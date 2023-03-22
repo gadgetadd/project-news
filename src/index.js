@@ -1,0 +1,1 @@
+import {checkbox} from './js/thema'

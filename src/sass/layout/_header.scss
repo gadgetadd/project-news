@@ -1,0 +1,123 @@
+.page-header {
+  //   position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 33px;
+  outline: 1px solid red;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+// Поле пошуку інпут
+.search_input {
+  display: none;
+}
+
+// Бургер меню
+.menu-btn {
+  display: flex;
+  justify-content: flex-end;
+  //   outline: 1px solid rgb(34, 31, 214);
+}
+
+.menu-btn_search {
+  // position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  margin-right: 14px;
+  margin-top: 6px;
+  margin-bottom: 7px;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  //   outline: 1px solid rgb(24, 243, 24);
+  cursor: pointer;
+
+  &.is-open .icon-search {
+    display: none;
+  }
+}
+
+.menu-btn_menu {
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  margin-top: 4px;
+  margin-bottom: 5px;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  //   outline: 1px solid rgb(24, 243, 24);
+  cursor: pointer;
+
+  & .icon-close {
+    display: none;
+  }
+
+  &.is-open .icon-close {
+    display: block;
+  }
+
+  &.is-open .icon-menu {
+    display: none;
+  }
+
+  &.is-open .icon-close:hover,
+  &.is-open .icon-close:focus {
+    cursor: pointer;
+  }
+}
+
+// Планшетна версія 768px
+@media screen and (min-width: 768px) {
+  .search_input {
+    display: block;
+    background-color: transparent;
+    width: 213px;
+    height: 31px;
+    opacity: 0.4;
+    border: 1px solid #111321;
+
+    border-radius: 25px;
+    margin-top: 12px;
+    margin-bottom: 3px;
+    margin-left: 32px;
+    margin-right: 24px;
+  }
+  .header {
+    height: 57px;
+    margin-top: 32px;
+    margin-bottom: 28px;
+  }
+
+    .menu-btn {
+    display: none;
+  }
+
+  .menu-btn_search {
+    display: none;
+  }
+
+  .menu-btn_menu {
+    display: none;
+  }
+}
+
+// Десктопна версія 1280px
+@media screen and (min-width: 1280px) {
+  .search_input {
+    width: 288px;
+    margin-top: 23px;
+    margin-left: 147px;
+    margin-right: 147px;
+  }
+}

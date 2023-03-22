@@ -1,0 +1,209 @@
+body.dark {
+  background-color: #2e2e2e;
+}
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 21px;
+  //   width: 148px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid red;
+}
+.checkbox {
+  opacity: 0;
+  //   position: absolute;
+}
+.checkbox-light {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #4440f7;
+
+  opacity: 0.4;
+  margin-left: 0px;
+  //   margin-right: 6px;
+}
+.checkbox-dark {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+
+  color: #5f6775;
+}
+.label {
+  width: 35px;
+  height: 15px;
+  background-color: #fff;
+  display: flex;
+  border-radius: 20px;
+  border-color: #4440f7;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+  margin-right: 8px;
+}
+
+.ball {
+  width: 11px;
+  height: 11px;
+  background-color: #4440f7;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(20px);
+}
+
+@media screen and (min-width: 768px) {
+  .checkbox-container {
+        margin-top: 21px;
+      width: 98px;
+    height: 21px;
+  }
+
+  .checkbox {
+    opacity: 0;
+    //   position: absolute;
+  }
+
+  .checkbox-light {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #4440f7;
+
+    opacity: 0.4;
+    margin-left: 0px;
+    //   margin-right: 6px;
+  }
+
+  .checkbox-dark {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #5f6775;
+  }
+
+  .label {
+    width: 35px;
+    height: 15px;
+    background-color: #fff;
+    display: flex;
+    border-radius: 20px;
+    border-color: #4440f7;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    margin-right: 8px;
+  }
+
+  .ball {
+    width: 11px;
+    height: 11px;
+    background-color: #4440f7;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+
+  .checkbox:checked + .label .ball {
+    transform: translateX(20px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 21px;
+    //   width: 148px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+    outline: 1px solid red;
+  }
+  .checkbox {
+    opacity: 0;
+    //   position: absolute;
+  }
+  .checkbox-light {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #4440f7;
+
+    opacity: 0.4;
+    margin-left: 0px;
+    //   margin-right: 6px;
+  }
+  .checkbox-dark {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #5f6775;
+  }
+  .label {
+    width: 35px;
+    height: 15px;
+    background-color: #fff;
+    display: flex;
+    border-radius: 20px;
+    border-color: #4440f7;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    transform: scale(1.5);
+    margin-right: 8px;
+  }
+
+  .ball {
+    width: 11px;
+    height: 11px;
+    background-color: #4440f7;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+
+  .checkbox:checked + .label .ball {
+    transform: translateX(20px);
+  }
+}

@@ -1,0 +1,27 @@
+.logo {
+  z-index: 2;
+  display: flex;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  align-items: center;
+  color: #111321;
+}
+
+// Планшетна версія 768px
+@media screen and (min-width: 768px) {
+  .logo {
+    font-size: 32px;
+    margin-right: 44px;
+  }
+}
+
+// Планшетна версія 1280px
+@media screen and (min-width: 1280px) {
+  .logo {
+    font-size: 42px;
+    margin-right: 102px;
+  }
+}
