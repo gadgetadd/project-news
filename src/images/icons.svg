@@ -32,5 +32,8 @@
 <symbol id="arrow_down" viewBox="0 0 32 32">
 <path d="M3.76 9.143l-3.76 3.479 16 14.807 16-14.807-3.76-3.479-12.24 11.303-12.24-11.303z"></path>
 </symbol>
+<symbol id="arrow_right" viewBox="0 0 18 32">
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4.5714" stroke="#000" d="M2.286 29.714l13.714-13.714-13.714-13.714"></path>
+</symbol>
 </defs>
 </svg>
