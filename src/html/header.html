@@ -5,7 +5,7 @@
       <div class="menu-container" id="menu-container" data-menu>
         <ul class="site-nav">
           <li>
-            <a href="./index.html" class="site-nav__item">
+            <a href="./index.html" class="site-nav__item current">
               <svg width="32" height="32" class="icon-home">
                 <use href="./images/svg/symbol-defs.svg#home"></use></svg
               >Home
@@ -39,8 +39,15 @@
           </li>
         </ul>
       </div>
-      <input type="search" class="search_input" placeholder="Search  |" />
-    <div class="checkbox-container">
+      <form class="form-search" role="search" id="form-search">
+        <svg class="form-svg" width="20" height="20">
+          <use href="./images/svg/symbol-defs.svg#search">
+          </use>
+        </svg>
+        <input class="form-input" type="" placeholder="Search  |" aria-label="Search" name="searchQuery" autocomplete="off">
+            
+      </form>
+      <div class="checkbox-container" data-thema>
       <svg width="21" height="21" class="icon-sun">
         <use href="./images/svg/symbol-defs.svg#icon-sun"></use>
       </svg>
@@ -53,15 +60,12 @@
         <use href="./images/svg/symbol-defs.svg#icon-moon"></use>
         </svg>
         <p class="checkbox-dark">Dark</p>
-    </div>
-      
+      </div>
       <div class="menu-btn">
         <button type="button" class="menu-btn_search" data-menu-button2>
           <svg width="20" height="20" aria-label="Пошук">
-            <use
-              class="icon-search"
-              href="./images/svg/symbol-defs.svg#search"
-            ></use>
+            <use href="./images/svg/symbol-defs.svg#search">
+            </use>
           </svg>
         </button>
         <button
@@ -85,8 +89,6 @@
           </svg>
         </button>
       </div>
-    
-    
     </section>
   </div>
 </header>

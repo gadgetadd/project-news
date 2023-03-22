@@ -5,15 +5,19 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   height: 33px;
-  // outline: 1px solid red;
+
   margin-top: 24px;
   margin-bottom: 24px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 1px solid red;
 }
 
 // Поле пошуку інпут
-.search_input {
+.form-search {
   display: none;
 }
 
@@ -30,7 +34,7 @@
   width: 20px;
   height: 20px;
   display: inline-flex;
-  margin-right: 14px;
+  // margin-right: 14px;
   margin-top: 6px;
   margin-bottom: 7px;
 
@@ -79,19 +83,34 @@
 
 // Планшетна версія 768px
 @media screen and (min-width: 768px) {
-  .search_input {
-    display: block;
+  .form-search {
+    position: relative;
+    display: flex;
     background-color: transparent;
     width: 213px;
     height: 31px;
     opacity: 0.4;
     border: 1px solid #111321;
-
     border-radius: 25px;
-    margin-top: 12px;
-    margin-bottom: 3px;
-    margin-left: 32px;
-    margin-right: 24px;
+    // margin-top: 12px;
+    // margin-bottom: 3px;
+  }
+  .form-input {
+    background-color: transparent;
+    width: 213px;
+    padding-left: 48px;
+    border-radius: 25px;
+    border: none;
+    
+  }
+  .form-svg {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%, -50%) scale(1);
+    border: none;
+    fill: #111321;
   }
   .header {
     height: 57px;
@@ -99,7 +118,7 @@
     margin-bottom: 28px;
   }
 
-    .menu-btn {
+  .menu-btn {
     display: none;
   }
 
@@ -114,10 +133,8 @@
 
 // Десктопна версія 1280px
 @media screen and (min-width: 1280px) {
-  .search_input {
+  .form-search {
     width: 288px;
-    margin-top: 23px;
-    margin-left: 147px;
-    margin-right: 147px;
+    // margin-top: 23px;
   }
 }
