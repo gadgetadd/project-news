@@ -37,7 +37,7 @@
   justify-content: flex-start;
   color: #111321;
   cursor: pointer;
-  padding: 6px 16px;
+  // padding: 6px 16px;
   margin-left: -16px;
   display: flex;
 
@@ -46,7 +46,7 @@
     background-color: #4440f6;
     color: #f4f4f4;
 
-    .icon-chevron-right {
+    .arrow-right {
       display: block;
     }
   }
@@ -62,7 +62,7 @@
   margin-right: 14px;
 }
 
-.icon-chevron-right {
+.arrow-right {
   display: none;
   margin-left: auto;
   margin-right: 0;
@@ -93,13 +93,14 @@
     font-size: 16px;
     padding-top: 16px;
     padding-bottom: 8px;
+    margin: 0;
 
     &:hover,
     &:focus {
       background-color: transparent;
       color: #4440f6;
 
-      .icon-chevron-right {
+      .arrow-right {
         display: none;
       }
     }
@@ -109,7 +110,7 @@
     display: none;
   }
 
-  .icon-chevron-right {
+  .arrow-right {
     display: none;
   }
 }
