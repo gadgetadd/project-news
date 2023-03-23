@@ -1,0 +1,23 @@
+.logo {
+  z-index: 2;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+
+  color: #111321;
+}
+
+// Планшетна версія 768px
+@media screen and (min-width: 768px) {
+.logo {
+    
+        font-size: 33px;
+        line-height: 44px;
+    }
+}
+
+// Планшетна версія 1280px
+@media screen and (min-width: 1280px) {
+}

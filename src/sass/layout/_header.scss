@@ -1,0 +1,192 @@
+.page-header {
+  //   position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  height: 33px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+<<<<<<< Updated upstream
+=======
+  margin-top: 24px;
+  margin-bottom: 24px;
+>>>>>>> Stashed changes
+}
+
+// Поле пошуку інпут
+.search {
+  width: auto;
+  height: 31px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .search-input {
+    position: relative;
+    width: 20px;
+    height: 31px;
+<<<<<<< Updated upstream
+    color: #111321;
+=======
+    color: $darkTextColor;
+>>>>>>> Stashed changes
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0 0 0 32px;
+    transition: width 0.9s ease;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+
+    &:focus {
+      z-index: 0;
+      opacity: 1;
+      width: 173px;
+    }
+  }
+
+  .search-symbol {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .search-lens {
+<<<<<<< Updated upstream
+      fill: #111321;
+=======
+      fill: $darkTextColor;
+>>>>>>> Stashed changes
+      width: 20px;
+      height: 20px;
+      z-index: 1;
+      margin-left: 5px;
+    }
+  }
+}
+
+// Бургер меню
+.menu-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-btn_menu {
+  z-index: 2;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  margin-bottom: 5px;
+  margin-right: 16px;
+
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  & .icon-close {
+    display: none;
+  }
+
+  &.is-open .icon-close {
+    display: block;
+  }
+
+  &.is-open .icon-menu {
+    display: none;
+  }
+
+  &.is-open .icon-close:hover,
+  &.is-open .icon-close:focus {
+    cursor: pointer;
+  }
+}
+
+// Планшетна версія 768px
+@media screen and (min-width: 768px) {
+<<<<<<< Updated upstream
+  .search {
+    width: auto;
+
+    .search-input {
+      position: static;
+      width: 213px;
+      z-index: 1;
+      opacity: 1;
+      &:focus {
+        z-index: 1;
+        opacity: 1;
+        width: 213px;
+      }
+    }
+
+    .search-symbol {
+      height: 100%;
+      width: 25px;
+
+      left: 0;
+      z-index: 1;
+    }
+  }
+=======
+>>>>>>> Stashed changes
+  .header {
+    height: 57px;
+    margin-top: 32px;
+    margin-bottom: 28px;
+  }
+
+  .menu-btn_menu {
+    display: none;
+  }
+  .search {
+    width: auto;
+
+    .search-input {
+      position: static;
+      width: 213px;
+      z-index: 1;
+      opacity: 1;
+      &:focus {
+        z-index: 1;
+        opacity: 1;
+        width: 213px;
+      }
+    }
+    .search-symbol {
+      height: 100%;
+      width: 25px;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}
+
+// Десктопна версія 1280px
+@media screen and (min-width: 1280px) {
+  .search {
+    width: auto;
+
+    .search-input {
+      position: static;
+      width: 288px;
+
+      &:focus {
+        width: 288px;
+      }
+    }
+  }
+}
