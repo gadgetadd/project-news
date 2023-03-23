@@ -1,25 +1,21 @@
 const add = document.querySelector('#add-card');
 const remove = document.querySelector('#remove-card');
 
-// parent.addEventListener('click', () => {
-//   alert('Parent click handler');
-// });
+// import Player from '@vimeo/player';
+// import throttle from 'lodash.throttle';
 
-// loadMoreBtn.addEventListener('click', onClickLoadMoreBtn);
+// const iframe = document.querySelector('iframe');
+// const player = new Player(iframe);
 
-// async function onClickLoadMoreBtn() {
-//   currentPage += 1;
-//   try {
-//     const response = await fetchImages(searchQuery, currentPage);
-//     renderCardImage(response.hits);
-//     lightbox.refresh();
-//     currentHits += response.hits.length;
+// const onPlay = function (data) {
+//   localStorage.setItem(
+//     'videoplayer-current-time',
+//     JSON.stringify(data.seconds)
+//   );
+// };
 
-//     if (currentHits === response.totalHits) {
-//       loadMoreBtn.classList.add('is-hidden');
-//       endCollectionText.classList.remove('is-hidden');
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+// player.on('timeupdate', throttle(onPlay, 1000));
+
+// const currentTime = Number(localStorage.getItem('videoplayer-current-time'));
+
+// player.setCurrentTime(currentTime);
