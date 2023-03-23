@@ -1,5 +1,5 @@
-const parent = document.querySelector('#parent');
-const child = document.querySelector('#child');
+const add = document.querySelector('#add-card');
+const remove = document.querySelector('#remove-card');
 
 // parent.addEventListener('click', () => {
 //   alert('Parent click handler');
