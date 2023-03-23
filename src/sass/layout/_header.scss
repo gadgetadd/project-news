@@ -17,8 +17,62 @@
 }
 
 // Поле пошуку інпут
-.form-search {
-  display: none;
+.form-search--activ {
+  position: relative;
+  display: flex;
+  background-color: none;
+  width: 173px;
+  height: 31px;
+  opacity: 0.4;
+  border: 1px solid #111321;
+  border-radius: 25px;
+  // margin-top: 12px;
+  // margin-bottom: 3px;
+}
+// .form-search{
+//   display: none;
+
+// }
+
+.form-input {
+  position: static;
+  background-color: none;
+  width: 173px;
+  padding-left: 48px;
+  border-radius: 25px;
+  border: none;
+
+}
+
+.form-svg {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 20px;
+  transform: translate(-50%, -50%) scale(1);
+  border: none;
+  fill: #111321;
+}
+.menu-btn_search {
+  // position: relative;
+  // display: block;
+  // margin-right: 60px;
+  // z-index: 2;
+  // width: 20px;
+  // height: 20px;
+  // // margin-right: 14px;
+  // margin-top: 6px;
+  // margin-bottom: 7px;
+
+  // padding: 0;
+  // border: none;
+  // background-color: none;
+    outline: 1px solid rgb(24, 243, 24);
+  cursor: pointer;
+
+  // &.is-open .icon-search {
+  //   display: none;
+  // }
 }
 
 // Бургер меню
@@ -28,26 +82,7 @@
   //   outline: 1px solid rgb(34, 31, 214);
 }
 
-.menu-btn_search {
-  // position: absolute;
-  z-index: 2;
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  // margin-right: 14px;
-  margin-top: 6px;
-  margin-bottom: 7px;
 
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  //   outline: 1px solid rgb(24, 243, 24);
-  cursor: pointer;
-
-  &.is-open .icon-search {
-    display: none;
-  }
-}
 
 .menu-btn_menu {
   z-index: 2;

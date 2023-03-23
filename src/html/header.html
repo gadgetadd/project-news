@@ -39,14 +39,8 @@
           </li>
         </ul>
       </div>
-      <form class="form-search" role="search" id="form-search">
-        <svg class="form-svg" width="20" height="20">
-          <use href="./images/svg/symbol-defs.svg#search">
-          </use>
-        </svg>
-        <input class="form-input" type="" placeholder="Search  |" aria-label="Search" name="searchQuery" autocomplete="off">
-            
-      </form>
+      
+      
       <div class="checkbox-container" data-thema>
       <svg width="21" height="21" class="icon-sun">
         <use href="./images/svg/symbol-defs.svg#icon-sun"></use>
@@ -61,14 +55,24 @@
         </svg>
         <p class="checkbox-dark">Dark</p>
       </div>
-      <div class="menu-btn">
-        <button type="button" class="menu-btn_search" data-menu-button2>
-          <svg width="20" height="20" aria-label="Пошук">
+      <div class="search-container">
+        <form class="form-search" role="search" id="form-search">
+          <svg class="form-svg" width="20" height="20">
             <use href="./images/svg/symbol-defs.svg#search">
             </use>
           </svg>
-        </button>
-        <button
+          <input class="form-input" type="text" placeholder="Search  |" aria-label="Search" name="searchQuery"
+            autocomplete="off">
+          <button type="button" class="btn_search" data-menu-button2>
+            <svg class="btn_search--svg" width="20" height="20" aria-label="Пошук">
+              <use href="./images/svg/symbol-defs.svg#search">
+              </use>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="menu-btn">
+         <button
           type="button"
           class="menu-btn_menu"
           aria-expanded="false"
