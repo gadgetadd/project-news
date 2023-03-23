@@ -1,62 +1,96 @@
 .page-header {
+  //   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 .header {
   display: flex;
+  height: 33px;
   justify-content: space-between;
-  height: 35px;
-  outline: 1px solid red;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
-.search_input {
-  display: none;
-  background-color: transparent;
-  width: 213px;
+
+// Поле пошуку інпут
+.search {
+  display: flex;
+  width: auto;
   height: 31px;
-  opacity: 0.4;
-  border: 1px solid #111321;
-  
+  position: relative;
+  overflow: hidden;
   border-radius: 25px;
-  outline: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &.is-open .search-symbol {
+      display: flex;
+    }
+
+  .search-input {
+    position: relative;
+    width: 20px;
+    height: 31px;
+    color: $darkTextColor;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0 0 0 32px;
+    transition: width 0.9s ease;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+
+    &:focus {
+      z-index: 0;
+      opacity: 1;
+      width: 173px;
+    }
+  }
+
+  .search-symbol {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .search-lens {
+      fill: $darkTextColor;
+      width: 20px;
+      height: 20px;
+      z-index: 1;
+      margin-left: 5px;
+    }
+  }
 }
+
+// Бургер меню
 .menu-btn {
   display: flex;
   justify-content: flex-end;
-  //   outline: 1px solid rgb(34, 31, 214);
-}
-.menu-btn_search {
-  // position: absolute;
-  z-index: 2;
-  width: 20px;
-  height: 20px;
-  display: inline-flex;
-  margin-right: 14px;
-  margin-top: 6px;
-  margin-bottom: 7px;
-
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  //   outline: 1px solid rgb(24, 243, 24);
-  cursor: pointer;
-
-  &.is-open .icon-search {
-    display: none;
-  }
 }
 
 .menu-btn_menu {
   z-index: 2;
+  display: block;
   width: 24px;
   height: 24px;
-  display: inline-flex;
   margin-top: 4px;
   margin-bottom: 5px;
+  margin-right: 16px;
 
   padding: 0;
   border: none;
   background-color: transparent;
-  //   outline: 1px solid rgb(24, 243, 24);
   cursor: pointer;
+
   & .icon-close {
     display: none;
   }
@@ -73,32 +107,55 @@
   &.is-open .icon-close:focus {
     cursor: pointer;
   }
+        
 }
 
 // Планшетна версія 768px
 @media screen and (min-width: 768px) {
   .header {
-    display: flex;
-    height: 46px;
-  }
-
-  .search_input {
-    display: block;
-  }
-
-  .menu-btn {
-    display: none;
-  }
-
-  .menu-btn_search {
-    display: none;
+    height: 57px;
+    margin-top: 32px;
+    margin-bottom: 28px;
   }
 
   .menu-btn_menu {
     display: none;
   }
+  .search {
+    width: auto;
+
+    .search-input {
+      position: static;
+      width: 213px;
+      z-index: 1;
+      opacity: 1;
+      &:focus {
+        z-index: 1;
+        opacity: 1;
+        width: 213px;
+      }
+    }
+    .search-symbol {
+      height: 100%;
+      width: 25px;
+      left: 0;
+      z-index: 1;
+    }
+  }
 }
 
 // Десктопна версія 1280px
 @media screen and (min-width: 1280px) {
+  .search {
+    width: auto;
+
+    .search-input {
+      position: static;
+      width: 288px;
+
+      &:focus {
+        width: 288px;
+      }
+    }
+  }
 }
