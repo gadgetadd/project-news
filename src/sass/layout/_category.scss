@@ -1,3 +1,44 @@
 .list {
     list-style: none;
 }
+.filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+
+}
+.categories-wrapper {
+display: flex;
+align-items: center;
+ gap: 10px;
+}
+
+// .categories__item {
+//     display: flex;
+// }
+
+.categories__button {
+    border: 1px solid #4440F6;
+    border-radius: 20px;
+    padding: 8px 21px;
+    text-align: center;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color:#4440F6;
+    background-color: #fff;
+      
+} 
+.categories__button:hover {
+    color: #fff;
+    background-color: #4B48DB;
+}
+.others {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    fill: currentColor;
+}
