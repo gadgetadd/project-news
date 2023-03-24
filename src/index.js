@@ -1,3 +1,5 @@
+import './js/mobile-menu.js';
+
 import { Categories, Search, Popular } from './js/NewsAPI';
 
 const func = async () => {
