@@ -1,20 +1,13 @@
 import axios from 'axios';
 
-// categoriesListURL =
-//   'https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key=vVHb9x2ZvJACextBSwzpPJg5KNN9Tso5';
-// categoryURL =
-//   'https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=yourkey';
-// searchURL =
-//   'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=yourkey';
-// popularURL =
-//   'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=yourkey';
+// Загальний клас для базових даних і методів
 
 class NewsAPI {
   BASE_URL = 'https://api.nytimes.com/svc/';
   API_KEY = 'vVHb9x2ZvJACextBSwzpPJg5KNN9Tso5';
 
   async get() {
-    try {
+        try {
       const response = await axios.get(this.URL, {
         params: this.options,
       });
@@ -24,6 +17,8 @@ class NewsAPI {
     }
   }
 }
+
+// Клас для отримання списку категорій
 
 export class Categories extends NewsAPI {
   URL = `${this.BASE_URL}news/v3/content/section-list.json`;
@@ -41,6 +36,15 @@ export class Categories extends NewsAPI {
   }
 }
 
+// Клас для пошуку, екземпляр приймає стрічку для запиту
+// приклад застосування:
+
+// import { Categories, Search, Popular, Category } from './js/NewsAPI';
+
+// const search = new Search('ukraine');
+// const res = await search.get();
+
+
 export class Search extends NewsAPI {
   URL = `${this.BASE_URL}search/v2/articlesearch.json`;
   options = { ['api-key']: this.API_KEY };
@@ -53,7 +57,7 @@ export class Search extends NewsAPI {
   normalize({ response: { docs } }) {
     return docs.map(doc => {
       return {
-        id: doc._id,
+        id: doc._id.split('/').pop(),
         category: doc.section_name,
         image: doc.multimedia[0]
           ? `https://static01.nyt.com/${doc.multimedia[0].url}`
@@ -66,6 +70,10 @@ export class Search extends NewsAPI {
     });
   }
 }
+
+// Клас для запиту популярних статей, приклад:
+// const pop = new Popular();
+// const res3 = await pop.get();
 
 export class Popular extends NewsAPI {
   URL = `${this.BASE_URL}mostpopular/v2/viewed/1.json`;
@@ -91,3 +99,44 @@ export class Popular extends NewsAPI {
     });
   }
 }
+
+// Клас для запиту по категорії, екземпляр приймає стрічку з назвою категорії
+//  const cat = new Category('Smarter Living');
+//   const res4 = await cat.get();
+
+
+export class Category extends NewsAPI {
+  URL = `${this.BASE_URL}news/v3/content/all/`;
+  options = { ['api-key']: this.API_KEY };
+
+  constructor(category) {
+    super();
+    this.URL += `${encodeURIComponent(category.toLowerCase())}.json `;
+  }
+
+  normalize({ results }) {
+    return results.map(res => {
+      return {
+        id: res.slug_name,
+        category: res.section,
+        image:
+          res.multimedia && res.multimedia[2]
+            ? res.multimedia[2].url
+            : 'https://demofree.sirv.com/nope-not-here.jpg?w=400',
+        title: res.title,
+        descr: res.abstract,
+        date: res.published_date,
+        url: res.url,
+      };
+    });
+  }
+}
+
+// Всі запити повертають масив даних одного формату
+// category: "Health"
+// date: "2023-03-22"
+// descr: "By analyzing seven samples of hair said to have come from Ludwig van Beethoven, researchers debunked myths about the revered composer while raising new questions about his life and death."
+// id: 100000008820741
+// image: "https://static01.nyt.com/images/2023/03/22/multimedia/22beethoven-promo/22beethoven-promo-mediumThreeByTwo440.jpg"
+// title: "DNA From Beethoven’s Hair Unlocks Medical and Family Secrets"
+// url: "https://www.nytimes.com/2023/03/22/health/beethoven-death-dna-hair.html"
