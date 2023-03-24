@@ -1,2 +1,5 @@
+@import './abstracts/breakpoints';
+@import './abstracts/variables';
 @import './base/reset';
-@import './base/typography'
+@import './base/typography';
+@import './layout/paginator';

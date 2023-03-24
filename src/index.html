@@ -8,7 +8,18 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <!-- <include src="./partials/example.html"></include> -->
+    <div class="pagination">
+      <button class="pagination__item"><svg width="8" class="pagination__icon">
+        <use href="./images/icons.svg#arrow_down"></use>
+      </svg>Prew</button>
+      <button class="pagination__item">1</button>
+      ...
+      <button class="pagination__item , pagination__item--active">4</button>
+      ...
+      <button class="pagination__item">20</button>
+      <button class="pagination__item">Next<svg width="7" class="pagination__icon">
+        <use href="./images/icons.svg#arrow_up"></use>
+      </svg></button>
+    </_div>
   </body>
 </html>
