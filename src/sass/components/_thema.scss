@@ -77,6 +77,20 @@
     transform: scale(1.5);
   }
 
+<<<<<<< Updated upstream
+=======
+  // .ball {
+  //   width: 10.5px;
+  //   height: 10.5px;
+  //   background-color: $accentColor;
+  //   position: absolute;
+  //   top: 1.3px;
+  //   left: 2px;
+  //   border-radius: 50%;
+  //   transition: transform 0.2s linear;
+  // }
+
+>>>>>>> Stashed changes
   .checkbox:checked + .label .ball {
     transform: translateX(13px);
   }
@@ -150,4 +164,86 @@
     background-color: $whiteColor;
     transform: translateX(12px);
   }
+<<<<<<< Updated upstream
+=======
+}
+
+
+//My style
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  cursor: pointer ;
+}
+
+.switch__input{
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.switch__slider{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background: #FFFFFF;
+  border: 0.604701px solid #4B48DB;
+  border-radius: 20px;
+  transition-duration: 300ms;
+}
+
+.switch__slider::before{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 1px;
+  top: 1.3px;
+  border-radius: 50%;
+  background-color: #4B48DB;
+  transition-duration: 300ms
+}
+
+.switch__input:checked + .switch__slider{
+    background-color: #4B48DB;
+    border-color: #fff;
+}
+.switch__input:checked + .switch__slider::before{
+  background-color: #fff;
+  transform: translateX(19px);
+}
+
+.dark body{
+  background-color: $darkTextColor;
+  color: $lightBgColor;
+}
+.dark .logo{
+  color: $lightBgColor;
+}
+.dark .site-nav__item{
+  color: $lightBgColor;
+}
+.dark .page-header{
+  border-color: rgba($color: #F4F4F4, $alpha: 20%);
+}
+.bark .search{
+  background-color: $darkTextColor;
+}
+.bark .search{
+  border-color: $lightBgColor;
+  background-color: $darkTextColor;
+}
+.dark .menu-btn{
+  fill: $lightBgColor;
+}
+.dark .search-input{
+  border-color: $lightBgColor;
+  background-color: $darkTextColor;
+  fill: $lightBgColor;
+>>>>>>> Stashed changes
 }

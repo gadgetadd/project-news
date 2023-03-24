@@ -1,9 +1,16 @@
 const input = document.querySelector('.switch__input');
+<<<<<<< Updated upstream
 const sun = document.querySelector('.icon-sun');
 const moon = document.querySelector('.icon-moon')
 
 
 setBackgroundColor();
+=======
+
+
+setBackgroundColor();
+console.dir(input)
+>>>>>>> Stashed changes
 
 input.addEventListener('click', onInputClick)
 function onInputClick(e){
@@ -19,12 +26,17 @@ function onInputClick(e){
     setBackgroundColor(theme);
 }
 
+<<<<<<< Updated upstream
 function setBackgroundColor(e){
+=======
+function setBackgroundColor(){
+>>>>>>> Stashed changes
     const theme = localStorage.getItem('theme');
     if(!theme){
         return;
     }
     if(theme === 'light'){
+<<<<<<< Updated upstream
         document.querySelector('html').classList.remove('dark')
         document.body.classList.remove('body-dark')
     }
@@ -48,4 +60,13 @@ function switchIcon(e){
         document.querySelector('p[data-light]').classList.remove('checkbox-dark')
         document.querySelector('p[data-dark]').classList.add('checkbox-dark')
     }
+=======
+        console.log('fff')
+        document.querySelector('html').classList.remove('dark')
+        document.body.classList.remove('body-dark')
+        return;
+    }
+    input.checked = true;
+    document.querySelector('html').classList.add('dark')
+>>>>>>> Stashed changes
 }
