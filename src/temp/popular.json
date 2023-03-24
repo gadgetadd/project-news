@@ -1,0 +1,1084 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2023 The New York Times Company.  All Rights Reserved.",
+  "num_results": 20,
+  "results": [
+    {
+      "uri": "nyt://article/7923a5cf-9323-5110-82ee-9baa1f38f7f4",
+      "url": "https://www.nytimes.com/2023/03/20/business/media/fox-news-abby-grossberg.html",
+      "id": 100000008822097,
+      "asset_id": 100000008822097,
+      "source": "New York Times",
+      "published_date": "2023-03-20",
+      "updated": "2023-03-21 11:18:23",
+      "section": "Business",
+      "subsection": "Media",
+      "nytdsection": "business",
+      "adx_keywords": "Television;News and News Media;Suits and Litigation (Civil);Discrimination;Workplace Environment;Sexual Harassment;Bartiromo, Maria;Carlson, Tucker;Grossberg, Abby;Fox News Channel;Fox Business Network;Dominion Voting Systems Corp",
+      "column": null,
+      "byline": "By Nicholas Confessore and Katie Robertson",
+      "type": "Article",
+      "title": "Fox Producer Says She Was Set Up in Dominion Case",
+      "abstract": "The producer, Abby Grossberg, said in a pair of lawsuits that the effort to place blame on her and Maria Bartiromo, the Fox Business host, was rooted in rampant misogyny and discrimination at the company.",
+      "des_facet": [
+        "Television",
+        "News and News Media",
+        "Suits and Litigation (Civil)",
+        "Discrimination",
+        "Workplace Environment",
+        "Sexual Harassment"
+      ],
+      "org_facet": [
+        "Fox News Channel",
+        "Fox Business Network",
+        "Dominion Voting Systems Corp"
+      ],
+      "per_facet": ["Bartiromo, Maria", "Carlson, Tucker", "Grossberg, Abby"],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Abby Grossberg said Fox News lawyers had pressured and intimidated her into protecting executives and on-air talent, while putting her own reputation at risk.",
+          "copyright": "Mark Lennihan/Associated Press",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/02/28/multimedia/20fox-suits/28fox-a-tmgh-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/02/28/multimedia/20fox-suits/28fox-a-tmgh-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/02/28/multimedia/20fox-suits/28fox-a-tmgh-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/4686c793-a2a6-52da-89fd-16bbca4112da",
+      "url": "https://www.nytimes.com/2023/03/21/us/politics/trump-pending-indictment.html",
+      "id": 100000008822696,
+      "asset_id": 100000008822696,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 23:35:34",
+      "section": "U.S.",
+      "subsection": "Politics",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Presidential Election of 2020;Presidential Election of 2024;Trump, Donald J;Mar-a-Lago (Palm Beach, Fla)",
+      "column": null,
+      "byline": "By Michael C. Bender and Maggie Haberman",
+      "type": "Article",
+      "title": "Trump at Mar-a-Lago: Magical Thinking and a Perp-Walk Fixation",
+      "abstract": "Those who have spent time with Donald Trump in recent days say he has often appeared significantly disconnected from the severity of his potential legal woes.",
+      "des_facet": [
+        "Presidential Election of 2020",
+        "Presidential Election of 2024"
+      ],
+      "org_facet": ["Mar-a-Lago (Palm Beach, Fla)"],
+      "per_facet": ["Trump, Donald J"],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "The case in Manhattan is one of four criminal investigations facing former President Donald J. Trump as he runs again for the White House. ",
+          "copyright": "Maddie McGarvey for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21pol-trump-inside-wjkc/21pol-trump-inside-wjkc-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21pol-trump-inside-wjkc/21pol-trump-inside-wjkc-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21pol-trump-inside-wjkc/21pol-trump-inside-wjkc-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/15eeb671-1407-56c2-aab7-f715d8afd980",
+      "url": "https://www.nytimes.com/article/donald-trump-indictment-arrest.html",
+      "id": 100000008822639,
+      "asset_id": 100000008822639,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-22 09:31:28",
+      "section": "New York",
+      "subsection": "",
+      "nytdsection": "new york",
+      "adx_keywords": "District Attorneys;Bragg, Alvin;Cohen, Michael D (1966- );Trump, Donald J;Manhattan (NYC)",
+      "column": null,
+      "byline": "By William K. Rashbaum and Jonah E. Bromwich",
+      "type": "Article",
+      "title": "How an Indictment and Arrest of Donald Trump Could Unfold",
+      "abstract": "An indictment could be handed up as soon as Wednesday, but much about how the process might play out remains unknown.",
+      "des_facet": ["District Attorneys"],
+      "org_facet": [],
+      "per_facet": [
+        "Bragg, Alvin",
+        "Cohen, Michael D (1966- )",
+        "Trump, Donald J"
+      ],
+      "geo_facet": ["Manhattan (NYC)"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "The timing of any potential arrest of Donald J. Trump remains up in the air.",
+          "copyright": "Desiree Rios/The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21trump-whatsnext-bjgv/21trump-whatsnext-bjgv-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21trump-whatsnext-bjgv/21trump-whatsnext-bjgv-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21trump-whatsnext-bjgv/21trump-whatsnext-bjgv-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/0b193ebd-851a-5876-9f8e-cc82bcf99b73",
+      "url": "https://www.nytimes.com/2023/03/21/opinion/trump-indictment-alvin-bragg.html",
+      "id": 100000008820726,
+      "asset_id": 100000008820726,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 10:38:37",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "Trump, Donald J;Bragg, Alvin;Clifford, Stephanie (1979- )",
+      "column": null,
+      "byline": "By Ryan Goodman and Andrew Weissmann",
+      "type": "Article",
+      "title": "Make No Mistake, the Investigation of Donald Trump and the Stormy Daniels Scheme Is Serious",
+      "abstract": "Trump’s former job does not, and should not, immunize him from the accountability that would be sought for anyone else.",
+      "des_facet": [],
+      "org_facet": [],
+      "per_facet": [
+        "Trump, Donald J",
+        "Bragg, Alvin",
+        "Clifford, Stephanie (1979- )"
+      ],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Damon Winter/The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21weissmann-2-bcmk/21weissmann-2-bcmk-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21weissmann-2-bcmk/21weissmann-2-bcmk-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21weissmann-2-bcmk/21weissmann-2-bcmk-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/b5a80351-bab7-51d9-8a75-0839caa96540",
+      "url": "https://www.nytimes.com/2023/03/20/sports/olympics/jennifer-fox-sexual-abuse-the-tale.html",
+      "id": 100000008770809,
+      "asset_id": 100000008770809,
+      "source": "New York Times",
+      "published_date": "2023-03-20",
+      "updated": "2023-03-21 17:41:42",
+      "section": "Sports",
+      "subsection": "Olympics",
+      "nytdsection": "sports",
+      "adx_keywords": "Child Abuse and Neglect;Sex Crimes;Movies;Rowing;Content Type: Personal Profile;internal-sub-only;Coaches and Managers;Dern, Laura;Fox, Jennifer;Nash, Ted;US Center for SafeSport",
+      "column": null,
+      "byline": "By Juliet Macur",
+      "type": "Article",
+      "title": "For Years She Said a Coach Abused Her. Now She Has Named a Legend.",
+      "abstract": "Jennifer Fox has long discussed what happened when she was 13 and her coach was 40. She even based a film on it. Now she has revealed the final detail: his identity.",
+      "des_facet": [
+        "Child Abuse and Neglect",
+        "Sex Crimes",
+        "Movies",
+        "Rowing",
+        "Content Type: Personal Profile",
+        "internal-sub-only",
+        "Coaches and Managers"
+      ],
+      "org_facet": ["US Center for SafeSport"],
+      "per_facet": ["Dern, Laura", "Fox, Jennifer", "Nash, Ted"],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Jennifer Fox made the film “The Tale” about the summer she was 13.",
+          "copyright": "Ingmar Nolting for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/10/multimedia/00rowing-abuse-qljp/00rowing-abuse-qljp-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/10/multimedia/00rowing-abuse-qljp/00rowing-abuse-qljp-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/10/multimedia/00rowing-abuse-qljp/00rowing-abuse-qljp-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/c7926a06-caaa-5a4e-a046-472e28cc759d",
+      "url": "https://www.nytimes.com/2023/03/21/us/irvo-otieno-virginia-police-video.html",
+      "id": 100000008822452,
+      "asset_id": 100000008822452,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-22 09:38:51",
+      "section": "U.S.",
+      "subsection": "",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Police Brutality, Misconduct and Shootings;Video Recordings, Downloads and Streaming;Murders, Attempted Murders and Homicides;Mental Health and Disorders;Content Type: Personal Profile;Otieno, Irvo (d 2023);Virginia;Henrico County (Va);Dinwiddie County (Va)",
+      "column": null,
+      "byline": "By Campbell Robertson and Christine Hauser",
+      "type": "Article",
+      "title": "Video Shows Virginia Man’s Death in Custody",
+      "abstract": "Irvo Otieno’s death was a devastating ending to a journey that began when his family immigrated from Kenya when he was a young boy, “compelled by the American dream.”",
+      "des_facet": [
+        "Police Brutality, Misconduct and Shootings",
+        "Video Recordings, Downloads and Streaming",
+        "Murders, Attempted Murders and Homicides",
+        "Mental Health and Disorders",
+        "Content Type: Personal Profile"
+      ],
+      "org_facet": [],
+      "per_facet": ["Otieno, Irvo (d 2023)"],
+      "geo_facet": ["Virginia", "Henrico County (Va)", "Dinwiddie County (Va)"],
+      "media": [],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/1e2dd840-e211-59b4-ae13-5abe699db5ae",
+      "url": "https://www.nytimes.com/2023/03/21/sports/basketball/tall-basketball-march-madness.html",
+      "id": 100000008566733,
+      "asset_id": 100000008566733,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-22 00:04:55",
+      "section": "Sports",
+      "subsection": "N.B.A.",
+      "nytdsection": "sports",
+      "adx_keywords": "internal-sub-only;Basketball;Women and Girls;Height (Stature);College Athletics;Content Type: Personal Profile;Basketball (College);Athletics and Sports;Aldrich, Cole;National Basketball Assn;Women's National Basketball Assn",
+      "column": null,
+      "byline": "By Scott Cacciola",
+      "type": "Article",
+      "title": "Yes, They Are Tall. No, They Do Not Play Basketball.",
+      "abstract": "For the vertically gifted, every day of the year means standing out. But March can be particularly maddening.",
+      "des_facet": [
+        "internal-sub-only",
+        "Basketball",
+        "Women and Girls",
+        "Height (Stature)",
+        "College Athletics",
+        "Content Type: Personal Profile",
+        "Basketball (College)",
+        "Athletics and Sports"
+      ],
+      "org_facet": [
+        "National Basketball Assn",
+        "Women's National Basketball Assn"
+      ],
+      "per_facet": ["Aldrich, Cole"],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Dave Rasmussen is 7 feet 2 inches and has gotten used to people asking (and asking) if he played basketball.",
+          "copyright": "Sara Stathas for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/00nba-tall-01-gptf/00nba-tall-01-gptf-thumbStandard-v2.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/00nba-tall-01-gptf/00nba-tall-01-gptf-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/00nba-tall-01-gptf/00nba-tall-01-gptf-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/8a0937ca-750e-55d0-87fb-3e8e9dd50871",
+      "url": "https://www.nytimes.com/2023/03/21/technology/google-bard-chatbot.html",
+      "id": 100000008822015,
+      "asset_id": 100000008822015,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 23:53:10",
+      "section": "Technology",
+      "subsection": "",
+      "nytdsection": "technology",
+      "adx_keywords": "Search Engines;ChatGPT;Computers and the Internet;Web Browsers;Google Inc;Microsoft Corp;OpenAI Labs",
+      "column": null,
+      "byline": "By Nico Grant and Cade Metz",
+      "type": "Article",
+      "title": "Google Releases Bard, Its Competitor in the Race to Create A.I. Chatbots",
+      "abstract": "The internet giant will grant users access to a chatbot after years of cautious development, chasing splashy debuts from rivals OpenAI and Microsoft.",
+      "des_facet": [
+        "Search Engines",
+        "ChatGPT",
+        "Computers and the Internet",
+        "Web Browsers"
+      ],
+      "org_facet": ["Google Inc", "Microsoft Corp", "OpenAI Labs"],
+      "per_facet": [],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Bard is a stand-alone webpage featuring a question box.",
+          "copyright": "via Google",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/business/21GOOGLE-BARD-promo/21GOOGLE-BARD-promo-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/business/21GOOGLE-BARD-promo/21GOOGLE-BARD-promo-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/business/21GOOGLE-BARD-promo/21GOOGLE-BARD-promo-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/32d66ae4-d024-5753-9523-c3030b41630d",
+      "url": "https://www.nytimes.com/2023/03/21/us/abigail-zwerner-virginia-teacher-shooting.html",
+      "id": 100000008822995,
+      "asset_id": 100000008822995,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 15:12:55",
+      "section": "U.S.",
+      "subsection": "",
+      "nytdsection": "u.s.",
+      "adx_keywords": "School Shootings and Armed Attacks;Education (K-12);Firearms;Teachers and School Employees;Zwerner, Abigail;Richneck Elementary School (Newport News, Va);Newport News (Va)",
+      "column": null,
+      "byline": "By Christine Hauser",
+      "type": "Article",
+      "title": "Teacher Shot by 6-Year-Old Will ‘Never Forget’ the Look on His Face",
+      "abstract": "In an interview with NBC’s “Today” show, the teacher, Abigail Zwerner, said she was recovering after a bullet struck her hand and chest at a Virginia elementary school in January.",
+      "des_facet": [
+        "School Shootings and Armed Attacks",
+        "Education (K-12)",
+        "Firearms",
+        "Teachers and School Employees"
+      ],
+      "org_facet": ["Richneck Elementary School (Newport News, Va)"],
+      "per_facet": ["Zwerner, Abigail"],
+      "geo_facet": ["Newport News (Va)"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Abigail Zwerner was in her first-grade classroom at Richneck Elementary School in Newport News, Va., when a boy pulled out a handgun, aimed it at her and fired. ",
+          "copyright": "NBC News",
+          "approved_for_syndication": 0,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21xp-teacher/21xp-teacher-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21xp-teacher/21xp-teacher-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/multimedia/21xp-teacher/21xp-teacher-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/6e16f0a8-a21b-5c52-b8e9-5ecb135f2386",
+      "url": "https://www.nytimes.com/2023/03/21/sports/baseball/japan-usa-world-baseball-classic.html",
+      "id": 100000008812180,
+      "asset_id": 100000008812180,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-22 08:10:38",
+      "section": "Sports",
+      "subsection": "Baseball",
+      "nytdsection": "sports",
+      "adx_keywords": "Baseball;World Baseball Classic;Ohtani, Shohei;Trout, Mike;Japan",
+      "column": null,
+      "byline": "By James Wagner",
+      "type": "Article",
+      "title": "Ohtani Shines as Japan Beats U.S. to Win World Baseball Classic",
+      "abstract": "A thrilling tournament ended emphatically with Shohei Ohtani striking out Mike Trout to give Japan its third W.B.C. crown.",
+      "des_facet": ["Baseball", "World Baseball Classic"],
+      "org_facet": [],
+      "per_facet": ["Ohtani, Shohei", "Trout, Mike"],
+      "geo_facet": ["Japan"],
+      "media": [],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/76943f0d-36dc-571b-8738-3d3a03e6b361",
+      "url": "https://www.nytimes.com/2023/03/21/us/politics/trump-2024-campaign-indictment.html",
+      "id": 100000008820779,
+      "asset_id": 100000008820779,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 23:36:25",
+      "section": "U.S.",
+      "subsection": "Politics",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Presidential Election of 2024;Primaries and Caucuses;United States Politics and Government;Trump, Donald J;Bragg, Alvin;DeSantis, Ron;Republican Party",
+      "column": null,
+      "byline": "By Michael C. Bender",
+      "type": "Article",
+      "title": "‘The Circus Continues’: For Trump, Legal Woes Resurrect Old Habits",
+      "abstract": "The former president strengthened his political position in recent weeks, but an impetuous response to his potential indictment could alienate voters he will need to win back the White House.",
+      "des_facet": [
+        "Presidential Election of 2024",
+        "Primaries and Caucuses",
+        "United States Politics and Government"
+      ],
+      "org_facet": ["Republican Party"],
+      "per_facet": ["Trump, Donald J", "Bragg, Alvin", "DeSantis, Ron"],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Former President Donald J. Trump last week in Davenport, Iowa.",
+          "copyright": "Desiree Rios/The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/20/multimedia/20polltrump-memo-pqmb/20polltrump-memo-pqmb-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/20/multimedia/20polltrump-memo-pqmb/20polltrump-memo-pqmb-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/20/multimedia/20polltrump-memo-pqmb/20polltrump-memo-pqmb-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/81fb04aa-b00f-5498-ae62-21539df294b9",
+      "url": "https://www.nytimes.com/2023/03/21/arts/gwyneth-paltrow-ski-accident-trial.html",
+      "id": 100000008822818,
+      "asset_id": 100000008822818,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-22 04:10:11",
+      "section": "Arts",
+      "subsection": "",
+      "nytdsection": "arts",
+      "adx_keywords": "Suits and Litigation (Civil);Compensation for Damages (Law);Skiing;Customs, Etiquette and Manners;Paltrow, Gwyneth;Park City (Utah)",
+      "column": null,
+      "byline": "By Remy Tumin",
+      "type": "Article",
+      "title": "Gwyneth Paltrow to Testify in Trial Over Utah Ski Accident",
+      "abstract": "A retired optometrist accused the actress in a lawsuit of violently crashing into him in a skiing accident in Park City in 2016. He is seeking $300,000 in damages.",
+      "des_facet": [
+        "Suits and Litigation (Civil)",
+        "Compensation for Damages (Law)",
+        "Skiing",
+        "Customs, Etiquette and Manners"
+      ],
+      "org_facet": [],
+      "per_facet": ["Paltrow, Gwyneth"],
+      "geo_facet": ["Park City (Utah)"],
+      "media": [],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/fa262998-e7b5-5baf-9a1d-72e3d02ac52f",
+      "url": "https://www.nytimes.com/2023/03/21/opinion/george-bush-iraq-pepfar.html",
+      "id": 100000008816037,
+      "asset_id": 100000008816037,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-22 09:49:50",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "Humanitarian Aid;Acquired Immune Deficiency Syndrome;United States Politics and Government;Bush, George W;President's Emergency Plan for AIDS Relief;Africa",
+      "column": null,
+      "byline": "By Adam B. Ellick, Jonah M. Kessel and Nicholas Kristof",
+      "type": "Article",
+      "title": "In This Story, George W. Bush Is the Hero",
+      "abstract": "Twenty years ago, Bush did something amazing. Hint: It wasn’t the Iraq war.",
+      "des_facet": [
+        "Humanitarian Aid",
+        "Acquired Immune Deficiency Syndrome",
+        "United States Politics and Government"
+      ],
+      "org_facet": ["President's Emergency Plan for AIDS Relief"],
+      "per_facet": ["Bush, George W"],
+      "geo_facet": ["Africa"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "",
+          "approved_for_syndication": 0,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/13/autossell/op-gwb-aids-thumb/op-gwb-aids-thumb-thumbStandard.png",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/13/autossell/op-gwb-aids-thumb/op-gwb-aids-thumb-mediumThreeByTwo210.png",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/13/autossell/op-gwb-aids-thumb/op-gwb-aids-thumb-mediumThreeByTwo440.png",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/7c9a1c63-67a3-57f7-b29d-e033bfa4f862",
+      "url": "https://www.nytimes.com/2023/03/18/us/politics/jimmy-carter-october-surprise-iran-hostages.html",
+      "id": 100000008815506,
+      "asset_id": 100000008815506,
+      "source": "New York Times",
+      "published_date": "2023-03-18",
+      "updated": "2023-03-19 09:58:59",
+      "section": "U.S.",
+      "subsection": "Politics",
+      "nytdsection": "u.s.",
+      "adx_keywords": "Presidential Election of 1980;United States Politics and Government;Kidnapping and Hostages;United States International Relations;Barnes, Ben;Connally, John B Jr.;Casey, William J;Reagan, Ronald Wilson;Carter, Jimmy;Sick, Gary;Democratic Party;Republican Party;Iran",
+      "column": null,
+      "byline": "By Peter Baker",
+      "type": "Article",
+      "title": "A Four-Decade Secret: One Man’s Story of Sabotaging Carter’s Re-election",
+      "abstract": "A prominent Texas politician said he unwittingly took part in a 1980 tour of the Middle East with a clandestine agenda.",
+      "des_facet": [
+        "Presidential Election of 1980",
+        "United States Politics and Government",
+        "Kidnapping and Hostages",
+        "United States International Relations"
+      ],
+      "org_facet": ["Democratic Party", "Republican Party"],
+      "per_facet": [
+        "Barnes, Ben",
+        "Connally, John B Jr.",
+        "Casey, William J",
+        "Reagan, Ronald Wilson",
+        "Carter, Jimmy",
+        "Sick, Gary"
+      ],
+      "geo_facet": ["Iran"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "“History needs to know that this happened,” Ben Barnes now says of his trip to the Middle East in 1980.",
+          "copyright": "Christopher Lee for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/18/multimedia/18dc-carter-hostage-barnes-pjkb/18dc-carter-hostage-barnes-pjkb-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/18/multimedia/18dc-carter-hostage-barnes-pjkb/18dc-carter-hostage-barnes-pjkb-mediumThreeByTwo210-v3.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/18/multimedia/18dc-carter-hostage-barnes-pjkb/18dc-carter-hostage-barnes-pjkb-mediumThreeByTwo440-v3.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/85a6f9bc-820d-52fa-902b-ea6d9424cfab",
+      "url": "https://www.nytimes.com/2023/03/20/magazine/women-friendships-travel-morocco.html",
+      "id": 100000008817368,
+      "asset_id": 100000008817368,
+      "source": "New York Times",
+      "published_date": "2023-03-20",
+      "updated": "2023-03-21 21:04:56",
+      "section": "Magazine",
+      "subsection": "",
+      "nytdsection": "magazine",
+      "adx_keywords": "internal-sub-only;Friendship;Travel and Vacations;Women and Girls;Parties (Social);audio-positive-escape;audio-positive-happy;Morocco",
+      "column": null,
+      "byline": "By Caity Weaver",
+      "type": "Article",
+      "title": "I Went on a Package Trip for Lonely Millennials. It Was Exhausting.",
+      "abstract": "On traveling to Morocco with a group-travel company that promised to build “meaningful friendships” among its youngish clientele.",
+      "des_facet": [
+        "internal-sub-only",
+        "Friendship",
+        "Travel and Vacations",
+        "Women and Girls",
+        "Parties (Social)",
+        "audio-positive-escape",
+        "audio-positive-happy"
+      ],
+      "org_facet": [],
+      "per_facet": [],
+      "geo_facet": ["Morocco"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Rosie Marks for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/26/magazine/26mag-morocco/26mag-morocco-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/26/magazine/26mag-morocco/26mag-morocco-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/26/magazine/26mag-morocco/26mag-morocco-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/934d2111-2cea-5bd1-9d49-cfdd202384de",
+      "url": "https://www.nytimes.com/2023/03/21/nyregion/we-love-nyc-logo.html",
+      "id": 100000008820806,
+      "asset_id": 100000008820806,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 23:31:25",
+      "section": "New York",
+      "subsection": "",
+      "nytdsection": "new york",
+      "adx_keywords": "Logos;Social Media;Trademarks and Trade Names;Advertising and Marketing;Partnership for New York City;New York City",
+      "column": null,
+      "byline": "By Dodai Stewart",
+      "type": "Article",
+      "title": "These New Yorkers Don’t ❤️ the ‘We ❤️NYC’ Logo",
+      "abstract": "Promoters said the campaign, which draws on a successful tourism slogan from the 1970s, was aimed at cutting through pandemic-era negativity. So far, it’s getting rough reviews.",
+      "des_facet": [
+        "Logos",
+        "Social Media",
+        "Trademarks and Trade Names",
+        "Advertising and Marketing"
+      ],
+      "org_facet": ["Partnership for New York City"],
+      "per_facet": [],
+      "geo_facet": ["New York City"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "New York State Department of Economic Development",
+          "approved_for_syndication": 0,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/22/nyregion/00NY-LOGO/20nytoday-we-heart-ny-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/22/nyregion/00NY-LOGO/00NY-LOGO-mediumThreeByTwo210-v2.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/22/nyregion/00NY-LOGO/00NY-LOGO-mediumThreeByTwo440-v2.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/224bd65a-ec12-5aea-9feb-65c981d07391",
+      "url": "https://www.nytimes.com/2023/03/20/health/candida-auris-us-fungus.html",
+      "id": 100000008818552,
+      "asset_id": 100000008818552,
+      "source": "New York Times",
+      "published_date": "2023-03-20",
+      "updated": "2023-03-21 14:41:27",
+      "section": "Health",
+      "subsection": "",
+      "nytdsection": "health",
+      "adx_keywords": "Coronavirus (2019-nCoV);Drug Resistance (Microbial);Candida Auris (Fungus);States (US);Research;your-feed-healthcare;internal-open-access;Annals of Internal Medicine;Centers for Disease Control and Prevention",
+      "column": null,
+      "byline": "By Matt Richtel",
+      "type": "Article",
+      "title": "Deadly Fungus Spread Rapidly During the Pandemic, C.D.C. Says",
+      "abstract": "Candida auris, a drug-resistant fungus that health officials hoped to contain is now in more than half the 50 states, according to a new research paper.",
+      "des_facet": [
+        "Coronavirus (2019-nCoV)",
+        "Drug Resistance (Microbial)",
+        "Candida Auris (Fungus)",
+        "States (US)",
+        "Research",
+        "your-feed-healthcare",
+        "internal-open-access"
+      ],
+      "org_facet": [
+        "Annals of Internal Medicine",
+        "Centers for Disease Control and Prevention"
+      ],
+      "per_facet": [],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A projection of the Candida auris fungus on a microscope slide.",
+          "copyright": "Melissa Golden for The New York Times",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/20/multimedia/20fungus-hjfb/20fungus-hjfb-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/20/multimedia/20fungus-hjfb/20fungus-hjfb-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/20/multimedia/20fungus-hjfb/20fungus-hjfb-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/2a080dbf-a7b6-5cbf-a6fa-bfdb14530d5c",
+      "url": "https://www.nytimes.com/2023/03/17/arts/television/lance-reddick-dead.html",
+      "id": 100000008818712,
+      "asset_id": 100000008818712,
+      "source": "New York Times",
+      "published_date": "2023-03-17",
+      "updated": "2023-03-20 11:12:38",
+      "section": "Arts",
+      "subsection": "Television",
+      "nytdsection": "arts",
+      "adx_keywords": "Deaths (Obituaries);Actors and Actresses;Television;Movies;Reddick, Lance",
+      "column": null,
+      "byline": "By Michael Levenson and Neil Genzlinger",
+      "type": "Article",
+      "title": "Lance Reddick, Star of ‘The Wire’ and ‘John Wick,’ Dies at 60",
+      "abstract": "A prolific actor, he also starred in the Amazon series “Bosch” and had recently branched out into video games like Horizon Zero Dawn and the Destiny franchise.",
+      "des_facet": [
+        "Deaths (Obituaries)",
+        "Actors and Actresses",
+        "Television",
+        "Movies"
+      ],
+      "org_facet": [],
+      "per_facet": ["Reddick, Lance"],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Mr. Reddick in an episode of “The Wire.”",
+          "copyright": "Paul Schiraldi/HBO",
+          "approved_for_syndication": 0,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/18/multimedia/17xp-reddick-02-fjhk-print2/17xp-reddick-02-fjhk-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/18/multimedia/17xp-reddick-02-fjhk-print2/17xp-reddick-02-fjhk-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/18/multimedia/17xp-reddick-02-fjhk-print2/17xp-reddick-02-fjhk-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/97f6e5d0-7745-55c7-9f2a-c00380a8a6f2",
+      "url": "https://www.nytimes.com/2023/03/21/opinion/artificial-intelligence-chatgpt.html",
+      "id": 100000008822519,
+      "asset_id": 100000008822519,
+      "source": "New York Times",
+      "published_date": "2023-03-21",
+      "updated": "2023-03-21 23:36:04",
+      "section": "Opinion",
+      "subsection": "",
+      "nytdsection": "opinion",
+      "adx_keywords": "Artificial Intelligence;ChatGPT;Innovation;DeepMind Technologies Ltd;OpenAI Labs",
+      "column": null,
+      "byline": "By Thomas L. Friedman",
+      "type": "Article",
+      "title": "Our New Promethean Moment",
+      "abstract": "I just saw magic, and it’s the future.",
+      "des_facet": ["Artificial Intelligence", "ChatGPT", "Innovation"],
+      "org_facet": ["DeepMind Technologies Ltd", "OpenAI Labs"],
+      "per_facet": [],
+      "geo_facet": [],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "",
+          "copyright": "Olivier Douliery/Agence France-Presse — Getty Images",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/23/multimedia/21Friedman-hkzp/21Friedman-hkzp-thumbStandard-v2.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/23/multimedia/21Friedman-hkzp/21Friedman-hkzp-mediumThreeByTwo210-v2.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/23/multimedia/21Friedman-hkzp/21Friedman-hkzp-mediumThreeByTwo440-v2.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    },
+    {
+      "uri": "nyt://article/4006df66-c9ae-5fd9-bf8c-0e1d54753f04",
+      "url": "https://www.nytimes.com/2023/03/20/science/yellowstone-indigenous-people-obsidian.html",
+      "id": 100000008785571,
+      "asset_id": 100000008785571,
+      "source": "New York Times",
+      "published_date": "2023-03-20",
+      "updated": "2023-03-21 14:34:40",
+      "section": "Science",
+      "subsection": "",
+      "nytdsection": "science",
+      "adx_keywords": "Archaeology and Anthropology;Historic Buildings and Sites;National Parks, Monuments and Seashores;Rock and Stone;Volcanoes;Native Americans;Tools;your-feed-science;Peabody Museum;Yellowstone National Park",
+      "column": null,
+      "byline": "By Jim Robbins",
+      "type": "Article",
+      "title": "Obsidian Cliff: Humanity’s Tool Shed for the Last 11,500 Years",
+      "abstract": "X-ray technology has allowed researchers a glimpse at the reaches of the Yellowstone landmark’s prized stone and its importance to Indigenous people.",
+      "des_facet": [
+        "Archaeology and Anthropology",
+        "Historic Buildings and Sites",
+        "National Parks, Monuments and Seashores",
+        "Rock and Stone",
+        "Volcanoes",
+        "Native Americans",
+        "Tools",
+        "your-feed-science"
+      ],
+      "org_facet": ["Peabody Museum"],
+      "per_facet": [],
+      "geo_facet": ["Yellowstone National Park"],
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Obsidian Cliff, made of volcanic glass used for milleniums as an extremely sharp tool for hunters’ weapons.",
+          "copyright": "Art World/Alamy",
+          "approved_for_syndication": 1,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/science/00sci-obsidian/00sci-obsidian-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/science/00sci-obsidian/00sci-obsidian-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2023/03/21/science/00sci-obsidian/00sci-obsidian-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ],
+      "eta_id": 0
+    }
+  ]
+}
