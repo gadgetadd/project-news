@@ -1,0 +1,37 @@
+.read {
+    padding-top: 40px;
+
+
+
+
+    &__list-wrapper {
+        max-width: 288px;
+        height: 33px;
+        margin: 0 auto;
+        position: relative;
+
+        &::before {
+            content: " ";
+            position: absolute;
+            top: 32px;
+            width: 288px;
+            display: block;
+            border-bottom: 1px solid #929292;
+        }
+    }
+
+    &__date {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.02em;
+        color: inherit;
+    }
+
+}
+
+.open {
+    height: auto;
+}
