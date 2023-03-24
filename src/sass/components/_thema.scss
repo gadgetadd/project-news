@@ -1,5 +1,6 @@
 .checkbox-container {
   z-index: 2;
+  gap: 9px;
   position: absolute;
   display: none;
   flex-direction: row;
@@ -15,12 +16,6 @@
 }
 .checkbox {
   opacity: 0;
-}
-.checkbox-light {
-  display: none;
-}
-
-.checkbox-dark {
   display: none;
 }
 .label {
@@ -57,22 +52,14 @@
 @media screen and (min-width: 768px) {
   .checkbox-container {
     display: flex;
+    gap: 12px; 
     flex-direction: row;
     align-content: center;
     position: static;
-    width: 98px;
-    height: 21px;
   }
 
   .checkbox {
     opacity: 0;
-  }
-
-  .checkbox-light {
-    display: none;
-  }
-
-  .checkbox-dark {
     display: none;
   }
 
@@ -88,17 +75,6 @@
     padding: 5px;
     position: relative;
     transform: scale(1.5);
-  }
-
-  .ball {
-    width: 10.5px;
-    height: 10.5px;
-    background-color: $accentColor;
-    position: absolute;
-    top: 1.3px;
-    left: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
   }
 
   .checkbox:checked + .label .ball {
@@ -117,26 +93,18 @@
   .checkbox {
     opacity: 0;
   }
-  .checkbox-light {
+  .checkbox{
     display: flex;
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    color: $accentColor;
-
-    opacity: 0.4;
     margin-left: 0px;
+    color: $accentColor;
+    opacity: 1;
   }
   .checkbox-dark {
-    display: flex;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    display: flex;
     align-items: center;
 
     color: #5f6775;
@@ -165,15 +133,21 @@
   .ball {
     width: 11px;
     height: 11px;
-    background-color: $accentColor;
     position: absolute;
     top: 2px;
     left: 2px;
     border-radius: 50%;
     transition: transform 0.2s linear;
   }
+  .ball-light{
+    background-color: $accentColor;
+  }
+  .ball-dark{
+    background-color: $whiteColor;
+  }
 
   .checkbox:checked + .label .ball {
-    transform: translateX(20px);
+    background-color: $whiteColor;
+    transform: translateX(12px);
   }
 }

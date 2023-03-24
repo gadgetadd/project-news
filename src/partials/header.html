@@ -74,16 +74,17 @@
         <svg width="21" height="21" class="icon-sun">
           <use href="./images/icons.svg#icon-sun"></use>
         </svg>
-        <p class="checkbox-light">Light</p>
-        <input type="checkbox" class="checkbox" id="checkbox">
-        <label for="checkbox" class="label">
-          <div class='ball'>
+        <p data-light class="checkbox">Light</p>
+        <label class="switch">
+          <input type="checkbox" class="switch__input">
+          <span class="switch__slider"></span>
         </label>
         <svg width="21" height="21" class="icon-moon">
           <use href="./images/icons.svg#icon-moon"></use>
         </svg>
-        <p class="checkbox-dark">Dark</p>
+        <p data-dark class="checkbox">Dark</p>
       </div>
     </section>
   </div>
 </header>
+<script src="./js/switch-theme.js"></script>

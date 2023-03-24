@@ -1,0 +1,30 @@
+.dark body{
+    background-color: $darkTextColor;
+    color: $lightBgColor;
+}
+.dark .logo{
+    color: $lightBgColor;
+}
+.dark .site-nav__item{
+    color: $lightBgColor;
+}
+.dark .site-nav__item:hover{
+    color: $accentColor
+}
+.dark .page-header{
+    border-color: rgba($color: #F4F4F4, $alpha: 20%);
+}
+.dark .menu-btn{
+    fill: $lightBgColor;
+}
+.dark .search-input{
+    border-color: $lightBgColor;
+    background-color: $darkTextColor;
+    fill: $lightBgColor;
+}
+.dark .search-lens{
+    fill: $lightBgColor;
+}
+.dark .icon-moon{
+    fill: $accentColor;
+}
