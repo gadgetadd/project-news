@@ -62,7 +62,6 @@
     align-items: center;
 
     .search-lens {
-      fill: $darkTextColor;
       width: 20px;
       height: 20px;
       z-index: 1;
@@ -123,6 +122,7 @@
   }
   .search {
     width: auto;
+    border:1px solid $lightBgColor;
 
     .search-input {
       position: static;
