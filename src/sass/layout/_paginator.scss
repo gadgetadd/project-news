@@ -1,37 +1,71 @@
 .pagination {
   list-style: none;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
   font-family: 'Manrope';
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.375;
+  height: 28px;
+
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+    font-size: 16px;
+    height: 31px;
+  }
+
+
+  &__button {
+    display: flex;
+    align-items: center;
+    width: auto;
+
+    border: 1px solid $accentColor;
+    border-radius: 2px;
+    background-color: $lightBgColor;
+    gap: 10px;
+    cursor: pointer;
+
+    &--prev {
+      padding-right: 10px;
+      padding-left: 14px;
+
+      @media screen and (min-width: 768px) {
+        padding-left: 16px;
+      }
+    }
+    &--next {
+      padding-right: 14px;
+      padding-left: 10px;
+
+      @media screen and (min-width: 768px) {
+        padding-left: 16px;
+      }
+    }
+  }
 
   &__item {
     border: 1px solid $accentColor;
     border-radius: 2px;
     background-color: $lightBgColor;
-    height: 28px;
+    cursor: pointer;
     width: 28px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 
-    &:first-child {
-      width: auto;
-      padding-right: 10px;
-      padding-left: 16px;
-    }
-
-    &:last-child {
-      width: auto;
-      padding-left: 10px;
-      padding-right: 17px;
+    @media screen and (min-width: 768px) {
+      width: 33px;
     }
 
     &--active {
+      background-color: $accentColor;
+      color: $lightBgColor;
+    }
+
+    &:hover {
       background-color: $accentColor;
       color: $lightBgColor;
     }
@@ -39,5 +73,22 @@
 
   &__icon {
     transform: rotate(90deg);
+    fill: $darkTextColor;
+    color: $darkTextColor;
+  }
+}
+
+#pagination {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  font-family: 'Manrope';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.375;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 }
