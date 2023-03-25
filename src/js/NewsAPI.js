@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment/moment';
 
 // Загальний клас для базових даних і методів
 
@@ -7,10 +8,13 @@ class NewsAPI {
   API_KEY = 'vVHb9x2ZvJACextBSwzpPJg5KNN9Tso5';
 
   async get() {
-        try {
+    try {
       const response = await axios.get(this.URL, {
         params: this.options,
       });
+      if (this.hasOwnProperty('hits')) {
+        this.hits = response.data.response.meta.hits;
+      }
       return this.normalize(response.data);
     } catch {
       throw new Error('data retrieval error');
@@ -20,54 +24,69 @@ class NewsAPI {
 
 // Клас для отримання списку категорій
 
-export class Categories extends NewsAPI {
+export class CategoriesList extends NewsAPI {
   URL = `${this.BASE_URL}news/v3/content/section-list.json`;
   options = { ['api-key']: this.API_KEY };
 
-  async get() {
-    try {
-      const response = await axios.get(this.URL, {
-        params: this.options,
-      });
-      return response.data.results;
-    } catch {
-      throw new Error('data retrieval error');
-    }
+  normalize({ results }) {
+    return results.map(el => el.display_name);
   }
 }
 
-// Клас для пошуку, екземпляр приймає стрічку для запиту
+// Клас для пошуку, екземпляр приймає стрічку для запиту, і необов'язковий параметр дата
+// (в форматі об'єкта Date або стрічку стандарту ISO 8601)
 // приклад застосування:
 
-// import { Categories, Search, Popular, Category } from './js/NewsAPI';
+// import { CategoriesList, Search, Popular, Category } from './js/NewsAPI';
 
 // const search = new Search('ukraine');
+// або
+// const search = new Search('ukraine', date);
 // const res = await search.get();
 
+// створений об'єкт search має методи getHits, getPage, setPage для пагінації
+// запит завжди повертає 10 елементів, за документацією максимальне значення сторінки 100, тому можна отримати не більше 1000 результатів не залежно від hits.
 
 export class Search extends NewsAPI {
   URL = `${this.BASE_URL}search/v2/articlesearch.json`;
-  options = { ['api-key']: this.API_KEY };
+  options = {
+    ['api-key']: this.API_KEY,
+    page: 0,
+  };
+  hits = 0;
 
-  constructor(query) {
+  constructor(query, date = null) {
     super();
-    this.options.fq = query;
+    if (date) {
+      this.options.begin_date = moment(date).format('YYYYMMDD');
+      this.options.end_date = moment(date).format('YYYYMMDD');
+    }
+    this.options.q = encodeURIComponent(query.toLowerCase());
   }
 
   normalize({ response: { docs } }) {
-    return docs.map(doc => {
+    return docs.map(res => {
       return {
-        id: doc._id.split('/').pop(),
-        category: doc.section_name,
-        image: doc.multimedia[0]
-          ? `https://static01.nyt.com/${doc.multimedia[0].url}`
+        id: res.uri.split('/').pop(),
+        category: res.section_name,
+        image: res.multimedia[0]
+          ? `https://static01.nyt.com/${res.multimedia[0].url}`
           : 'https://demofree.sirv.com/nope-not-here.jpg?w=400',
-        title: doc.abstract,
-        descr: doc.lead_paragraph,
-        date: doc.pub_date,
-        url: doc.web_url,
+        title: res.abstract,
+        descr: res.lead_paragraph,
+        date: res.pub_date,
+        url: res.web_url,
       };
     });
+  }
+  getHits() {
+    return this.hits;
+  }
+  getPage() {
+    return this.options.page;
+  }
+  setPage(num) {
+    this.options.page = num;
   }
 }
 
@@ -86,7 +105,7 @@ export class Popular extends NewsAPI {
   normalize({ results }) {
     return results.map(res => {
       return {
-        id: res.id,
+        id: res.uri.split('/').pop(),
         category: res.section,
         image: res.media[0]?.['media-metadata'][2]
           ? res.media[0]['media-metadata'][2].url
@@ -104,12 +123,14 @@ export class Popular extends NewsAPI {
 //  const cat = new Category('Smarter Living');
 //   const res4 = await cat.get();
 
-
 export class Category extends NewsAPI {
   URL = `${this.BASE_URL}news/v3/content/all/`;
-  options = { ['api-key']: this.API_KEY };
+  options = {
+    ['api-key']: this.API_KEY,
+    limit: 500,
+  };
 
-  constructor(category) {
+  constructor(category = 'all') {
     super();
     this.URL += `${encodeURIComponent(category.toLowerCase())}.json `;
   }
@@ -117,7 +138,7 @@ export class Category extends NewsAPI {
   normalize({ results }) {
     return results.map(res => {
       return {
-        id: res.slug_name,
+        id: res.uri.split('/').pop(),
         category: res.section,
         image:
           res.multimedia && res.multimedia[2]
