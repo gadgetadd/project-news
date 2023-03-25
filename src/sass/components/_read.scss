@@ -1,8 +1,12 @@
 .read {
     padding-top: 40px;
 
-
-
+    @media screen and (min-width: 768px) {
+        padding-top: 48px;;
+    }
+    @media screen and (min-width: 1280px) {
+        padding-top: 60px;
+    }
 
     &__list-wrapper {
         max-width: 288px;
@@ -10,6 +14,7 @@
         margin: 0 auto;
         position: relative;
         overflow: hidden;
+        transition: all 1000ms;
 
         &::before {
             content: " ";
@@ -18,6 +23,20 @@
             width: 288px;
             display: block;
             border-bottom: 1px solid #929292;
+
+            @media screen and (min-width: 768px) {
+                width: 736px;
+            }
+            @media screen and (min-width: 1280px) {
+                width: 1248px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            max-width: 736px;
+        }
+        @media screen and (min-width: 1280px) {
+            max-width: 1248px;
         }
     }
 
@@ -29,10 +48,26 @@
         line-height: 1.71;
         letter-spacing: 0.02em;
         color: inherit;
+        margin-bottom: 28px;
     }
 
 }
 
 .open {
     height: auto;
+}
+
+
+.testblock {
+    width: 288px;
+    background-color: brown;
+    margin-bottom: 28px;
+    
+    @media screen and (min-width: 768px) {
+        width: 736px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 1248px;
+    }
 }

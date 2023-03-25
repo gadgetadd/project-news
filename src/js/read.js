@@ -1,38 +1,66 @@
-// import axios from 'axios';
+const contsiner = document.querySelector('#art-container');
 
-// const URL = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json';
-// const API_KEY = 'OBK3Did8o78UsdlrjUGmAIlHx1LUyO5b';
-// const test = document.querySelector('.test');
+const renderAccordion = (dateString, articles) => {
+    const date = new Date(dateString);
+    const content = renderArticles(articles);
+    const { day, month, year } = normalizeDate(date)
+    const accordion = document.createElement('div');
+    accordion.classList.add('read__list-wrapper');
+    accordion.innerHTML = `<h2 class="read__date">${day}/${month}/${year}</h2>`;
+    accordion.insertAdjacentHTML('beforeend', content);
+    contsiner.append(accordion);
+};
 
-// const getnews = (url, key) => {
-//    axios.get(`${url}`, {
-//         params: {
-//             'api-key': key
-//         }
-//     })
-//         .then(function (response) {
-//             return console.log(response);;
-//         })
-//         .catch(function (error) {
-//             console.log(error);
-//         });
-// };
+const normalizeDate = (date) => {
+    const zero = '0';
+    const normalDate = {
+        month: 0,
+        day: 0,
+        year: date.getFullYear(),
+    };
 
-// getnews(URL, API_KEY)
+    if (date.getMonth() <= 8) {
+        normalDate.month = `${zero}${(date.getMonth() + 1)}`;
+    } else {
+        normalDate.month = (date.getMonth() + 1);
+    };
 
-const list = document.querySelector('.read__list-wrapper')
+    if (date.getDate() <= 9) {
+        normalDate.day = `${zero}${date.getDate()}`;
+    } else {
+        normalDate.day = date.getDate();
+    };
+    return normalDate;
+};
 
-list.addEventListener('click', () => {
-    list.classList.toggle('open');
-})
-
-const renderRead = () => {
-    const articls = localStorage.getItem('readArticle');
-    
-    articls.reduce((acc, el) => {
-        acc += `
-            `
+const renderArticles = (articles) => {
+   return articles.reduce((acc, el) => {
+        return acc += `
+        <div class="testblock">${el.descr}</div>
+        `
     },'')
 };
 
-// renderRead()
+const renderPage = () => {
+    const articls = JSON.parse(localStorage.getItem('readArticles'));
+
+    for (const key in articls) {
+        renderAccordion(key, articls[key]);
+    };
+
+    const list = document.querySelectorAll('.read__list-wrapper')
+
+    for (let i = 0; i < list.length; i += 1) {
+        list[i].addEventListener('click', () => {
+            const clientHeight = list[i].clientHeight;
+            const height = list[i].scrollHeight
+            if (clientHeight > 33) {
+                list[i].style.height = "33px";
+                return;
+            };
+            list[i].style.height = `${height}px`;
+        });
+    };
+};
+
+renderPage();
