@@ -109,7 +109,8 @@
     transition: .3s ease-in-out;
     cursor: pointer;
 }
-.options:active {
+.options:active,
+.options.selected {
     text-decoration: underline;
     color: #4B48DB;
 }
