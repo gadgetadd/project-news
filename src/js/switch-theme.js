@@ -37,15 +37,11 @@ function setBackgroundColor(e){
 
 function switchIcon(e){
     if(input.checked){
-        // sun.classList.add('dark-icon')
-        // moon.classList.remove('dark-icon')
-        document.querySelector('p[data-light]').classList.add('checkbox-dark')
-        document.querySelector('p[data-dark]').classList.remove('checkbox-dark')
+        // document.querySelector('p[data-light]').classList.add('checkbox-dark')
+        // document.querySelector('p[data-dark]').classList.remove('checkbox-dark')
     }
     else{
-        // sun.classList.remove('dark-icon')
-        // moon.classList.add('dark-icon')
-        document.querySelector('p[data-light]').classList.remove('checkbox-dark')
-        document.querySelector('p[data-dark]').classList.add('checkbox-dark')
+        // document.querySelector('p[data-light]').classList.remove('checkbox-dark')
+        // document.querySelector('p[data-dark]').classList.add('checkbox-dark')
     }
 }

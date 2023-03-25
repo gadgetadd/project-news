@@ -34,7 +34,7 @@
     position: relative;
     width: 20px;
     height: 31px;
-    color: $darkTextColor;
+    color: inherit;
     border: 0;
     box-sizing: border-box;
     outline: none;
@@ -43,6 +43,7 @@
     z-index: 2;
     opacity: 0;
     cursor: pointer;
+    background-color: inherit;
 
     &:focus {
       z-index: 0;
@@ -62,7 +63,7 @@
     align-items: center;
 
     .search-lens {
-      fill: $darkTextColor;
+      fill: inherit;
       width: 20px;
       height: 20px;
       z-index: 1;
@@ -123,7 +124,7 @@
   }
   .search {
     width: auto;
-
+    border: 1px solid black;
     .search-input {
       position: static;
       width: 213px;

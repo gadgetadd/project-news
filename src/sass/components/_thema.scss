@@ -103,13 +103,16 @@
     margin-left: 0px;
     color: $accentColor;
     opacity: 1;
-  }
-  .checkbox-dark {
     align-items: center;
-
-    color: #5f6775;
+  }
+  .checkbox-dark{
+    color: #5F6775;
+  }
+  .checkbox-light{
+    color: #4B48DB;
   }
   .icon-sun {
+    fill: #4B48DB;
     display: none;
   }
   .icon-moon {
