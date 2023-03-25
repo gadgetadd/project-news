@@ -1,8 +1,9 @@
-@import './abstracts/variables';
+@import './base/base';
 @import './base/reset';
 @import './base/typography';
-@import './layout/paginator';
+@import './abstracts/variables';
 @import './components/header';
 @import './components/logo';
 @import './components/mobile-menu';
 @import './components/thema';
+@import './layout/paginator';
