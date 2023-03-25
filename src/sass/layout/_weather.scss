@@ -1,0 +1,85 @@
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 395px;
+  height: 675px;
+  background-color: #4440f6;
+  border-radius: 4px;
+}
+.weather-card__description {
+  display: flex;
+  flex-direction: row;
+}
+.wether-card__temperature {
+  display: block;
+  margin-top: 45px;
+}
+.weather-card__degrees {
+  margin: 0;
+  padding: 0 8px 0 0;
+  height: 75px;
+  font-family: 'Roboto';
+  font-style: normal;
+  display: block;
+  border-right: 1px solid #ffffff;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 75px;
+  color: #ffffff;
+}
+.weather-card__geoblock {
+  display: flex;
+  flex-direction: column;
+}
+.weather-card__forecast {
+  display: block;
+  margin: 40px 0 0 15px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  color: #ffffff;
+}
+.weather-card__geolocation {
+  display: flex;
+  margin: 0 0 0 8px;
+  justify-content: center;
+  align-items: center;
+  width: 177px;
+  height: 42px;
+  left: 112px;
+  top: 42px;
+
+  background: rgba(254, 254, 255, 0.3);
+  border-radius: 10px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #ffffff;
+}
+.weather-card__icon {
+  display: block;
+  border-radius: 50%;
+  margin-top: 91px;
+  height: 156px;
+  width: 165px;
+  background: linear-gradient(180deg, #fa6c21 0%, rgba(255, 211, 88, 0.2) 100%);
+  box-shadow: inset 0px 20px 65px #fa6c21;
+}
+.weather-card__date {
+  display: block;
+  margin-top: 90px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+
+  color: #ffffff;
+}

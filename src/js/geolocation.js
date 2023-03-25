@@ -14,7 +14,7 @@ export function weatherByGeolocation(weather) {
     const result = await response.json();
     // console.log(result);
     const weather = await fetchWeather(result.features[0].properties.city);
-    console.log(weather);
+    // console.log(weather);
   };
   const error = (error) => {
     console.log(error.code + ' ' + error.message);
