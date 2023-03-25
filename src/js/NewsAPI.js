@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment/moment';
 
 // Загальний клас для базових даних і методів
 
@@ -11,7 +12,9 @@ class NewsAPI {
       const response = await axios.get(this.URL, {
         params: this.options,
       });
-      console.log(response.data);
+      if (this.hasOwnProperty('hits')) {
+        this.hits = response.data.response.meta.hits;
+      }
       return this.normalize(response.data);
     } catch {
       throw new Error('data retrieval error');
@@ -21,29 +24,28 @@ class NewsAPI {
 
 // Клас для отримання списку категорій
 
-export class Categories extends NewsAPI {
+export class CategoriesList extends NewsAPI {
   URL = `${this.BASE_URL}news/v3/content/section-list.json`;
   options = { ['api-key']: this.API_KEY };
 
-  async get() {
-    try {
-      const response = await axios.get(this.URL, {
-        params: this.options,
-      });
-      return response.data.results;
-    } catch {
-      throw new Error('data retrieval error');
-    }
+  normalize({ results }) {
+    return results.map(el => el.display_name);
   }
 }
 
-// Клас для пошуку, екземпляр приймає стрічку для запиту
+// Клас для пошуку, екземпляр приймає стрічку для запиту, і необов'язковий параметр дата
+// (в форматі об'єкта Date або стрічку стандарту ISO 8601)
 // приклад застосування:
 
-// import { Categories, Search, Popular, Category } from './js/NewsAPI';
+// import { CategoriesList, Search, Popular, Category } from './js/NewsAPI';
 
 // const search = new Search('ukraine');
+// або
+// const search = new Search('ukraine', date);
 // const res = await search.get();
+
+// створений об'єкт search має методи getHits, getPage, setPage для пагінації
+// запит завжди повертає 10 елементів, за документацією максимальне значення сторінки 100, тому можна отримати не більше 1000 результатів не залежно від hits.
 
 export class Search extends NewsAPI {
   URL = `${this.BASE_URL}search/v2/articlesearch.json`;
@@ -51,10 +53,15 @@ export class Search extends NewsAPI {
     ['api-key']: this.API_KEY,
     page: 0,
   };
+  hits = 0;
 
-  constructor(query) {
+  constructor(query, date = null) {
     super();
-    this.options.fq = query;
+    if (date) {
+      this.options.begin_date = moment(date).format('YYYYMMDD');
+      this.options.end_date = moment(date).format('YYYYMMDD');
+    }
+    this.options.q = encodeURIComponent(query.toLowerCase());
   }
 
   normalize({ response: { docs } }) {
@@ -71,6 +78,15 @@ export class Search extends NewsAPI {
         url: res.web_url,
       };
     });
+  }
+  getHits() {
+    return this.hits;
+  }
+  getPage() {
+    return this.options.page;
+  }
+  setPage(num) {
+    this.options.page = num;
   }
 }
 
@@ -114,7 +130,7 @@ export class Category extends NewsAPI {
     limit: 500,
   };
 
-  constructor(category) {
+  constructor(category = 'all') {
     super();
     this.URL += `${encodeURIComponent(category.toLowerCase())}.json `;
   }
