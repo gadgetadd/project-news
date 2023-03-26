@@ -61,16 +61,9 @@ const renderArticles = (articles) => {
                             <button type="button" class="button-card">
                             Add to favorite
                             <svg class="button-card-icon" width="16" height="16">
-                                <use href="/src/images/icons.svg#icons_heart"></use>
+                                <use href="${sprite}#icons_heart"></use>
                             </svg>
                             </button>
-
-                            <!-- <button type="button" class="button-card">
-                            Remove from favorite
-                            <svg class="button-card-icon" width="16" height="16">
-                                <use href="/src/images/icons.svg#icons_heart"></use>
-                            </svg>
-                            </button> -->
                         </div>
                         <h1 class="news__title">${el.title}</h1>
                         <p class="news__text">
