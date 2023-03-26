@@ -1,6 +1,9 @@
 import { categories } from './categories';
 import sprite from '../../images/icons.svg';
 
+const wrapper = document.querySelector('.category-wrapper');
+renderFilter();
+
 function generateSelectMarkup(data) {
   return data.reduce((markup, ctg) => {
     return (markup += `
@@ -84,8 +87,7 @@ function selectLayout(data) {
   return generateDesktopMarkup(data);
 }
 
-const wrapper = document.querySelector('.filter-wrapper');
-
-const filter = selectLayout(categories);
-
-wrapper.insertAdjacentHTML('afterbegin', filter);
+export function renderFilter() {
+  const filter = selectLayout(categories);
+  wrapper.innerHTML = filter;
+}
