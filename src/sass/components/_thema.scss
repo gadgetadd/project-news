@@ -1,5 +1,6 @@
 .checkbox-container {
   z-index: 2;
+  gap: 9px;
   position: absolute;
   display: none;
   flex-direction: row;
@@ -60,8 +61,6 @@
     flex-direction: row;
     align-content: center;
     position: static;
-    width: 98px;
-    height: 21px;
   }
 
   .checkbox {
@@ -126,7 +125,6 @@
     line-height: 24px;
     color: $accentColor;
 
-    opacity: 0.4;
     margin-left: 0px;
   }
   .checkbox-dark {
