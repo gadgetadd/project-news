@@ -24,10 +24,6 @@
   gap: 10px;
 }
 
-// .categories__item {
-//     display: flex;
-// }
-
 .categories__button {
    max-height: 31px;
   border: 1px solid $accentColor;
@@ -44,6 +40,7 @@
   cursor: pointer;
 }
 .categories__button:hover,
+.categories__button:focus,
 .categories__button.selected {
   color: $whiteColor;
   background-color: $accentBgColor;
@@ -140,8 +137,12 @@
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }
-.options:active,
+.options.active,
 .options.selected {
   text-decoration: underline;
   color: $accentBgColor;
+}
+.active-category {
+  color: $whiteColor;
+  background-color: $accentBgColor;
 }
