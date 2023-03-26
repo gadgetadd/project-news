@@ -18,6 +18,7 @@
     "url": "https://github.com/gadgetadd/project-news/issues"
   },
   "dependencies": {
+    "calendar-dates": "^2.7.2",
     "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
