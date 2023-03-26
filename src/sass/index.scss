@@ -1,10 +1,13 @@
-@import './base/base';
 @import './base/reset';
 @import './base/typography';
 @import './abstracts/variables';
 @import './components/paginator';
+@import './base/base';
 @import './components/header';
 @import './components/logo';
 @import './components/mobile-menu';
 @import './components/thema';
 @import './components/card';
+@import './components/dark';
+@import './components/switch';
+@import './components/category';
