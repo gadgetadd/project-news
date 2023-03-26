@@ -1,4 +1,4 @@
-refs = {
+const refs = {
     input: document.querySelector('.switch__input')
 }
 
