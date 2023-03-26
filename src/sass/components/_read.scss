@@ -49,14 +49,14 @@
         letter-spacing: 0.02em;
         color: inherit;
         margin-bottom: 28px;
+        cursor: pointer;
+    }
+
+    &__date-icon {
+        fill: $darkTextColor;
     }
 
 }
-
-.open {
-    height: auto;
-}
-
 
 .testblock {
     width: 288px;
