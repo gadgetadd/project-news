@@ -1,6 +1,7 @@
 const select = document.querySelector('.select');
 const select__list = document.querySelector('.select__list');
 const options = document.querySelectorAll('.options');
+// const categoriesBtn = document.querySelector('');
 // виїжає випадалка
 select.addEventListener('click', () => {
   select__list.classList.toggle('active');
