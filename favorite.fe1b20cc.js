@@ -1,2 +1,0 @@
-(()=>{const e=document.querySelector("[data-menu-button]"),t=document.querySelector("[data-menu-button2]"),a=document.querySelector("[data-menu]"),s=document.querySelector("[data-thema]");e.addEventListener("click",(()=>{const n="true"===e.getAttribute("aria-expanded")||!1;e.classList.toggle("is-open"),e.setAttribute("aria-expanded",!n),t.classList.toggle("is-open"),t.setAttribute("aria-expanded",!n),a.classList.toggle("is-open"),s.classList.toggle("is-open")}))})();
-//# sourceMappingURL=favorite.fe1b20cc.js.map
