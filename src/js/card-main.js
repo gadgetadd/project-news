@@ -1,4 +1,7 @@
-const cardNewsEl = document.querySelector('.card-wrap');
+const cardsNewsBoxEl = document.querySelector('.card-wrap');
+const cardNewsEl = document.querySelector('.news');
+const weatherCard = document.querySelector('.weather-card');
+
 
 // searchForm.addEventListener('submit', onSearch);
 
@@ -30,4 +33,4 @@ detectViewport(elementsArray);
 
 const markup = elementsArray.join('');
 
-cardNewsEl.insertAdjacentHTML('afterbegin', markup);
+cardsNewsBoxEl.insertAdjacentHTML('afterbegin', markup);
