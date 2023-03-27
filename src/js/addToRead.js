@@ -34,3 +34,5 @@ const availabilityCheck = (arr, value) => {
         return (el.title === value)
     }); 
 };
+
+addToRead();

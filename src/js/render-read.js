@@ -122,7 +122,7 @@ export const renderPage = () => {
                     alt="Зображення не має новин">
             </picture>`;
         return
-    }
+    };
 
     for (const key in articls) {
         renderAccordion(key, articls[key]);
