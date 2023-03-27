@@ -1,3 +1,7 @@
+.card-news__wrap {
+  min-height: 90vh;
+}
+
 .card-wrap {
   @media screen and (min-width: 768px) {
     display: flex;
@@ -27,7 +31,7 @@
   @media screen and (min-width: 1280px) {
     width: 395px;
     height: 675px;
-      }
+  }
 }
 
 .card-wrap__box {
@@ -51,6 +55,5 @@
   @media screen and (min-width: 1280px) {
     width: 395px;
     height: 675px;
-    
-   }
+  }
 }
