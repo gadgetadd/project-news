@@ -114,7 +114,7 @@ export function createCardsMarkup(card) {
     const { day, month, year } = normalizeDate(date);
     return `
       
-            <li class="news__item">
+            <li class="news__item" id="${element.id}">
                 <div class="news__card">
                     <div class="news__img">
                         <picture>
@@ -161,25 +161,25 @@ export function createCardsMarkup(card) {
   });
 }
 
-// function detectViewport(arr) {
-//   if (window.innerWidth < 768) {
-//     arr.splice(0, 0, weather);
-//   } else if (window.innerWidth < 1280) {
-//     arr.splice(1, 0, weather);
-//   } else {
-//     arr.splice(2, 0, weather);
-//   }
-// }
+function detectViewport(arr) {
+  if (window.innerWidth < 768) {
+    arr.splice(0, 0, weather);
+  } else if (window.innerWidth < 1280) {
+    arr.splice(1, 0, weather);
+  } else {
+    arr.splice(2, 0, weather);
+  }
+}
 
-// function renderCardsNews(array) {
-//   spinner.spin(cardsNewsEl);
-//   const elementsArray = createCardsMarkup(array);
-//   detectViewport(elementsArray);
-//   const markup = elementsArray.join('');
-//   setTimeout(() => {
-//     spinner.stop();
-//     cardsNewsEl.innerHTML = markup;
-//   }, 5000);
-// }
+function renderCardsNews(array) {
+  spinner.spin(cardsNewsEl);
+  const elementsArray = createCardsMarkup(array);
+  detectViewport(elementsArray);
+  const markup = elementsArray.join('');
+  setTimeout(() => {
+    spinner.stop();
+    cardsNewsEl.innerHTML = markup;
+  }, 5000);
+}
 
-// renderCardsNews(array);
+renderCardsNews(array);
