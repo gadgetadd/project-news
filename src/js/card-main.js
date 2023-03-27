@@ -16,7 +16,7 @@ const opts = {
   animation: 'spinner-line-fade-more',
   direction: 1,
   color: '#4440f6',
-  fadeColor: 'transparent', 
+  fadeColor: 'transparent',
   top: '50%',
   left: '50%',
   shadow: '0 0 1px transparent',
@@ -108,7 +108,7 @@ const normalizeDate = date => {
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const weather = '<div class="card-wrap__weather">555</div>';
 
-function createCardsMarkup(card) {
+export function createCardsMarkup(card) {
   return card.map(element => {
     const date = new Date(element.date);
     const { day, month, year } = normalizeDate(date);
@@ -161,25 +161,25 @@ function createCardsMarkup(card) {
   });
 }
 
-function detectViewport(arr) {
-  if (window.innerWidth < 768) {
-    arr.splice(0, 0, weather);
-  } else if (window.innerWidth < 1280) {
-    arr.splice(1, 0, weather);
-  } else {
-    arr.splice(2, 0, weather);
-  }
-}
+// function detectViewport(arr) {
+//   if (window.innerWidth < 768) {
+//     arr.splice(0, 0, weather);
+//   } else if (window.innerWidth < 1280) {
+//     arr.splice(1, 0, weather);
+//   } else {
+//     arr.splice(2, 0, weather);
+//   }
+// }
 
-function renderCardsNews(array) {
-  spinner.spin(cardsNewsEl);
-  const elementsArray = createCardsMarkup(array);
-  detectViewport(elementsArray);
-  const markup = elementsArray.join('');
-  setTimeout(() => {
-    spinner.stop();
-    cardsNewsEl.innerHTML = markup;
-  }, 5000);
-}
+// function renderCardsNews(array) {
+//   spinner.spin(cardsNewsEl);
+//   const elementsArray = createCardsMarkup(array);
+//   detectViewport(elementsArray);
+//   const markup = elementsArray.join('');
+//   setTimeout(() => {
+//     spinner.stop();
+//     cardsNewsEl.innerHTML = markup;
+//   }, 5000);
+// }
 
-renderCardsNews(array);
+// renderCardsNews(array);

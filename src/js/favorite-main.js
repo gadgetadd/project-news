@@ -1,34 +1,10 @@
-// Отримати кнопку AddToFavorite
-const addToFavoriteBtn = document.querySelector('.button-card');
-addToFavoriteBtn.addEventListener('click', addToFavorite);
-
-function addToFavorite() {
-  // Отримати інформацію про додану новину
-  const newsCard = document.querySelector('.news__item');
-
-  // Отримати масив новин, які вже додані в обране (якщо такі є)
-  let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
-
-  // Додати нову новину до масиву доданих в обране новин
-  favoriteNews.push(newsCard);
-
-  // Зберегти масив доданих в обране новин в локальному сховищі браузера
-  localStorage.setItem('favoriteNews', JSON.stringify(favoriteNews));
-
-  //   hasCard = card => favoriteNews.some(({ id }) => id === card.id);
-}
+import { createCardsMarkup } from './card-main';
 
 function displayFavorites() {
-  const gallery = document.getElementById('.gallery');
-  //   let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
-  //   // очищаємо попередній контент галереї
-  //   gallery.innerHTML = '';
-
-  // проходимося по списку збережених новин та створюємо картки для кожної з них
-  favoriteNews.forEach(news => {
-    const favoriteCard = createCard(news);
-    gallery.appendChild(favoriteCard);
-  });
+  const gallery = document.querySelector('.gallery');
+  let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews'));
+  const cardsMarkup = createCardsMarkup(favoriteNews);
+  gallery.insertAdjacentHTML('afterbegin', cardsMarkup);
 }
 
 function removeFromFavorite(id) {
@@ -50,3 +26,5 @@ function removeFromFavorite(id) {
     card.remove();
   }
 }
+
+displayFavorites();
