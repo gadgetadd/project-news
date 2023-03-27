@@ -1,5 +1,5 @@
 .page-header {
-  //   position: relative;
+  // position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -31,8 +31,8 @@
   }
   
   &.is-open .search-symbol {
-      display: flex;
-    }
+    display: flex;
+  }
 
   .search-input {
     position: relative;
@@ -112,7 +112,6 @@
   &.is-open .icon-close:focus {
     cursor: pointer;
   }
-        
 }
 
 // Планшетна версія 768px

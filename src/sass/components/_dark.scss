@@ -1,24 +1,29 @@
-.dark body{
-    background-color: $darkBgColor;
-    color: $lightBgColor;
+.dark{
+    & body{
+        background-color: $darkBgColor;
+        color: $lightBgColor;
         fill: $lightBgColor;
-}
-.dark .page-header{
-    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
-}
-.dark .checkbox-dark{
-    color: $checkboxDark;
-}
-.dark .checkbox-light{
-    color: $lightBgColor;
-    opacity: 0.4;
-}
-.dark .icon-moon{
-    stroke: $accentBgColor;
-}
-.dark .icon-sun{
-    stroke: $darkCheckColor;
-}
-.dark .search{
-    border-color: $lightBgColor;
+    }
+    & .page-header{
+        border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+    }
+    & .menu-container{
+        background-color: $darkBgColor;
+    }
+    & .switch-dark{
+        color: $accentBgColor;
+    }
+    & .switch-light{
+        color: $lightBgColor;
+        opacity: 0.4;
+    }
+    & .icon-moon{
+        stroke: $accentBgColor;
+    }
+    & .icon-sun{
+        stroke: $darkCheckColor;
+    }
+    & .search{
+        border-color: $lightBgColor;
+    }
 }

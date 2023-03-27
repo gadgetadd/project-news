@@ -14,46 +14,6 @@
     display: flex;
   }
 }
-.checkbox {
-  opacity: 0;
-}
-.checkbox-light {
-  display: none;
-}
-
-.checkbox-dark {
-  display: none;
-}
-.label {
-  width: 27px;
-  height: 13.4px;
-  background-color: $whiteColor;
-  display: flex;
-  border-radius: 20px;
-  border-color: $accentColor;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  position: relative;
-  transform: scale(1.5);
-  margin-right: 12px;
-  cursor: pointer;
-}
-
-.ball {
-  width: 11px;
-  height: 11px;
-  background-color: $accentColor;
-  position: absolute;
-  left: 2px;
-  border-radius: 50%;
-  transition: transform 0.2s linear;
-  justify-content: center;
-}
-
-.checkbox:checked + .label .ball {
-  transform: translateX(12px);
-}
 
 @media screen and (min-width: 768px) {
   .checkbox-container {
@@ -61,47 +21,6 @@
     flex-direction: row;
     align-content: center;
     position: static;
-  }
-
-  .checkbox {
-    opacity: 0;
-  }
-
-  .checkbox-light {
-    display: none;
-  }
-
-  .checkbox-dark {
-    display: none;
-  }
-
-  .label {
-    width: 27px;
-    height: 13px;
-    background-color: $whiteColor;
-    display: flex;
-    border-radius: 20px;
-    border-color: $accentColor;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    position: relative;
-    transform: scale(1.5);
-  }
-
-  .ball {
-    width: 10.5px;
-    height: 10.5px;
-    background-color: $accentColor;
-    position: absolute;
-    top: 1.3px;
-    left: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-
-  .checkbox:checked + .label .ball {
-    transform: translateX(13px);
   }
 }
 @media screen and (min-width: 1280px) {
@@ -113,65 +32,10 @@
     justify-content: center;
     align-items: center;
   }
-  .checkbox {
-    opacity: 0;
-  }
-  .checkbox-light {
-    display: flex;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    color: $accentColor;
-
-    margin-left: 0px;
-  }
-  .checkbox-dark {
-    display: flex;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-
-    color: #5f6775;
-  }
   .icon-sun {
     display: none;
   }
   .icon-moon {
     display: none;
-  }
-  .label {
-    width: 35px;
-    height: 15px;
-    background-color: $whiteColor;
-    display: flex;
-    border-radius: 20px;
-    border-color: $accentColor;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    position: relative;
-    transform: scale(1.5);
-    margin-right: 12px;
-  }
-
-  .ball {
-    width: 11px;
-    height: 11px;
-    background-color: $accentColor;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-
-  .checkbox:checked + .label .ball {
-    transform: translateX(20px);
   }
 }

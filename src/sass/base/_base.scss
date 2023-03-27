@@ -24,8 +24,8 @@ a {
 
 img {
   display: block;
-  width: 100%;
-  // height: auto;
+  max-width: 100%;
+  height: auto;
 }
 .container {
   margin-right: auto;
@@ -35,10 +35,10 @@ img {
   min-width: 320px;
 
   @media screen and (min-width: 768px) {
+    width: 768px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 1280px;
   }
 }
-
