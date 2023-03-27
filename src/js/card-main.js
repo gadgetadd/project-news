@@ -31,6 +31,7 @@ export function createCardsMarkup(card) {
             <li class="news__item" id="${element.id}>
                 <div class="news__card">
                     <div class="news__img">
+                    <div class="news__img-wrap">
                         <picture>
                         <source
                             srcset="${element.image}"
@@ -45,6 +46,7 @@ export function createCardsMarkup(card) {
                             height="395"
                         />
                         <img
+                            class="news__image"
                             srcset="${element.image}"
                             src="${element.image}"
                             alt=""
@@ -52,6 +54,7 @@ export function createCardsMarkup(card) {
                             height="395"
                         />
                         </picture>
+                        </div>
 
                         <p class="news__category">${element.category}</p>
 
@@ -62,14 +65,16 @@ export function createCardsMarkup(card) {
                         </svg>
                         </button>
                     </div>
+                    <div class="news__title-wrap">
                     <h1 class="news__title">${element.title}</h1>
+                    </div>
                     <p class="news__text">
                         ${element.descr}
-                    </p>
-                </div>
+                    </p>                
                 <div class="news__info">
                     <time datetime="${element.date}" class="news__time">${day}/${month}/${year}</time>
                     <a class="news__link" href="${element.url}">Read more</a>
+                </div>
                 </div>
             </li>`;
   });
