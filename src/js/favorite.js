@@ -16,8 +16,28 @@ function addToFavorite() {
   localStorage.setItem('favoriteNews', JSON.stringify(favoriteNews));
 }
 
-// Отримати контейнер для галереї на сторінці Favorite
-const favoriteGallery = document.querySelector;
+// Відображаємо галерею зі списком збережених новин
+const newsGallery = document.querySelector('#news-gallery');
+favoriteNews.forEach(news => {
+  const newsCard = document.createElement('div');
+  newsCard.innerHTML = `
+    <h2>${news.title}</h2>
+    <p>${news.description}</p>
+    <button data-id="${news.id}" class="remove-btn">RemoveFromFavorite</button>
+  `;
+  newsGallery.appendChild(newsCard);
+});
+
+// Додаємо обробник подій для видалення новини зі списку збережених
+const removeButtons = document.querySelectorAll('.remove-btn');
+removeButtons.forEach(button => {
+  button.addEventListener('click', event => {
+    const newsId = event.target.dataset.id;
+    const updatedNews = favoriteNews.filter(news => news.id !== newsId);
+    localStorage.setItem('favoriteNews', JSON.stringify(updatedNews));
+    event.target.parentNode.remove();
+  });
+});
 
 function removeFromFavorite(id) {
   // Отримуємо список збережених новин з локального сховища
