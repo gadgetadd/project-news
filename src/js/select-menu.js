@@ -2,6 +2,7 @@ const select = document.querySelector('.select');
 const select__list = document.querySelector('.select__list');
 const options = document.querySelectorAll('.options');
 const ctgBtns = document.querySelectorAll('.categories__button');
+// const nameCtg = document.querySelector('.name');
 // виїжає випадалка
 select.addEventListener('click', () => {
   select__list.classList.toggle('active');
@@ -15,6 +16,7 @@ options.forEach(option => {
       option.classList.remove('selected');
     });
     select.querySelector('span').innerHTML = option.innerHTML;
+    // nameCtg.innerHTML = option.innerHTML;
     option.classList.add('selected');
     select.classList.add('active-category');
 
