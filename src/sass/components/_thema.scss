@@ -29,7 +29,6 @@
   width: 40px;
   height: 20px;
   cursor: pointer;
-  cursor: pointer;
 }
 
 .switch__input {
@@ -44,8 +43,8 @@
   left: 0px;
   bottom: 0px;
   right: 0px;
-  background: #FFFFFF;
-  border: 0.604701px solid #4B48DB;
+  background: #ffffff;
+  border: 0.604701px solid #4b48db;
   border-radius: 20px;
   transition-duration: 300ms;
 }
@@ -58,18 +57,18 @@
   left: 1px;
   top: 1px;
   border-radius: 50%;
-  background-color: #4B48DB;
-  transition-duration: 300ms
+  background-color: #4b48db;
+  transition-duration: 300ms;
 }
 
-.switch__input:checked+.switch__slider {
-  background-color: #4B48DB;
+.switch__input:checked + .switch__slider {
+  background-color: #4b48db;
   border-color: #fff;
 }
 
-.switch__input:checked+.switch__slider::before {
+.switch__input:checked + .switch__slider::before {
   background-color: #fff;
-  transform: translateX(19px);
+  transform: translateX(20px);
 }
 
 @media screen and (min-width: 768px) {
@@ -87,7 +86,6 @@
   .switch-dark {
     display: none;
   }
-
 }
 @media screen and (min-width: 1280px) {
   .checkbox-container {
@@ -98,7 +96,6 @@
     justify-content: center;
     align-items: center;
   }
-  
   .switch-light {
     display: flex;
     font-family: "Poppins";
@@ -120,7 +117,7 @@
     display: flex;
     align-items: center;
 
-    color: #5f6775;
+    color: $darkCheckColor;
   }
   .icon-sun {
     display: none;
@@ -128,5 +125,4 @@
   .icon-moon {
     display: none;
   }
-  
 }

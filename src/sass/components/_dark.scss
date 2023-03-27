@@ -9,10 +9,10 @@
 .dark .menu-container {
     background-color: $darkBgColor;
 }
-.dark .checkbox-dark{
-    color: $checkboxDark;
+.dark .switch-dark{
+    color: $accentBgColor;
 }
-.dark .checkbox-light{
+.dark .switch-light{
     color: $lightBgColor;
     opacity: 0.4;
 }
