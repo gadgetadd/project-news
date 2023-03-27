@@ -19,14 +19,13 @@ function addToFavorite() {
   localStorage.setItem('favoriteNews', JSON.stringify(favoriteNews));
 
   //   hasCard = card => favoriteNews.some(({ id }) => id === card.id);
-  return;
 }
 
 function displayFavorites() {
   const gallery = document.getElementById('.gallery');
-
-  // очищаємо попередній контент галереї
-  gallery.innerHTML = '';
+  let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
+  //   // очищаємо попередній контент галереї
+  //   gallery.innerHTML = '';
 
   // проходимося по списку збережених новин та створюємо картки для кожної з них
   favoriteNews.forEach(news => {
