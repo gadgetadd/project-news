@@ -22,15 +22,13 @@ const normalizeDate = date => {
   return normalDate;
 };
 
-
-
 export function createCardsMarkup(card) {
   return card.map(element => {
     const date = new Date(element.date);
     const { day, month, year } = normalizeDate(date);
     return `
       
-            <li class="news__item">
+            <li class="news__item" id="${element.id}>
                 <div class="news__card">
                     <div class="news__img">
                         <picture>
@@ -76,5 +74,3 @@ export function createCardsMarkup(card) {
             </li>`;
   });
 }
-
-
