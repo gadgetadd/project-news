@@ -1,0 +1,59 @@
+.card-news__wrap {
+  min-height: 90vh;
+}
+
+.card-wrap {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 32px;
+  }
+}
+
+.card-wrap__weather {
+  width: 288px;
+  height: 469px;
+  margin-bottom: 28px;
+
+  background-color: blue;
+  border: 1px solid grey;
+
+  @media screen and (min-width: 768px) {
+    width: 353px;
+    height: 675px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 675px;
+  }
+}
+
+.card-wrap__box {
+  width: 288px;
+  height: 630px;
+  margin-bottom: 28px;
+
+  background-color: tomato;
+  border: 1px solid grey;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 353px;
+    height: 675px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 395px;
+    height: 675px;
+  }
+}
