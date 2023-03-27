@@ -13,7 +13,12 @@
 
 import { Popular, Category, Search } from './NewsAPI';
 import { createCardsMarkup } from './card-main';
+import { weatherByGeolocation } from './geolocation.js';
+import { Spinner } from 'spin.js';
+import 'spin.js/spin.css';
 
+
+const cardsNewsEl = document.querySelector('.news');
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
 const btnPrevPg = document.querySelector('button.pagination__button--prev');
@@ -28,6 +33,29 @@ const valuePage = {
   totalHits: 0,
   response: {},
 };
+
+const opts = {
+  lines: 8,
+  length: 60,
+  width: 18,
+  radius: 36,
+  scale: 0.3,
+  corners: 1,
+  speed: 1.1,
+  rotate: 0,
+  animation: 'spinner-line-fade-more',
+  direction: 1,
+  color: '#4440f6',
+  fadeColor: 'transparent',
+  top: '50%',
+  left: '50%',
+  shadow: '0 0 1px transparent',
+  zIndex: 2000000000,
+  className: 'spinner',
+  position: 'absolute',
+};
+
+const spinner = new Spinner(opts);
 
 function setPageParam(response) {
   const device = typeOfDevice();
@@ -50,7 +78,7 @@ function setPageParam(response) {
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
 }
 
-function typeOfDevice() {
+export function typeOfDevice() {
   if (window.matchMedia('(max-width:767px)').matches) {
     return 'mobile';
   } else if (window.matchMedia('(min-width:1280px)').matches) {
@@ -60,36 +88,42 @@ function typeOfDevice() {
   }
 }
 
-const createPagination = {
+export const createPagination = {
   async popular() {
+    spinner.spin(cardsNewsEl);
     valuePage.searchType = 'popular';
     const popular = new Popular();
-    response = await popular.get();
+    const response = await popular.get();
     valuePage.response = response;
     // console.log('response :', response);
+    const weatherCard = await weatherByGeolocation();
     setPageParam(response);
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    // console.log('картки для відмальовки', itemsToShow);
-    return itemsToShow;
+    spinner.stop();
+    renderPopular(itemsToShow, weatherCard);
+      return itemsToShow;
+
   },
+
   async category(cat) {
     valuePage.searchType = 'category';
     const category = new Category(cat);
-    response = await category.get();
+    const response = await category.get();
     valuePage.response = response;
     // console.log('response :', response);
     setPageParam(response);
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
     // console.log('картки для відмальовки', itemsToShow);
     return itemsToShow;
+
   },
   async search(input) {
     valuePage.searchType = 'search';
@@ -97,15 +131,16 @@ const createPagination = {
     const search = new Search(input);
     const response = await search.get();
     valuePage.totalHits = search.getHits();
-    console.log('response :', response);
+    // console.log('response :', response);
     setPageParam(response);
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
   },
+
   async onPageChange() {
     if (valuePage.searchType === 'search') {
       const search = new Search(valuePage.searchParam);
@@ -123,7 +158,9 @@ const createPagination = {
     );
     pagination();
     // console.log('картки для відмальовки', itemsToShow);
+
     return itemsToShow;
+
   },
 };
 
@@ -229,6 +266,31 @@ function handleButtonRight() {
   } else {
     btnNextPg.disabled = false;
   }
+}
+
+// createPagination.popular();
+
+// Функція для першої сторінки
+function detectViewport(news, weather) {
+  if (window.innerWidth < 768) {
+    news.splice(0, 0, weather);
+  } else if (window.innerWidth < 1280) {
+    news.splice(1, 0, weather);
+  } else {
+    news.splice(2, 0, weather);
+  }
+  return news;
+}
+
+function renderPopular(data, weather) {
+  const news = createCardsMarkup(data);
+  const markup = detectViewport(news, weather).join('');
+  cardsNewsEl.innerHTML = markup;
+}
+
+function renderDefault(data) {
+  const markup = createCardsMarkup(data).join('');
+  cardsNewsEl.innerHTML = markup;
 }
 
 createPagination.popular();

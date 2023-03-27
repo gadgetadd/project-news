@@ -28,8 +28,7 @@ export async function fetchWeather(city) {
       return response.json();
     })
     .then(function (data) {
-      const markup = renderWeatherCard(data, currentDate, dayName, month);
-      weatherCard.innerHTML = markup;
+      return renderWeatherCard(data, currentDate, dayName, month);
     })
     .catch(function (error) {
       console.log(error);
@@ -66,7 +65,7 @@ function renderWeatherCard(data, currentDate, dayName, month) {
   </div>`;
 }
 
-async function app() {
-  const weather = await weatherByGeolocation();
-}
-app();
+// async function app() {
+//   const weather = await weatherByGeolocation();
+//   }
+// app();
