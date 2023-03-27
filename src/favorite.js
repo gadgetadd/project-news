@@ -23,14 +23,14 @@ function addToFavorite() {
 
 function displayFavorites() {
   const gallery = document.getElementById('.gallery');
-  let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
+  //   let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
   //   // очищаємо попередній контент галереї
   //   gallery.innerHTML = '';
 
   // проходимося по списку збережених новин та створюємо картки для кожної з них
   favoriteNews.forEach(news => {
-    const card = createCard(news);
-    gallery.appendChild(card);
+    const favoriteCard = createCard(news);
+    gallery.appendChild(favoriteCard);
   });
 }
 
