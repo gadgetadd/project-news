@@ -104,7 +104,7 @@ const renderAccordion = (dateString, articles) => {
 };
 
 export const renderPage = () => {
-    const articls = JSON.parse(localStorage.getItem('readArticless'));
+    const articls = JSON.parse(localStorage.getItem('readArticles'));
 
     if (articls === null) {
         container.innerHTML = 
