@@ -13,72 +13,54 @@ function generateSelectMarkup(data) {
 }
 
 function generateButtonsMarkup(data) {
-  return data.reduce((markup, ctg) => {
-    return (markup += `
+  return data
+    ? data.reduce((markup, ctg) => {
+        return (markup += `
 <li class="categories__item">
         <button type="button" class="categories__button">${ctg}</button>
       </li>`);
-  }, '');
+      }, '')
+    : '';
+}
+
+function generateFilter(buttons, select) {
+  return `<ul id="categories" class="categories-wrapper list"> 
+        ${generateButtonsMarkup(buttons)}     
+       <li class="categories__item">
+        <div class="select-menu">
+          <button class="categories__button select" type="button">
+            <span> Others</span>
+            <svg class="categories__icon" width="14" height="14">
+              <use href="${sprite}#arrow_down"></use>
+            </svg>
+          </button>
+          <div class="select__list list">
+            <div class="select__wrapper">${generateSelectMarkup(select)}</div>
+          </div>
+        </div>
+      </li>
+    </ul>`;
 }
 
 function generateMobileMarkup(data) {
-  return `
-<div class="select-menu">
-  <button class="categories__button select" type="button">
-    <span>Categories</span>
-    <svg class="categories__icon" width="14" height="14">
-      <use href='${sprite}#arrow_down'></use>
-    </svg>
-  </button>
-  <div class="select__list">
-    <div class="select__wrapper">${generateSelectMarkup(data)}</div>
-  </div>
-</div>
-`;
+  const buttons = null;
+  const select = data;
+
+  return generateFilter(buttons, select);
 }
 
 function generateTabletMarkup(data) {
   const buttons = data.slice(0, 4);
   const select = data.slice(4);
 
-  return `<ul id="categories" class="categories-wrapper list"> 
-        ${generateButtonsMarkup(buttons)}     
-       <li class="categories__item">
-        <div class="select-menu">
-          <button class="categories__button select" type="button">
-            <span> Others</span>
-            <svg class="categories__icon" width="14" height="14">
-              <use href="${sprite}#arrow_down"></use>
-            </svg>
-          </button>
-          <div class="select__list list">
-            <div class="select__wrapper">${generateSelectMarkup(select)}</div>
-          </div>
-        </div>
-      </li>
-    </ul>`;
+  return generateFilter(buttons, select);
 }
 
 function generateDesktopMarkup(data) {
   const buttons = data.slice(0, 6);
   const select = data.slice(6);
 
-  return `<ul id="categories" class="categories-wrapper list"> 
-        ${generateButtonsMarkup(buttons)}     
-       <li class="categories__item">
-        <div class="select-menu">
-          <button class="categories__button select" type="button">
-            <span> Others</span>
-            <svg class="categories__icon" width="14" height="14">
-              <use href="${sprite}#arrow_down"></use>
-            </svg>
-          </button>
-          <div class="select__list list">
-            <div class="select__wrapper">${generateSelectMarkup(select)}</div>
-          </div>
-        </div>
-      </li>
-    </ul>`;
+  return generateFilter(buttons, select);
 }
 
 function selectLayout(data) {
