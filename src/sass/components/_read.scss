@@ -14,7 +14,7 @@
         margin: 0 auto 40 auto;
         position: relative;
         overflow: hidden;
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
         @media screen and (min-width: 768px) {
             max-width: 736px;
@@ -57,5 +57,37 @@
 
     &__date-icon {
         fill: currentColor;
+        transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__already-read {
+        opacity: 0.6;
+        position: relative;
+    }
+
+    &--rotate {
+        transform: rotate(180deg);
+    }
+}
+
+.is-read {
+    color: $markerTextColor;
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.36;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    @media screen and (min-width: 768px) {
+        top: 20px;
+        right: 21px;
+    }
+
+
+    &__icon {
+        margin-left: 4px;
     }
 }

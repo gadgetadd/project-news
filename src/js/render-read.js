@@ -129,9 +129,11 @@ export const renderPage = () => {
     };
 
     const list = document.querySelectorAll('.read__list-wrapper');
+    console.log(list);
     
     for (let i = 0; i < list.length; i += 1) {
         list[i].children[0].addEventListener('click', () => {
+            list[i].children[0].children[0].classList.toggle('read--rotate');
             const clientHeight = list[i].clientHeight;
             const height = list[i].scrollHeight;
             if (clientHeight > 33) {
