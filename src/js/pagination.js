@@ -9,6 +9,8 @@
 // В кінці функції треба запустити функцію для рендеру карток в яку аргументом необхідно передати змінну itemsToShow.
 
 import { Popular, Category, Search } from './NewsAPI';
+import { createCardsMarkup } from './card-main';
+import { weatherByGeolocation } from './geolocation.js';
 
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
@@ -36,12 +38,12 @@ function setPageParam(response) {
     valuePage.itemsPerPage = 9;
   }
   if (valuePage.searchType === 'search') {
-    console.log('search!!');
+    // console.log('search!!');
   }
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
 }
 
-function typeOfDevice() {
+export function typeOfDevice() {
   if (window.matchMedia('(max-width:767px)').matches) {
     return 'mobile';
   } else if (window.matchMedia('(min-width:1280px)').matches) {
@@ -51,50 +53,60 @@ function typeOfDevice() {
   }
 }
 
-const createPagination = {
+export const createPagination = {
   async popular() {
     valuePage.searchType = 'popular';
     const popular = new Popular();
     response = await popular.get();
     valuePage.response = response;
-    console.log('response :', response);
+    // console.log('response :', response);
+
+    const weatherCard = await weatherByGeolocation();
+    console.log(weatherCard);
     setPageParam(response);
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+
+    // console.log('картки для відмальовки', itemsToShow);
+    const newsCards = createCardsMarkup(itemsToShow);
+    return {
+      news: newsCards,
+      weather: weatherCard,
+    };
   },
+
   async category(cat) {
     valuePage.searchType = 'category';
     // valuePage.searchParam = cat;
     const category = new Category(cat);
     response = await category.get();
     valuePage.response = response;
-    console.log('response :', response);
+    // console.log('response :', response);
     setPageParam(response);
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
   },
   async search(input) {
     valuePage.searchType = 'search';
     valuePage.searchParam = input;
     const search = new Search('ukraine');
     const response = await search.get();
-    console.log(search.getHits());
-    console.log('response :', response);
+    // console.log(search.getHits());
+    // console.log('response :', response);
     setPageParam(response);
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
   },
   onPageChange() {
     itemsToShow = response.slice(
@@ -102,7 +114,7 @@ const createPagination = {
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
   },
 };
 
@@ -210,4 +222,4 @@ function handleButtonRight() {
   }
 }
 
-createPagination.popular();
+// createPagination.popular();
