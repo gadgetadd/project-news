@@ -1,0 +1,22 @@
+/* Загальні стилі для футера */
+
+footer {
+    padding-bottom: 16px;
+    background-color: $secondaryTextColor;
+}
+
+.text {
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+    color: $darkBgColor;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+/* Стилі для роздільника в футері */
+
+footer hr {
+    border: none;
+    border-top: 1px solid #929292;
+}
