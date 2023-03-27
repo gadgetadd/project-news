@@ -3,21 +3,18 @@ const addToFavoriteBtn = document.querySelector('.button-card');
 addToFavoriteBtn.addEventListener('click', addToFavorite);
 
 function addToFavorite() {
-  // Отримати інформацію про додану новину (наприклад, заголовок)
-  const newsTitle = document.querySelector('.news');
+  // Отримати інформацію про додану новину
+  const newsCard = document.querySelector('.news');
 
   // Отримати масив новин, які вже додані в обране (якщо такі є)
   let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
 
   // Додати нову новину до масиву доданих в обране новин
-  favoriteNews.push(newsTitle);
+  favoriteNews.push(newsCard);
 
   // Зберегти масив доданих в обране новин в локальному сховищі браузера
   localStorage.setItem('favoriteNews', JSON.stringify(favoriteNews));
 }
-
-// Отримати масив доданих в обране новин з локального сховища браузера
-const favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
 
 // Отримати контейнер для галереї на сторінці Favorite
 const favoriteGallery = document.querySelector;
