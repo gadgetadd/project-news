@@ -11,7 +11,10 @@
 import { Popular, Category, Search } from './NewsAPI';
 import { createCardsMarkup } from './card-main';
 import { weatherByGeolocation } from './geolocation.js';
+import { Spinner } from 'spin.js';
+import 'spin.js/spin.css';
 
+const cardsNewsEl = document.querySelector('.news');
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
 const btnPrevPg = document.querySelector('button.pagination__button--prev');
@@ -26,6 +29,29 @@ const valuePage = {
   totalHits: 0,
   response: {},
 };
+
+const opts = {
+  lines: 8,
+  length: 60,
+  width: 18,
+  radius: 36,
+  scale: 0.3,
+  corners: 1,
+  speed: 1.1,
+  rotate: 0,
+  animation: 'spinner-line-fade-more',
+  direction: 1,
+  color: '#4440f6',
+  fadeColor: 'transparent',
+  top: '50%',
+  left: '50%',
+  shadow: '0 0 1px transparent',
+  zIndex: 2000000000,
+  className: 'spinner',
+  position: 'absolute',
+};
+
+const spinner = new Spinner(opts);
 
 function setPageParam(response) {
   const device = typeOfDevice();
@@ -55,14 +81,13 @@ export function typeOfDevice() {
 
 export const createPagination = {
   async popular() {
+    spinner.spin(cardsNewsEl);
     valuePage.searchType = 'popular';
     const popular = new Popular();
     response = await popular.get();
     valuePage.response = response;
     // console.log('response :', response);
-
     const weatherCard = await weatherByGeolocation();
-    console.log(weatherCard);
     setPageParam(response);
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
@@ -71,11 +96,8 @@ export const createPagination = {
     pagination();
 
     // console.log('картки для відмальовки', itemsToShow);
-    const newsCards = createCardsMarkup(itemsToShow);
-    return {
-      news: newsCards,
-      weather: weatherCard,
-    };
+    spinner.stop();
+    renderPopular(itemsToShow, weatherCard);
   },
 
   async category(cat) {
@@ -223,3 +245,28 @@ function handleButtonRight() {
 }
 
 // createPagination.popular();
+
+// Функція для першої сторінки
+function detectViewport(news, weather) {
+  if (window.innerWidth < 768) {
+    news.splice(0, 0, weather);
+  } else if (window.innerWidth < 1280) {
+    news.splice(1, 0, weather);
+  } else {
+    news.splice(2, 0, weather);
+  }
+  return news;
+}
+
+function renderPopular(data, weather) {
+  const news = createCardsMarkup(data);
+  const markup = detectViewport(news, weather).join('');
+  cardsNewsEl.innerHTML = markup;
+}
+
+function renderDefault(data) {
+  const markup = createCardsMarkup(data).join('');
+  cardsNewsEl.innerHTML = markup;
+}
+
+createPagination.popular();
