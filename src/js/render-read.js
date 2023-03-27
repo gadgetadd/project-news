@@ -1,4 +1,10 @@
 import sprite from '../images/icons.svg';
+import desktop from '../images/no-news-desktop.jpg';
+import desktopX2 from '../images/no-news-desktop@2x.jpg';
+import tablet from '../images/no-news-tablet.jpg';
+import tabletX2 from '../images/no-news-tablet@2x.jpg';
+import mobile from '../images/no-news-mobile.jpg';
+import mobileX2 from '../images/no-news-mobile@2x.jpg';
 
 const container = document.querySelector('#art-container');
 
@@ -98,7 +104,25 @@ const renderAccordion = (dateString, articles) => {
 };
 
 export const renderPage = () => {
-    const articls = JSON.parse(localStorage.getItem('readArticles'));
+    const articls = JSON.parse(localStorage.getItem('readArticless'));
+
+    if (articls === null) {
+        container.innerHTML = 
+            ` <picture>
+                <source
+                    srcset="${mobile} 1x, ${mobileX2} 2x"
+                    media="(max-width: 767px)">
+                <source
+                    srcset="${tablet} 1x, ${tabletX2} 2x"
+                    media="(max-width: 1279px)">
+                <source
+                    srcset="${desktop} 1x, ${desktopX2} 2x"
+                    media="(min-width: 1280px)">
+                <img class="read__no-news" src="${mobile}"
+                    alt="Зображення не має новин">
+            </picture>`;
+        return
+    }
 
     for (const key in articls) {
         renderAccordion(key, articls[key]);

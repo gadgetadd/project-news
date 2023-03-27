@@ -58,19 +58,4 @@
     &__date-icon {
         fill: currentColor;
     }
-
-}
-
-.testblock {
-    width: 288px;
-    background-color: brown;
-    margin-bottom: 28px;
-    
-    @media screen and (min-width: 768px) {
-        width: 736px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        width: 1248px;
-    }
 }
