@@ -1,0 +1,84 @@
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    
+    &-light{
+        display: none; 
+    }
+    &-dark{
+        display: none;
+    }
+    &__input{
+        width: 0px;
+        height: 0px;
+        opacity: 0; 
+    }
+    &__slider {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+        background: #ffffff;
+        border: 0.604701px solid #4b48db;
+        border-radius: 20px;
+        transition-duration: 300ms;
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 1px;
+            top: 1px;
+            border-radius: 50%;
+            background-color: #4b48db;
+            transition-duration: 300ms; 
+        }
+    }
+    &__input:checked + &__slider {
+        background-color: #4b48db;
+        border-color: #fff;
+    }
+    &__input:checked + &__slider::before {
+        background-color: #fff;
+        transform: translateX(20px);
+      }
+    @media screen and (min-width: 768px) {
+        &-light {
+            display: none;
+        }
+        &-dark {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 1280px) {
+        &-light {
+          display: flex;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          color: $accentColor;
+      
+          margin-left: 0px;
+        }
+        &-dark {
+          display: flex;
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+          display: flex;
+          align-items: center;
+      
+          color: $darkCheckColor;
+        }
+      }
+    
+}
