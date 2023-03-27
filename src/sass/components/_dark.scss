@@ -6,10 +6,13 @@
 .dark .page-header{
     border-bottom: 1px solid rgba(244, 244, 244, 0.2);
 }
-.dark .checkbox-dark{
-    color: $checkboxDark;
+.dark .menu-container {
+    background-color: $darkBgColor;
 }
-.dark .checkbox-light{
+.dark .switch-dark{
+    color: $accentBgColor;
+}
+.dark .switch-light{
     color: $lightBgColor;
     opacity: 0.4;
 }
