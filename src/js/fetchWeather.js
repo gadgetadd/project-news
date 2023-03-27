@@ -1,6 +1,6 @@
 import { weatherByGeolocation } from './geolocation.js';
 import sprite from './../images/icons.svg';
-const weatherCard = document.querySelector('body');
+// const weatherCard = document.querySelector('body');
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 var months = [
   'Jan',
