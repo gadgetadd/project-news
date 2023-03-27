@@ -1,6 +1,31 @@
 import sprite from '../images/icons.svg';
+import { Spinner } from 'spin.js';
+import 'spin.js/spin.css';
 
 const cardsNewsEl = document.querySelector('.news');
+
+const opts = {
+  lines: 8,
+  length: 60,
+  width: 18,
+  radius: 36,
+  scale: 0.3,
+  corners: 1,
+  speed: 1.1,
+  rotate: 0,
+  animation: 'spinner-line-fade-more',
+  direction: 1,
+  color: '#4440f6',
+  fadeColor: 'transparent', 
+  top: '50%',
+  left: '50%',
+  shadow: '0 0 1px transparent',
+  zIndex: 2000000000,
+  className: 'spinner',
+  position: 'absolute',
+};
+
+const spinner = new Spinner(opts);
 
 const normalizeDate = date => {
   const zero = '0';
@@ -81,7 +106,9 @@ const normalizeDate = date => {
 // };
 
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-function renderCardsNews(card) {
+const weather = '<div class="card-wrap__weather">555</div>';
+
+function createCardsMarkup(card) {
   return card.map(element => {
     const date = new Date(element.date);
     const { day, month, year } = normalizeDate(date);
@@ -134,10 +161,6 @@ function renderCardsNews(card) {
   });
 }
 
-const elementsArray = renderCardsNews(array);
-
-const weather = '<div class="card-wrap__weather">555</div>';
-
 function detectViewport(arr) {
   if (window.innerWidth < 768) {
     arr.splice(0, 0, weather);
@@ -148,8 +171,15 @@ function detectViewport(arr) {
   }
 }
 
-detectViewport(elementsArray);
+function renderCardsNews(array) {
+  spinner.spin(cardsNewsEl);
+  const elementsArray = createCardsMarkup(array);
+  detectViewport(elementsArray);
+  const markup = elementsArray.join('');
+  setTimeout(() => {
+    spinner.stop();
+    cardsNewsEl.innerHTML = markup;
+  }, 5000);
+}
 
-const markup = elementsArray.join('');
-
-cardsNewsEl.insertAdjacentHTML('afterbegin', markup);
+renderCardsNews(array);
