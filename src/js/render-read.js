@@ -1,6 +1,6 @@
 import sprite from '../images/icons.svg';
 
-const contsiner = document.querySelector('#art-container');
+const container = document.querySelector('#art-container');
 
 const normalizeDate = (date) => {
     const zero = '0';
@@ -83,7 +83,7 @@ const renderArticles = (articles) => {
 const renderAccordion = (dateString, articles) => {
     const date = new Date(dateString);
     const content = renderArticles(articles);
-    const { day, month, year } = normalizeDate(date)
+    const { day, month, year } = normalizeDate(date);
     const accordion = document.createElement('div');
     accordion.classList.add('read__list-wrapper');
     accordion.innerHTML = `<h2 class="read__date">
@@ -94,23 +94,22 @@ const renderAccordion = (dateString, articles) => {
                             </h2>
                             `;
     accordion.append(content);
-    contsiner.append(accordion);
+    container.append(accordion);
 };
 
-const renderPage = () => {
+export const renderPage = () => {
     const articls = JSON.parse(localStorage.getItem('readArticles'));
 
-    console.log(articls);
     for (const key in articls) {
         renderAccordion(key, articls[key]);
     };
 
-    const list = document.querySelectorAll('.read__list-wrapper')
+    const list = document.querySelectorAll('.read__list-wrapper');
     
     for (let i = 0; i < list.length; i += 1) {
         list[i].children[0].addEventListener('click', () => {
             const clientHeight = list[i].clientHeight;
-            const height = list[i].scrollHeight
+            const height = list[i].scrollHeight;
             if (clientHeight > 33) {
                 list[i].style.height = "33px";
                 return;
@@ -119,5 +118,3 @@ const renderPage = () => {
         });
     };
 };
-
-renderPage();

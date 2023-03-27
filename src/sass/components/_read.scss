@@ -14,7 +14,7 @@
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-        transition: all 1000ms;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
         &::before {
             content: " ";
@@ -53,7 +53,7 @@
     }
 
     &__date-icon {
-        fill: $darkTextColor;
+        fill: currentColor;
     }
 
 }
