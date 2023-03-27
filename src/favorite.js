@@ -7,7 +7,7 @@ addToFavoriteBtn.addEventListener('click', addToFavorite);
 
 function addToFavorite() {
   // Отримати інформацію про додану новину
-  const newsCard = document.querySelector('.news');
+  const newsCard = document.querySelector('.news__card');
 
   // Отримати масив новин, які вже додані в обране (якщо такі є)
   let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
@@ -22,16 +22,16 @@ function addToFavorite() {
 }
 
 // Відображаємо галерею зі списком збережених новин
-const favoriteGallery = document.querySelector('#favorite-gallery');
-favoriteNews.forEach(news => {
-  const newsCard = document.createElement('div');
-  newsCard.innerHTML = ` 
-    // <h2>${news.title}</h2>
-    // <p>${news.description}</p>
-    // <button data-id="${news.id}" class="remove-btn">RemoveFromFavorite</button>
-  `;
-  favoriteGallery.appendChild(newsCard);
-});
+// const favoriteGallery = document.querySelector('#favorite-gallery');
+// favoriteNews.forEach(news => {
+//   const newsCard = document.createElement('div');
+//   newsCard.innerHTML = `
+//     // <h2>${news.title}</h2>
+//     // <p>${news.description}</p>
+//     // <button data-id="${news.id}" class="remove-btn">RemoveFromFavorite</button>
+//   `;
+//   favoriteGallery.appendChild(newsCard);
+// });
 
 function removeFromFavorite(id) {
   // Отримуємо список збережених новин з локального сховища
