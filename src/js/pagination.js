@@ -84,12 +84,12 @@ export const createPagination = {
     spinner.spin(cardsNewsEl);
     valuePage.searchType = 'popular';
     const popular = new Popular();
-    response = await popular.get();
+    const response = await popular.get();
     valuePage.response = response;
     // console.log('response :', response);
     const weatherCard = await weatherByGeolocation();
     setPageParam(response);
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
@@ -104,11 +104,11 @@ export const createPagination = {
     valuePage.searchType = 'category';
     // valuePage.searchParam = cat;
     const category = new Category(cat);
-    response = await category.get();
+    const response = await category.get();
     valuePage.response = response;
     // console.log('response :', response);
     setPageParam(response);
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
@@ -123,7 +123,7 @@ export const createPagination = {
     // console.log(search.getHits());
     // console.log('response :', response);
     setPageParam(response);
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
@@ -131,7 +131,7 @@ export const createPagination = {
     // console.log('картки для відмальовки', itemsToShow);
   },
   onPageChange() {
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
