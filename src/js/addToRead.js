@@ -5,7 +5,6 @@ export const addToRead = () => {
         const el = AllArticles[i];
 
         el.children[1].children[1].addEventListener('click', (evt) => {
-            evt.preventDefault();
             const articlesRead = {...(JSON.parse(localStorage.getItem('readArticles')))}
             const article = {
                 category: el.children[0].children[0].children[1].textContent,

@@ -3,7 +3,7 @@ import './js/mobile-menu.js';
 import './js/select-menu.js';
 import './js/switch';
 import './js/adaptiveRender';
-import { addToRead } from './js/read/addToRead.js';
+import { addToRead } from './js/addToRead.js';
 
 
 addToRead();
