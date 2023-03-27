@@ -1,14 +1,18 @@
 // createPagination.popular(). Функція запускається по замовчуванню при відкритті домашньої сторінки.
-// В кінці функції треба запустити функцію для рендеру карток в яку аргументом необхідно передати змінну itemsToShow.
-// Змінна  itemsToShow повертає з запиту массив для відмальовки.
+// Функція повертає з запиту масив для відмальовки першої сторінки.
 
-// CreatePagination.category(arg). Функцію запускає слухач подій на кнопках категорій. Агрументом потрібно передати назву категорії з кнопки.
-// В кінці функції треба запустити функцію для рендеру карток в яку аргументом необхідно передати змінну itemsToShow.
+// сreatePagination.category(arg). Функцію запускає слухач подій на кнопках категорій. Агрументом потрібно передати назву категорії з кнопки.
+// Функція повертає з запиту масив для відмальовки першої сторінки.
 
-// При переході на інші сторінки в popular та category запускається функція createPagination.onPageChange()
-// В кінці функції треба запустити функцію для рендеру карток в яку аргументом необхідно передати змінну itemsToShow.
+// сreatePagination.search(arg).Функцію запускає слухач подій на сабміті поля пошуку. Агрументом потрібно пошуковий запит з інпуту.
+// Функція повертає з запиту масив для відмальовки першої сторінки.
+
+// сreatePagination.onPageChange().
+// При переході на інші сторінки, слухачем подій запускається функція для рендеру, в яку агрументом передається функція CreatePagination.onPageChange.
+// Функція повертає масив для відмальовки необхідної сторінки.
 
 import { Popular, Category, Search } from './NewsAPI';
+import { createCardsMarkup } from './card-main';
 
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
@@ -36,7 +40,12 @@ function setPageParam(response) {
     valuePage.itemsPerPage = 9;
   }
   if (valuePage.searchType === 'search') {
-    console.log('search!!');
+    if (valuePage.totalHits > 1000) {
+      valuePage.totalHits = 1000;
+    }
+    valuePage.totalPages = Math.ceil(valuePage.totalHits / 10);
+    console.log(valuePage);
+    return;
   }
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
 }
@@ -57,36 +66,37 @@ const createPagination = {
     const popular = new Popular();
     response = await popular.get();
     valuePage.response = response;
-    console.log('response :', response);
+    // console.log('response :', response);
     setPageParam(response);
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
+    return itemsToShow;
   },
   async category(cat) {
     valuePage.searchType = 'category';
-    // valuePage.searchParam = cat;
     const category = new Category(cat);
     response = await category.get();
     valuePage.response = response;
-    console.log('response :', response);
+    // console.log('response :', response);
     setPageParam(response);
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
+    return itemsToShow;
   },
   async search(input) {
     valuePage.searchType = 'search';
     valuePage.searchParam = input;
-    const search = new Search('ukraine');
+    const search = new Search(input);
     const response = await search.get();
-    console.log(search.getHits());
+    valuePage.totalHits = search.getHits();
     console.log('response :', response);
     setPageParam(response);
     itemsToShow = response.slice(
@@ -96,13 +106,24 @@ const createPagination = {
     pagination();
     console.log('картки для відмальовки', itemsToShow);
   },
-  onPageChange() {
+  async onPageChange() {
+    if (valuePage.searchType === 'search') {
+      const search = new Search(valuePage.searchParam);
+      search.setPage(valuePage.curPage - 1);
+      const response = await search.get();
+      // console.log('response :', response);
+      itemsToShow = response.slice(0, valuePage.itemsPerPage);
+      pagination();
+      // console.log('картки для відмальовки', itemsToShow);
+      return itemsToShow;
+    }
     itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    console.log('картки для відмальовки', itemsToShow);
+    // console.log('картки для відмальовки', itemsToShow);
+    return itemsToShow;
   },
 };
 
@@ -187,12 +208,12 @@ function handleButton(element) {
     handleButtonRight();
   }
 
-  if (
-    valuePage.searchType === 'popular' ||
-    valuePage.searchType === 'category'
-  ) {
-    createPagination.onPageChange();
-  }
+  // if (
+  //   valuePage.searchType === 'popular' ||
+  //   valuePage.searchType === 'category'
+  // ) {
+  // }
+  createPagination.onPageChange();
 }
 
 function handleButtonLeft() {
