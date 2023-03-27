@@ -19,18 +19,16 @@
     <div class="calendar-wrapper is-hidden-wrapper" data-modal>
       <div class="calendar-wrapper__container">
         <div class="calendar-switcher">
-          <div class="wrapper-date">
-            <p class="current-date"></p>
+            <div class="wrapper-current-date"><p class="current-date"></p></div>
           <span id="year" class="material-symbols-rounded">
             <svg
-              class="calendar__button-arrow-icon"
+              class="calendar__button-arrow-icon year-switcher"
               width="12"
               height="7"
-              transform="rotate(270)"
-            >
+              transform="rotate(270)">
               <use href="./images/icons.svg#arrow_down"></use>
             </svg>
-          </span></div>
+          </span>
           <!-- <span id = 'next' class="calendar-icons"><svg class="current-date__icon">
           <use href="./images/sprite.svg#arrow-up"></use>
         </svg>
@@ -70,7 +68,7 @@
             <li class="calendar-weeks__item">Sat</li>
           </ul>
           <ul class="days">
-            <li class="calendar-days"></li>
+            <li class="calendar-days" class="prev-days" class="next-days"></li>
           </ul>
         </div>
       </div>

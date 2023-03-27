@@ -1,6 +1,4 @@
-.body{
-    background-color:#686868;
-}
+
 
 .calendar-input.isActive::placeholder {
   transition-duration: 250ms;
@@ -9,7 +7,7 @@
 }
 
 .calendar-input.isActive {
-  background-color: 4440f6;
+  background-color: #4440f6;
   color: #ffffff;
   border: 1px solid #4440f7;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -17,12 +15,12 @@
 }
 .calendar-wrapper {
     position: absolute;
-  
+
     overflow: hidden;
     z-index: 2;
     display: block;
     width: 250px;
-    height: 300px;
+    height: 250px;
     right: 0px;
     
     pointer-events: auto;
@@ -169,11 +167,10 @@
     z-index: 2;
     overflow: hidden;
     margin-left: 0;
-    /* padding: 16px 16px 20px 16px; */
     width: 250px;
-    height: 300px;
+    height: 250px;
     right: 0px;
-    background: #ffffff;
+    background-color: #ffffff;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
 
@@ -188,16 +185,22 @@
 }
 .calendar-switcher {
   display: flex;
-  justify-content: space-around;
-  gap: 50px;
-  padding: 7px 0px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 40px;
   height: 44px;
-  margin-bottom: 2px;
   align-items: center;
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0);
 }
-
+.year-switcher{
+  margin-right: 24px;
+}
+.wrapper-current-date{
+  width: 113px;
+  margin-right: 8px;
+}
 .current-date {
-  font-family: 'Manrope';
+  font-family: 'Manrope', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -238,15 +241,19 @@
   list-style: none;
   text-align: center;
 }
+.calendar-weeks__list{
+  margin-top: 0;
+  margin-bottom: 14px;
+}
 
 .calendar .days {
- margin-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .calendar li {
   width: calc(100% / 7);
   font-size: 1.07rem;
-  margin-bottom: 14px;
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 400;
@@ -267,7 +274,19 @@
   z-index: 1;
   cursor: pointer;
   position: relative;
-  margin-bottom: 12px;
+}
+.calendar .days .inactive{
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.79;
+  letter-spacing: 0.38px;
+  color: #000000;
+  opacity: 40%;
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
 }
 
 .calendar .days li:nth-last-child(-n + 7) {
