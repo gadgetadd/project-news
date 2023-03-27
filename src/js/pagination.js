@@ -41,7 +41,7 @@ function setPageParam(response) {
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
 }
 
-function typeOfDevice() {
+export function typeOfDevice() {
   if (window.matchMedia('(max-width:767px)').matches) {
     return 'mobile';
   } else if (window.matchMedia('(min-width:1280px)').matches) {
