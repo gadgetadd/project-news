@@ -28,12 +28,14 @@ function generateButtonsMarkup(data) {
 }
 
 function generateFilter(buttons, select) {
-  return `<ul id="categories" class="categories-wrapper list"> 
+  return `<ul id="categories" class="categories-wrapper"> 
         ${generateButtonsMarkup(buttons)}     
        <li class="categories__item">
         <div class="select-menu">
           <button class="categories__button select" type="button">
-            <span>Others</span>
+            <span>${
+              getCurrentStateIndex() === 0 ? 'Categories' : 'Others'
+            }</span>
             <svg class="categories__icon" width="14" height="14">
               <use href="${sprite}#arrow_down"></use>
             </svg>
