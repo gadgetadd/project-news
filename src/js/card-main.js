@@ -1,8 +1,6 @@
 import sprite from '../images/icons.svg';
 
-const cardsNewsBoxEl = document.querySelector('.card-wrap');
-// const cardNewsEl = document.querySelector('.news');
-// const weatherCard = document.querySelector('.weather-card');
+const cardsNewsEl = document.querySelector('.news');
 
 const normalizeDate = date => {
   const zero = '0';
@@ -88,50 +86,51 @@ function renderCardsNews(card) {
     const date = new Date(element.date);
     const { day, month, year } = normalizeDate(date);
     return `
-          <li class="news__item">
-              <div class="news__card">
-                  <div class="news__img">
-                      <picture>
-                      <source
-                          srcset="${element.image}"
-                          media="(max-width: 767px)"
-                          width="288"
-                          height="395"
-                      />
-                      <source
-                          srcset="${element.image}"
-                          media="(max-width: 1279px)"
-                          width="353"
-                          height="395"
-                      />
-                      <img
-                          srcset="${element.image}"
-                          src="${element.image}"
-                          alt=""
-                          width="395"
-                          height="395"
-                      />
-                      </picture>
+      
+            <li class="news__item">
+                <div class="news__card">
+                    <div class="news__img">
+                        <picture>
+                        <source
+                            srcset="${element.image}"
+                            media="(max-width: 767px)"
+                            width="288"
+                            height="395"
+                        />
+                        <source
+                            srcset="${element.image}"
+                            media="(max-width: 1279px)"
+                            width="353"
+                            height="395"
+                        />
+                        <img
+                            srcset="${element.image}"
+                            src="${element.image}"
+                            alt=""
+                            width="395"
+                            height="395"
+                        />
+                        </picture>
 
-                      <p class="news__category">${element.category}</p>
+                        <p class="news__category">${element.category}</p>
 
-                      <button type="button" class="button-card">
-                      Add to favorite
-                      <svg class="button-card-icon" width="16" height="16">
-                          <use href="${sprite}#icons_heart"></use>
-                      </svg>
-                      </button>
-                  </div>
-                  <h1 class="news__title">${element.title}</h1>
-                  <p class="news__text">
-                      ${element.descr}
-                  </p>
-              </div>
-              <div class="news__info">
-                  <time datetime="${element.date}" class="news__time">${day}/${month}/${year}</time>
-                  <a class="news__link" href="${element.url}">Read more</a>
-              </div>
-          </li>`;
+                        <button type="button" class="button-card">
+                        Add to favorite
+                        <svg class="button-card-icon" width="16" height="16">
+                            <use href="${sprite}#icons_heart"></use>
+                        </svg>
+                        </button>
+                    </div>
+                    <h1 class="news__title">${element.title}</h1>
+                    <p class="news__text">
+                        ${element.descr}
+                    </p>
+                </div>
+                <div class="news__info">
+                    <time datetime="${element.date}" class="news__time">${day}/${month}/${year}</time>
+                    <a class="news__link" href="${element.url}">Read more</a>
+                </div>
+            </li>`;
   });
 }
 
@@ -153,4 +152,4 @@ detectViewport(elementsArray);
 
 const markup = elementsArray.join('');
 
-cardsNewsBoxEl.insertAdjacentHTML('afterbegin', markup);
+cardsNewsEl.insertAdjacentHTML('afterbegin', markup);
