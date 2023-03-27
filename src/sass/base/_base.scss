@@ -1,10 +1,10 @@
 body {
   //     background-color: ;
   //     color: ;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 16px;
-  color: #111321;
-  background-color: #f4f4f4;
+  color: $darkTextColor;
+  background-color: $lightBgColor;
 }
 
 h1,
@@ -24,8 +24,8 @@ a {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  // height: auto;
 }
 .container {
   margin-right: auto;
