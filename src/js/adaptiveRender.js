@@ -18,13 +18,11 @@ function getCurrentStateIndex() {
 
 
 function onResize() {
-  console.log(1);
-  const newState = getCurrentStateIndex();
+   const newState = getCurrentStateIndex();
   if (newState !== currentState) {
     currentState = newState;
     // Сюди додати імпортовані функції рендеру
     renderFilter();
-    // 
-    // 
+   
   }
 }
