@@ -37,7 +37,7 @@ const renderArticles = articles => {
     const date = new Date(el.date);
     const { day, month, year } = normalizeDate(date);
     return (acc += `
-    <li class="news__item" id="${element.id}">
+    <li class="news__item" id="${el.id}">
     <div class="news__card">
         <div class="news__img">
           <div class="news__img-wrap">
