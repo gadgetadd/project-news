@@ -1,7 +1,11 @@
 import { categories } from './categories';
 import sprite from '../../images/icons.svg';
+import { typeOfDevice } from '../pagination';
+import throttle from 'lodash.throttle';
 
 const wrapper = document.querySelector('.category-wrapper');
+let currentState = getCurrentStateIndex();
+window.addEventListener('resize', throttle(onResize, 300));
 renderFilter();
 
 function generateSelectMarkup(data) {
@@ -13,45 +17,30 @@ function generateSelectMarkup(data) {
 }
 
 function generateButtonsMarkup(data) {
-  return data.reduce((markup, ctg) => {
-    return (markup += `
+  return data
+    ? data.reduce((markup, ctg) => {
+        return (markup += `
 <li class="categories__item">
         <button type="button" class="categories__button">${ctg}</button>
       </li>`);
-  }, '');
+      }, '')
+    : '';
 }
 
-function generateMobileMarkup(data) {
-  return `
-<div class="select-menu">
-  <button class="categories__button select" type="button">
-    <span>Categories</span>
-    <svg class="categories__icon" width="14" height="14">
-      <use href='${sprite}#arrow_down'></use>
-    </svg>
-  </button>
-  <div class="select__list">
-    <div class="select__wrapper">${generateSelectMarkup(data)}</div>
-  </div>
-</div>
-`;
-}
-
-function generateTabletMarkup(data) {
-  const buttons = data.slice(0, 4);
-  const select = data.slice(4);
-
-  return `<ul id="categories" class="categories-wrapper list"> 
+function generateFilter(buttons, select) {
+  return `<ul id="categories" class="categories-wrapper"> 
         ${generateButtonsMarkup(buttons)}     
        <li class="categories__item">
         <div class="select-menu">
           <button class="categories__button select" type="button">
-            <span> Others</span>
+            <span>${
+              getCurrentStateIndex() === 0 ? 'Categories' : 'Others'
+            }</span>
             <svg class="categories__icon" width="14" height="14">
               <use href="${sprite}#arrow_down"></use>
             </svg>
           </button>
-          <div class="select__list list">
+          <div class="select__list">
             <div class="select__wrapper">${generateSelectMarkup(select)}</div>
           </div>
         </div>
@@ -59,35 +48,43 @@ function generateTabletMarkup(data) {
     </ul>`;
 }
 
-function generateDesktopMarkup(data) {
-  const buttons = data.slice(0, 6);
-  const select = data.slice(6);
-
-  return `<ul id="categories" class="categories-wrapper list"> 
-        ${generateButtonsMarkup(buttons)}     
-       <li class="categories__item">
-        <div class="select-menu">
-          <button class="categories__button select" type="button">
-            <span> Others</span>
-            <svg class="categories__icon" width="14" height="14">
-              <use href="${sprite}#arrow_down"></use>
-            </svg>
-          </button>
-          <div class="select__list list">
-            <div class="select__wrapper">${generateSelectMarkup(select)}</div>
-          </div>
-        </div>
-      </li>
-    </ul>`;
-}
-
-function selectLayout(data) {
-  if (window.innerWidth < 768) return generateMobileMarkup(data);
-  if (window.innerWidth < 1280) return generateTabletMarkup(data);
-  return generateDesktopMarkup(data);
+function generateMarkup(data) {
+  const device = typeOfDevice();
+  let buttons;
+  let select;
+  if (device === 'mobile') {
+    buttons = null;
+    select = data;
+  } else if (device === 'tablet') {
+    buttons = data.slice(0, 4);
+    select = data.slice(4);
+  } else if (device === 'desktop') {
+    buttons = data.slice(0, 6);
+    select = data.slice(6);
+  }
+  return generateFilter(buttons, select);
 }
 
 export function renderFilter() {
-  const filter = selectLayout(categories);
+  const filter = generateMarkup(categories);
   wrapper.innerHTML = filter;
+}
+
+function getCurrentStateIndex() {
+  const width = window.innerWidth;
+  if (width < 768) {
+    return 0;
+  } else if (width < 1280) {
+    return 1;
+  } else {
+    return 2;
+  }
+}
+
+function onResize() {
+  const newState = getCurrentStateIndex();
+  if (newState !== currentState) {
+    currentState = newState;
+    renderFilter();
+  }
 }
