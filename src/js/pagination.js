@@ -15,6 +15,7 @@ import { Popular, Category, Search } from './NewsAPI';
 import { createCardsMarkup } from './card-main';
 import { weatherByGeolocation } from './geolocation.js';
 import { Spinner } from 'spin.js';
+import { addToRead } from './addToRead.js';
 import 'spin.js/spin.css';
 
 const cardsNewsEl = document.querySelector('.news');
@@ -297,11 +298,13 @@ export function renderPopular(data, weather) {
   const news = createCardsMarkup(data);
   const markup = detectViewport(news, weather).join('');
   cardsNewsEl.innerHTML = markup;
+  addToRead();
 }
 
 function renderDefault(data) {
   const markup = createCardsMarkup(data).join('');
   cardsNewsEl.innerHTML = markup;
+  addToRead();
 }
 
 export const firstPageData = createPagination.popular();

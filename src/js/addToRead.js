@@ -17,7 +17,7 @@ const alreadyRead = (elem) => {
     elem.insertAdjacentHTML('beforeend', isRead)
 };
 
-const addToRead = () => {
+export const addToRead = () => {
     if (!(localStorage.getItem('readArticles'))) {
         localStorage.setItem('readArticles', JSON.stringify({}));
     };
@@ -62,4 +62,4 @@ const addToRead = () => {
 };
 
 
-setTimeout(addToRead, 1000);
+// setTimeout(addToRead, 1000);
