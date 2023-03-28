@@ -1,4 +1,5 @@
 import { createPagination } from './pagination';
+import { getDate } from './search';
 
 const select = document.querySelector('.select');
 const select__list = document.querySelector('.select__list');
@@ -26,14 +27,14 @@ options.forEach(option => {
     select.classList.add('active-category');
     select__list.classList.toggle('active');
     select.querySelector('.categories__icon').classList.toggle('inverted');
-    createPagination.category(option.textContent);
+    createPagination.category(option.textContent, getDate());
   });
 });
 
 ctgBtns.forEach(ctgBtn => {
   ctgBtn.addEventListener('click', e => {
     if (e.currentTarget.classList.contains('standalone')) {
-      createPagination.category(e.currentTarget.textContent);
+      createPagination.category(e.currentTarget.textContent, getDate());
     }
 
     ctgBtns.forEach(ctgBtn => {
