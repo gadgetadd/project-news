@@ -7,10 +7,10 @@ function addToFavorite(e) {
   // Отримати інформацію про додану новину
 
   if (!e.target.closest('.button-card')) {
-   return
+    return;
   }
- const newsCard = e.target.closest('.news__item');
- console.log(newsCard);
+  const newsCard = e.target.closest('.news__item');
+  console.log(newsCard);
   // // Отримати масив новин, які вже додані в обране (якщо такі є)
   // let favoriteNews = JSON.parse(localStorage.getItem('favoriteNews')) || [];
   // console.log('favoriteNews', favoriteNews);
