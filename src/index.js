@@ -5,8 +5,6 @@ import './js/card-main.js';
 import './js/mobile-menu.js';
 import './js/select-menu.js';
 import './js/switch';
+import './js/calendar.js';
+import './js/search.js';
 import './js/addToRead';
-
-// import { addToRead } from './js/addToRead';
-
-// addToRead();
