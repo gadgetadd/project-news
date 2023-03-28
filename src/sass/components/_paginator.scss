@@ -3,7 +3,7 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  font-family: "Manrope";
+  font-family: 'Manrope';
   font-weight: 500;
   font-size: 14px;
   line-height: 1.375;
@@ -62,6 +62,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    color: $darkTextColor;
 
     @media screen and (min-width: 768px) {
       width: 33px;
@@ -90,7 +91,7 @@
   display: flex;
   gap: 8px;
   justify-content: center;
-  font-family: "Manrope";
+  font-family: 'Manrope';
   font-weight: 500;
   font-size: 14px;
   line-height: 1.375;

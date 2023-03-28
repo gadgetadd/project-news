@@ -54,6 +54,7 @@
     fill: $whiteColor;
     width: 12px;
     height: 15px;
+    margin-left: 10px;
   }
   .weather-card__geolocation__text {
     color: $whiteColor;
@@ -100,6 +101,9 @@
     width: 353px;
     height: 675px;
   }
+  .weather-card__date {
+    margin: 90px 0 0;
+  }
 }
 @media screen and (min-width: 1280px) {
   .weather-card {
@@ -124,18 +128,19 @@
   }
   .weather-card__geolocation {
     margin: 0 0 0 8px;
-    width: 177px;
-    height: 42px;
+    // width: 177px;
+    // height: 42px;
     left: 112px;
     top: 42px;
   }
   .weather-card__geolocation__text {
     font-size: 20px;
     line-height: 1.15;
-    margin-left: 12px;
+    margin-right: 17px;
   }
   .weather-card__geoelocation__icon {
     fill: $whiteColor;
+    margin: 0 12px;
     width: 18px;
     height: 23px;
   }

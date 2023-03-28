@@ -23,11 +23,16 @@
   gap: 24px;
   margin-top: auto;
   margin-bottom: auto;
+
+  @media screen and (max-width: 767px) {
+      width: 320px;
+      margin: auto;
+    }
 }
 
 .site-nav__item {
   display: flex;
-  font-family: 'Manrope' sans-serif;
+  font-family: "Manrope" sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -43,10 +48,7 @@
   &:focus {
     background-color: $accentColor;
     color: $lightBgColor;
-    // .icon-home {
-    //   border: $lightBgColor;
-    // }
-
+    
     .arrow-right {
       display: block;
     }
@@ -85,8 +87,10 @@
   }
 
   .site-nav {
+    display: flex;
     flex-direction: row;
-    gap: 44px;
+    justify-content: start;
+    gap: 24px;
     margin-top: auto;
     margin-bottom: auto;
   }
