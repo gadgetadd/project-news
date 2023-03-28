@@ -40,38 +40,42 @@ const renderArticles = articles => {
                 <li class="news__item">
                     <div class="news__card">
                         <div class="news__img">
-                            <picture>
-                            <source
-                                srcset="${el.image}"
-                                media="(max-width: 767px)"
-                                width="288"
-                                height="395"
-                            />
-                            <source
-                                srcset="${el.image}"
-                                media="(max-width: 1279px)"
-                                width="353"
-                                height="395"
-                            />
-                            <img
-                                srcset="${el.image}"
-                                src="${el.image}"
-                                alt=""
-                                width="395"
-                                height="395"
-                            />
-                            </picture>
+                            <div class="news__img-wrap">
+                                <picture>
+                                <source
+                                    srcset="${el.image}"
+                                    media="(max-width: 767px)"
+                                    width="288"
+                                    height="395"
+                                />
+                                <source
+                                    srcset="${el.image}"
+                                    media="(max-width: 1279px)"
+                                    width="353"
+                                    height="395"
+                                />
+                                <img
+                                    srcset="${el.image}"
+                                    src="${el.image}"
+                                    alt=""
+                                    width="395"
+                                    height="395"
+                                />
+                                </picture>
+                            </div>
 
                             <p class="news__category">${el.category}</p>
 
                             <button type="button" class="button-card">
-                            Add to favorite
-                            <svg class="button-card-icon" width="16" height="16">
-                                <use href="${sprite}#icons_heart"></use>
-                            </svg>
+                                Add to favorite
+                                <svg class="button-card-icon" width="16" height="16">
+                                    <use href="${sprite}#icons_heart"></use>
+                                </svg>
                             </button>
                         </div>
+                        <div class="news__title-wrap">
                         <h1 class="news__title">${el.title}</h1>
+                        </div>
                         <p class="news__text">
                             ${el.descr}
                         </p>
