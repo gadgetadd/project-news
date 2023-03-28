@@ -1,4 +1,5 @@
 import sprite from '../images/icons.svg';
+<<<<<<< HEAD
 import { Spinner } from 'spin.js';
 import 'spin.js/spin.css';
 
@@ -26,6 +27,8 @@ const opts = {
 };
 
 const spinner = new Spinner(opts);
+=======
+>>>>>>> main
 
 const normalizeDate = date => {
   const zero = '0';
@@ -49,6 +52,7 @@ const normalizeDate = date => {
   return normalDate;
 };
 
+<<<<<<< HEAD
 // const renderArticles = articles => {
 //   const list = document.createElement('ul');
 //   list.classList.add('news');
@@ -108,15 +112,22 @@ const normalizeDate = date => {
 const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const weather = '<div class="card-wrap__weather">555</div>';
 
+=======
+>>>>>>> main
 export function createCardsMarkup(card) {
   return card.map(element => {
     const date = new Date(element.date);
     const { day, month, year } = normalizeDate(date);
     return `
       
+<<<<<<< HEAD
             <li class="news__item" id="${element.id}">
+=======
+            <li class="news__item" id="${element.id}>
+>>>>>>> main
                 <div class="news__card">
                     <div class="news__img">
+                    <div class="news__img-wrap">
                         <picture>
                         <source
                             srcset="${element.image}"
@@ -131,6 +142,7 @@ export function createCardsMarkup(card) {
                             height="395"
                         />
                         <img
+                            class="news__image"
                             srcset="${element.image}"
                             src="${element.image}"
                             alt=""
@@ -138,6 +150,7 @@ export function createCardsMarkup(card) {
                             height="395"
                         />
                         </picture>
+                        </div>
 
                         <p class="news__category">${element.category}</p>
 
@@ -148,38 +161,17 @@ export function createCardsMarkup(card) {
                         </svg>
                         </button>
                     </div>
+                    <div class="news__title-wrap">
                     <h1 class="news__title">${element.title}</h1>
+                    </div>
                     <p class="news__text">
                         ${element.descr}
-                    </p>
-                </div>
+                    </p>                
                 <div class="news__info">
                     <time datetime="${element.date}" class="news__time">${day}/${month}/${year}</time>
                     <a class="news__link" href="${element.url}">Read more</a>
                 </div>
+                </div>
             </li>`;
   });
 }
-
-function detectViewport(arr) {
-  if (window.innerWidth < 768) {
-    arr.splice(0, 0, weather);
-  } else if (window.innerWidth < 1280) {
-    arr.splice(1, 0, weather);
-  } else {
-    arr.splice(2, 0, weather);
-  }
-}
-
-function renderCardsNews(array) {
-  spinner.spin(cardsNewsEl);
-  const elementsArray = createCardsMarkup(array);
-  detectViewport(elementsArray);
-  const markup = elementsArray.join('');
-  setTimeout(() => {
-    spinner.stop();
-    cardsNewsEl.innerHTML = markup;
-  }, 5000);
-}
-
-renderCardsNews(array);

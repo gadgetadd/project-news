@@ -16,10 +16,10 @@ export async function weatherByGeolocation() {
     );
     const result = await response.json();
     const weather = await fetchWeather(result.features[0].properties.city);
-    console.log(weather);
+    return weather;
   } catch (error) {
     console.log('Error:', error);
     const weather = await fetchWeather('New York');
-    console.log(weather);
+    return weather;
   }
 }
