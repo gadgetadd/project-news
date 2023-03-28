@@ -1,4 +1,4 @@
-<header class="page-header">
+<header>
   <div class="container">
     <section class="header">
       <a href="./index.html" class="logo">News</a>
@@ -10,9 +10,7 @@
                 <use href="./images/icons.svg#home"></use></svg
               >Home
               <svg width="24" height="24" class="arrow-right">
-                <use
-                  href="./images/icons.svg#arrow-right"
-                ></use>
+                <use href="./images/icons.svg#arrow-right"></use>
               </svg>
             </a>
           </li>
@@ -22,9 +20,7 @@
                 <use href="./images/icons.svg#like"></use></svg
               >Favorite
               <svg width="24" height="24" class="arrow-right">
-                <use
-                  href="./images/icons.svg#arrow-right"
-                ></use></svg
+                <use href="./images/icons.svg#arrow-right"></use></svg
             ></a>
           </li>
           <li>
@@ -32,23 +28,21 @@
               ><svg width="32" height="32" class="icon-menu">
                 <use href="./images/icons.svg#book"></use></svg
               >Read<svg width="24" height="24" class="arrow-right">
-                <use
-                  href="./images/icons.svg#arrow-right"
-                ></use></svg
+                <use href="./images/icons.svg#arrow-right"></use></svg
             ></a>
           </li>
         </ul>
       </div>
-      
+
       <div class="menu-btn">
-        <div class="search" data-menu-button2>
+        <form class="search" data-menu-button2>
           <input type="text" class="search-input" placeholder="Search  |" />
-          <div class="search-symbol">
+          <button type="submit" class="search-symbol">
             <svg class="search-lens">
               <use href="./images/icons.svg#search" />
             </svg>
-          </div>
-        </div>
+          </button>
+        </form>
         <button
           type="button"
           class="menu-btn_menu"
@@ -57,10 +51,7 @@
           data-menu-button
         >
           <svg width="24" height="24" aria-label="Перемикач мобільного меню">
-            <use
-              class="icon-close"
-              href="./images/icons.svg#x"
-            ></use>
+            <use class="icon-close" href="./images/icons.svg#x"></use>
             <use
               class="icon-menu"
               width="24"
@@ -76,7 +67,7 @@
         </svg>
         <p class="switch-light">Light</p>
         <label class="switch">
-          <input type="checkbox" class="switch__input">
+          <input type="checkbox" class="switch__input" />
           <span class="switch__slider"></span>
         </label>
         <svg width="21" height="21" class="icon-moon">
@@ -86,4 +77,5 @@
       </div>
     </section>
   </div>
+  <hr />
 </header>
