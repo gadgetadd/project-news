@@ -3,18 +3,25 @@
   display: flex;
   gap: 10px;
   justify-content: center;
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-weight: 500;
   font-size: 14px;
   line-height: 1.375;
   height: 28px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 
   @media screen and (min-width: 768px) {
     gap: 8px;
     font-size: 16px;
     height: 31px;
+    margin-top: 48px;
+    margin-bottom: 100px;
   }
-
+  @media screen and (min-width: 1280px) {
+    margin-top: 60px;
+    margin-bottom: 150px;
+  }
 
   &__button {
     display: flex;
@@ -83,7 +90,7 @@
   display: flex;
   gap: 8px;
   justify-content: center;
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-weight: 500;
   font-size: 14px;
   line-height: 1.375;
