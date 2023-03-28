@@ -1,0 +1,148 @@
+
+@media screen and (min-width: 320px) {
+  .filter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0 40px 0;
+  }
+}
+@media screen and (min-width: 768px) {
+.filter-wrapper {
+    padding: 28px 0 48px 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filter-wrapper {
+      padding: 28px 40px 60px 0;
+    }
+}
+.categories-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.categories__button {
+  max-height: 31px;
+  border: 1px solid $accentColor;
+  border-radius: 20px;
+  padding: 8px 21px;
+  text-align: center;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: $accentColor;
+  background-color: $whiteColor;
+  cursor: pointer;
+}
+.categories__button:hover,
+.categories__button:focus,
+.categories__button.selected {
+  color: $whiteColor;
+  background-color: $accentBgColor;
+}
+
+.categories__icon {
+  stroke: currentColor;
+  fill: currentColor;
+  transition: transform 0.4s linear 0.2s;
+}
+
+.categories__icon.inverted {
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 320px) {
+  .select-menu {
+    width: 148px;
+    position: relative;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 768px) {
+  .select-menu {
+    width: 168px;
+  }
+}
+@media screen and (min-width: 320px) {
+  .select {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    fill: currentColor;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .select {
+    gap: 10px;
+  }
+}
+.select__list {
+  position: absolute;
+  width: 100%;
+  max-height: 380px;
+  margin: 0;
+  border-radius: 20px;
+
+  background-color: $selectBgColor;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+  color: $accentColor;
+  overflow-y: hidden;
+  transition: 0.4s linear 0.2s;
+  // прибирається випадалка
+  height: 0;
+  z-index: 1;
+}
+
+.select__list.active {
+  height: 380px;
+}
+
+.select__wrapper {
+  overflow-y: scroll;
+  padding: 0 24px;
+  width: 100%;
+  height: 100%;
+}
+
+.select__wrapper::-webkit-scrollbar {
+  width: 1px;
+  background-color: $whiteColor;
+}
+
+.select__wrapper::-webkit-scrollbar-thumb {
+  width: 1px;
+  background-color: $accentColor;
+}
+
+.options {
+  padding: 12px 0;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+  color: $accentColor;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.options.active,
+.options.selected {
+  text-decoration: underline;
+  color: $accentBgColor;
+}
+.active-category {
+  color: $whiteColor;
+  background-color: $accentBgColor;
+}

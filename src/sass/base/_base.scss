@@ -3,6 +3,8 @@ body {
   //     color: ;
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
+  color: $darkTextColor;
+  background-color: $lightBgColor;
 }
 
 h1,
@@ -12,13 +14,32 @@ h4,
 h5,
 h6,
 p,
-ul {
+ul,
+a {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-width: 320px;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
 }

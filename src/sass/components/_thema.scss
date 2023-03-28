@@ -1,0 +1,41 @@
+.checkbox-container {
+  z-index: 2;
+  gap: 9px;
+  position: absolute;
+  display: none;
+  flex-direction: row;
+  top: auto;
+  bottom: 20px;
+  height: 21px;
+  align-items: center;
+  cursor: pointer;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    position: static;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .checkbox-container {
+    display: flex;
+    flex-direction: row;
+    width: 148px;
+    height: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon-sun {
+    display: none;
+  }
+  .icon-moon {
+    display: none;
+  }
+}

@@ -1,0 +1,81 @@
+<header>
+  <div class="container">
+    <section class="header">
+      <a href="./index.html" class="logo">News</a>
+      <div class="menu-container" id="menu-container" data-menu>
+        <ul class="site-nav">
+          <li>
+            <a href="./index.html" class="site-nav__item">
+              <svg width="32" height="32" class="icon-menu">
+                <use href="./images/icons.svg#home"></use></svg
+              >Home
+              <svg width="24" height="24" class="arrow-right">
+                <use href="./images/icons.svg#arrow-right"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="./favorite.html" class="site-nav__item"
+              ><svg width="32" height="32" class="icon-menu">
+                <use href="./images/icons.svg#like"></use></svg
+              >Favorite
+              <svg width="24" height="24" class="arrow-right">
+                <use href="./images/icons.svg#arrow-right"></use></svg
+            ></a>
+          </li>
+          <li>
+            <a href="./read.html" class="site-nav__item"
+              ><svg width="32" height="32" class="icon-menu">
+                <use href="./images/icons.svg#book"></use></svg
+              >Read<svg width="24" height="24" class="arrow-right">
+                <use href="./images/icons.svg#arrow-right"></use></svg
+            ></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="menu-btn">
+        <form class="search" data-menu-button2>
+          <input type="text" class="search-input" placeholder="Search  |" />
+          <button type="submit" class="search-symbol">
+            <svg class="search-lens">
+              <use href="./images/icons.svg#search" />
+            </svg>
+          </button>
+        </form>
+        <button
+          type="button"
+          class="menu-btn_menu"
+          aria-expanded="false"
+          aria-controls="menu-container"
+          data-menu-button
+        >
+          <svg width="24" height="24" aria-label="Перемикач мобільного меню">
+            <use class="icon-close" href="./images/icons.svg#x"></use>
+            <use
+              class="icon-menu"
+              width="24"
+              height="24"
+              href="./images/icons.svg#menu"
+            ></use>
+          </svg>
+        </button>
+      </div>
+      <div class="checkbox-container" data-thema>
+        <svg width="21" height="21" class="icon-sun">
+          <use href="./images/icons.svg#icon-sun"></use>
+        </svg>
+        <p class="switch-light">Light</p>
+        <label class="switch">
+          <input type="checkbox" class="switch__input" />
+          <span class="switch__slider"></span>
+        </label>
+        <svg width="21" height="21" class="icon-moon">
+          <use href="./images/icons.svg#icon-moon"></use>
+        </svg>
+        <p class="switch-dark">Dark</p>
+      </div>
+    </section>
+  </div>
+  <hr />
+</header>
