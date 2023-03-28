@@ -1,3 +1,5 @@
+import { createPagination } from './pagination';
+
 const select = document.querySelector('.select');
 const select__list = document.querySelector('.select__list');
 const options = document.querySelectorAll('.options');
@@ -19,16 +21,21 @@ options.forEach(option => {
     options.forEach(option => {
       option.classList.remove('selected');
     });
-    select.querySelector('span').innerHTML = option.innerHTML;
+    select.querySelector('span').textContent = option.textContent;
     option.classList.add('selected');
     select.classList.add('active-category');
-
     select__list.classList.toggle('active');
     select.querySelector('.categories__icon').classList.toggle('inverted');
+    createPagination.category(option.textContent);
   });
 });
+
 ctgBtns.forEach(ctgBtn => {
-  ctgBtn.addEventListener('click', () => {
+  ctgBtn.addEventListener('click', e => {
+    if (e.currentTarget.classList.contains('standalone')) {
+      createPagination.category(e.currentTarget.textContent);
+    }
+
     ctgBtns.forEach(ctgBtn => {
       ctgBtn.classList.remove('active');
     });

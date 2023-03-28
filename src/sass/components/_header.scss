@@ -1,8 +1,7 @@
-.page-header {
-  // position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
-
 .header {
   display: flex;
   height: 33px;
@@ -21,57 +20,59 @@
   height: 31px;
   position: relative;
   overflow: hidden;
-  border-radius: 25px;
-  display: flex;
+  border-radius: 50px;
   justify-content: center;
   align-items: center;
-  & > .search-input:focus{
-    border: 1px solid;
-    border-radius: 25px;
-  }
-  
+
   &.is-open .search-symbol {
     display: flex;
   }
 
   .search-input {
+    z-index: 2;
+    opacity: 0;
     position: relative;
-    width: 20px;
+    width: 31px;
     height: 31px;
+    padding: 0 0 0 16px;
     color: inherit;
+    background-color: $lightBgColor;
     border: 0;
     box-sizing: border-box;
     outline: none;
-    padding: 0 0 0 32px;
     transition: width 0.9s ease;
-    z-index: 2;
-    opacity: 0;
     cursor: pointer;
-    background-color: inherit;
+    
 
     &:focus {
-      z-index: 0;
+      z-index: 2;
       opacity: 1;
       width: 173px;
+      border: 1px solid $darkTextColor;
+      border-radius: 50px;
     }
   }
 
   .search-symbol {
+    z-index: 1;
+    opacity: 1;
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0;
-    z-index: 1;
+    // top: 0;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: center;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: $lightBgColor;
 
     .search-lens {
       fill: inherit;
       width: 20px;
       height: 20px;
-      z-index: 1;
-      margin-left: 5px;
+      margin-right: 5px;
     }
   }
 }
@@ -83,7 +84,7 @@
 }
 
 .menu-btn_menu {
-  z-index: 2;
+  z-index: 3;
   display: block;
   width: 24px;
   height: 24px;
@@ -127,23 +128,23 @@
   }
   .search {
     width: auto;
-    border: 1px solid black;
+    border: 1px solid $darkTextColor;
+
     .search-input {
       position: static;
       width: 213px;
-      z-index: 1;
       opacity: 1;
       &:focus {
-        z-index: 1;
-        opacity: 1;
         width: 213px;
+        border: none;
       }
     }
     .search-symbol {
-      height: 100%;
-      width: 25px;
-      left: 0;
-      z-index: 1;
+      z-index: 2;
+      height: 31px;
+      width: 31px;
+      right: 0;
+      background-color: $lightBgColor;
     }
   }
 }
@@ -154,7 +155,6 @@
     width: auto;
 
     .search-input {
-      position: static;
       width: 288px;
 
       &:focus {
@@ -163,9 +163,9 @@
     }
   }
 }
-.icon-sun{
-  stroke: #4B48DB;
+.icon-sun {
+  stroke: $accentBgColor;
 }
-.icon-moon{
-  stroke: #5F6775;
+.icon-moon {
+  stroke: $darkCheckColor;
 }
