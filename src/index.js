@@ -6,11 +6,11 @@ import './js/mobile-menu.js';
 import './js/select-menu.js';
 import './js/switch';
 <<<<<<< HEAD
-import './js/adaptiveRender';
-import './favorite';
+
 =======
 import './js/addToRead';
-
+// import './js/adaptiveRender';
+import './favorite';
 
 // import { addToRead } from './js/addToRead';
 
