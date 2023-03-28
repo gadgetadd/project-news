@@ -7,4 +7,4 @@ import './js/select-menu.js';
 import './js/switch.js';
 import './js/calendar.js';
 import './js/search.js';
-import './js/addToRead';
+import './js/addToRead.js';
