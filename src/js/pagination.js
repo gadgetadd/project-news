@@ -298,9 +298,9 @@ function handleButtonRight() {
 
 // Функція для першої сторінки
 function detectViewport(news, weather) {
-  if (window.innerWidth < 768) {
+  if (typeOfDevice() === 'mobile') {
     news.splice(0, 0, weather);
-  } else if (window.innerWidth < 1280) {
+  } else if (typeOfDevice() === 'tablet') {
     news.splice(1, 0, weather);
   } else {
     news.splice(2, 0, weather);
