@@ -26,7 +26,7 @@ const addingInFavorite = (el, arr, id) => {
 };
 
 const removingIntoFavorite = (el, arr = [], id) => {
-    index = arr.findIndex((elem) => elem.id === id);
+    const index = arr.findIndex((elem) => elem.id === id);
     arr.splice(index, 1);
     localStorage.setItem('favoriteArticles', JSON.stringify(arr));
 
