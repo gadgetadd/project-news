@@ -17,7 +17,12 @@ const alreadyRead = (elem) => {
     elem.insertAdjacentHTML('beforeend', isRead)
 };
 
-export const addToRead = () => {
+const addToRead = () => {
+    if (!(localStorage.getItem('readArticles'))) {
+        localStorage.setItem('readArticles', JSON.stringify({}));
+    };
+
+
     const AllArticles = document.querySelectorAll('.news__item');
     const articlesRead = { ...(JSON.parse(localStorage.getItem('readArticles'))) };
 
@@ -26,22 +31,22 @@ export const addToRead = () => {
 
         for (const key in articlesRead) {
             if (key === el.children[1].children[0].attributes[0].value) {
-                if (availabilityCheck(articlesRead[key], el.children[0].children[1].textContent)) {
+                if (availabilityCheck(articlesRead[key], el.children[0].children[1].innerText)) {
                     alreadyRead(el);
                 };
             };
-        }
+        };
 
         el.children[1].children[1].addEventListener('click', (evt) => {
             const article = {
                 category: el.children[0].children[0].children[1].textContent,
                 date: el.children[1].children[0].attributes[0].value,
                 descr: el.children[0].children[2].innerText,
-                image: el.children[0].children[0].children[0].children[2].attributes[1].value,
-                title: el.children[0].children[1].textContent,
+                image: el.children[0].children[0].children[0].children[0].children[2].attributes[1].value,
+                title: el.children[0].children[1].innerText,
                 url: el.children[1].children[1].attributes[1].value,
             };
-            
+
             if (article.date in articlesRead) {
                 if (availabilityCheck(articlesRead[article.date], article.title)) {
                     return
@@ -56,4 +61,5 @@ export const addToRead = () => {
     };
 };
 
-addToRead();
+
+setTimeout(addToRead, 1000);
