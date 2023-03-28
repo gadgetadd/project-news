@@ -42,7 +42,6 @@ hr {
     outline: none;
     transition: width 0.9s ease;
     cursor: pointer;
-    
 
     &:focus {
       z-index: 2;
@@ -69,7 +68,7 @@ hr {
     background-color: $lightBgColor;
 
     .search-lens {
-      fill: $darkTextColor;
+      fill: inherit;
       width: 20px;
       height: 20px;
       margin-right: 5px;
