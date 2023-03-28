@@ -1,13 +1,13 @@
-const daysTag = document.querySelector('.days'),
-  currentDate = document.querySelector('.current-date'),
-  prevNextIcon = document.querySelectorAll('.calendar-icons span');
-  yearChosingIcon = document.querySelectorAll('.wrapper-current-date span');
+const daysTag = document.querySelector('.days');
+const currentDate = document.querySelector('.current-date');
+const prevNextIcon = document.querySelectorAll('.calendar-icons span');
+const yearChosingIcon = document.querySelectorAll('.wrapper-current-date span');
 
 // getting new date, current year and month
-let date = new Date(),
-  currDay = date.getDate(),
-  currMonth = date.getMonth(),
-  currYear = date.getFullYear();
+let date = new Date();
+let currDay = date.getDate();
+let currMonth = date.getMonth();
+let currYear = date.getFullYear();
 function showCurrentDate() {
   let value1 = currDay + '-' + (currMonth + 1) + '-' + currYear;
   document.getElementById('input-picker').value = value1;
@@ -56,14 +56,14 @@ function showCurrentDate() {
 
 // storing full name of all months in array
 const days = [
-'Monday',
-'Tuesday',
-'Wednesday',
-'Thursday',
-'Friday',
-'Saturday',
-'Sunday'
-]
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];
 const months = [
   'January',
   'February',
@@ -189,4 +189,3 @@ prevNextIcon.forEach(icon => {
 
 localStorage.removeItem('VALUE');
 localStorage.removeItem('date');
-
