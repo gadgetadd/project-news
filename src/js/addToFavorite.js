@@ -5,7 +5,7 @@ const articleInFavorites = (elem) => {
     elem.children[0].children[0].children[2].children[0].classList.add('button-card-icon-remove');
 };
 
-const addingInFavorite = (el, arr) => {
+const addingInFavorite = (el, arr, id) => {
     const article = {
         id: el.attributes[1].value,
         category: el.children[0].children[0].children[1].textContent,
@@ -21,12 +21,14 @@ const addingInFavorite = (el, arr) => {
     articleInFavorites(el);
 
     el.children[0].children[0].children[2].addEventListener('click', (evt) => {
-        removingIntoFavorite(el, arr);
+        removingIntoFavorite(el, arr, id);
     }, { once: true });
 };
 
-const removingIntoFavorite = (el, arr) => {
-    // index = 
+const removingIntoFavorite = (el, arr = [], id) => {
+    index = arr.findIndex((elem) => elem.id === id);
+    arr.splice(index, 1);
+    localStorage.setItem('favoriteArticles', JSON.stringify(arr));
 
     el.children[0].children[0].children[2].childNodes[0].textContent = 'Add to favorite';
     el.children[0].children[0].children[2].children[0].classList.remove('button-card-icon-remove');
@@ -52,7 +54,7 @@ export const addToFavorite = () => {
         };
 
         el.children[0].children[0].children[2].addEventListener('click', (evt) => {
-            addingInFavorite(el, favoriteArticles);
+            addingInFavorite(el, favoriteArticles, el.attributes[1].value);
         }, { once: true});
     };
 };
@@ -66,7 +68,7 @@ export const removeFromFavorite = () => {
 
         if (favoriteArticles.some((elem) => elem.id === el.attributes[1].value)) {
             el.children[0].children[0].children[2].addEventListener('click', (evt) => {
-                removingIntoFavorite(el, favoriteArticles);
+                removingIntoFavorite(el, favoriteArticles, el.attributes[1].value);
             }, { once: true });
         };
     };
