@@ -110,6 +110,8 @@ export const createPagination = {
   },
 
   async category(cat) {
+    cardsNewsEl.innerHTML = '';
+    spinner.spin(cardsNewsEl);
     valuePage.searchType = 'category';
     const category = new Category(cat);
     const response = await category.get();
@@ -121,6 +123,8 @@ export const createPagination = {
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
+    spinner.stop();
+    renderDefault(itemsToShow);
     // console.log('картки для відмальовки', itemsToShow);
     return itemsToShow;
 
@@ -147,12 +151,12 @@ export const createPagination = {
       search.setPage(valuePage.curPage - 1);
       const response = await search.get();
       // console.log('response :', response);
-      itemsToShow = response.slice(0, valuePage.itemsPerPage);
+      const itemsToShow = response.slice(0, valuePage.itemsPerPage);
       pagination();
       // console.log('картки для відмальовки', itemsToShow);
       return itemsToShow;
     }
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );

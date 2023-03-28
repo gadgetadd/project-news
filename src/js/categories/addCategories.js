@@ -21,7 +21,7 @@ function generateButtonsMarkup(data) {
     ? data.reduce((markup, ctg) => {
         return (markup += `
 <li class="categories__item">
-        <button type="button" class="categories__button">${ctg}</button>
+        <button type="button" class="categories__button standalone">${ctg}</button>
       </li>`);
       }, '')
     : '';
