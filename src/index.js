@@ -5,16 +5,19 @@ import './js/card-main.js';
 import './js/mobile-menu.js';
 import './js/select-menu.js';
 import './js/switch';
-<<<<<<< HEAD
-
-=======
-import './js/adaptiveRender';
-import './favorite';
+<<<<<<< Updated upstream
 import './js/addToRead';
-
 
 
 // import { addToRead } from './js/addToRead';
 
 // addToRead();
->>>>>>> main
+=======
+import './js/adaptiveRender';
+import './favorite';
+import './js/addToRead';
+
+// import { addToRead } from './js/addToRead';
+
+// addToRead();
+>>>>>>> Stashed changes
