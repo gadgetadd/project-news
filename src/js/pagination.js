@@ -15,7 +15,9 @@ import { Popular, Category, Search } from './NewsAPI';
 import { createCardsMarkup } from './card-main';
 import { weatherByGeolocation } from './geolocation.js';
 import { Spinner } from 'spin.js';
+import { addToRead } from './addToRead.js';
 import 'spin.js/spin.css';
+import moment from 'moment/moment';
 
 const cardsNewsEl = document.querySelector('.news');
 const pg = document.getElementById('pagination');
@@ -91,6 +93,7 @@ export const createPagination = {
   async popular() {
     spinner.spin(cardsNewsEl);
     valuePage.searchType = 'popular';
+    valuePage.curPage = 1;
     const popular = new Popular();
     const response = await popular.get();
     valuePage.response = response;
@@ -107,12 +110,20 @@ export const createPagination = {
     return [itemsToShow, weatherCard];
   },
 
-  async category(cat) {
+  async category(cat, date = null) {
     cardsNewsEl.innerHTML = '';
     spinner.spin(cardsNewsEl);
     valuePage.searchType = 'category';
+    valuePage.curPage = 1;
     const category = new Category(cat);
-    const response = await category.get();
+    let response = await category.get();
+    if (date) {
+      normalizedDate = moment(date).format('YYYY-MM-DD');
+      const filteredResponse = response.filter(
+        value => value.date.slice(0, 10) === normalizedDate
+      );
+      response = filteredResponse;
+    }
     valuePage.response = response;
     // console.log('response :', response);
     setPageParam(response);
@@ -126,11 +137,13 @@ export const createPagination = {
     // console.log('картки для відмальовки', itemsToShow);
     return itemsToShow;
   },
+
   async search(input, date = null) {
     cardsNewsEl.innerHTML = '';
     spinner.spin(cardsNewsEl);
     valuePage.searchType = 'search';
     valuePage.searchParam = input;
+    valuePage.curPage = 1;
     const search = new Search(input, date);
     const response = await search.get();
     valuePage.totalHits = search.getHits();
@@ -297,11 +310,13 @@ export function renderPopular(data, weather) {
   const news = createCardsMarkup(data);
   const markup = detectViewport(news, weather).join('');
   cardsNewsEl.innerHTML = markup;
+  addToRead();
 }
 
 function renderDefault(data) {
   const markup = createCardsMarkup(data).join('');
   cardsNewsEl.innerHTML = markup;
+  addToRead();
 }
 
 export const firstPageData = createPagination.popular();
