@@ -9,7 +9,7 @@ srearchRef.addEventListener('submit', (e)=>{
     createPagination.search(valueForSearch, getDate());  
 });
 
-function getDate(){
+export function getDate(){
     const data = JSON.parse(localStorage.getItem('date'));
     if(!data){
         return null;
