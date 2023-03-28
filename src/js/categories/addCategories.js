@@ -1,6 +1,6 @@
 import { categories } from './categories';
 import sprite from '../../images/icons.svg';
-import { typeOfDevice } from '../pagination';
+import { typeOfDevice, firstPageData, renderPopular } from '../pagination';
 import throttle from 'lodash.throttle';
 
 const wrapper = document.querySelector('.category-wrapper');
@@ -86,5 +86,6 @@ function onResize() {
   if (newState !== currentState) {
     currentState = newState;
     renderFilter();
+    firstPageData.then(data => renderPopular(...data)).catch(console.log);
   }
 }

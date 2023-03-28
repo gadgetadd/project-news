@@ -104,7 +104,7 @@ export const createPagination = {
     pagination();
     spinner.stop();
     renderPopular(itemsToShow, weatherCard);
-    return itemsToShow;
+    return [itemsToShow, weatherCard];
   },
 
   async category(cat) {
@@ -292,7 +292,7 @@ function detectViewport(news, weather) {
   return news;
 }
 
-function renderPopular(data, weather) {
+export function renderPopular(data, weather) {
   const news = createCardsMarkup(data);
   const markup = detectViewport(news, weather).join('');
   cardsNewsEl.innerHTML = markup;
@@ -303,4 +303,4 @@ function renderDefault(data) {
   cardsNewsEl.innerHTML = markup;
 }
 
-createPagination.popular();
+export const firstPageData = createPagination.popular();
