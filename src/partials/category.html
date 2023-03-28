@@ -2,7 +2,86 @@
   <div class="filter-wrapper">
     <div class="category-wrapper"></div>
     <div>
-      <button>select-date</button>
+      <p class="calendar-form__text">Search date news</p>
+      <div class="calendar-form">
+        <div class="input-form" data-modal-open data-modal-close>
+          <svg class="calendar__button-calendar" width="14" height="14">
+            <use href="./images/icons.svg#calendar"></use>
+          </svg>
+          <input
+            readonly
+            id="input-picker"
+            class="calendar-input datepicker-here"
+            placeholder="Виберіть дату"
+          />
+          <svg class="calendar__button-arrow" width="14" height="14">
+            <use href="./images/icons.svg#arrow_down"></use>
+          </svg>
+        </div>
+        <div class="calendar-wrapper is-hidden-wrapper" data-modal>
+          <div class="calendar-wrapper__container">
+            <div class="calendar-switcher">
+              <div class="wrapper-current-date">
+                <p class="current-date"></p>
+              </div>
+              <span id="year" class="material-symbols-rounded">
+                <svg
+                  class="calendar__button-arrow-icon year-switcher"
+                  width="12"
+                  height="7"
+                  transform="rotate(270)"
+                >
+                  <use href="./images/icons.svg#arrow_down"></use>
+                </svg>
+              </span>
+              <!-- <span id = 'next' class="calendar-icons"><svg class="current-date__icon">
+          <use href="./images/sprite.svg#arrow-up"></use>
+        </svg>
+        </span> -->
+              <div class="calendar-icons">
+                <span id="prev" class="material-symbols-rounded">
+                  <svg
+                    class="calendar__button-arrow-icon"
+                    width="14"
+                    height="14"
+                    transform="rotate(90)"
+                  >
+                    <use href="./images/icons.svg#arrow_down"></use>
+                  </svg>
+                </span>
+                <span id="next" class="material-symbols-rounded">
+                  <svg
+                    class="calendar__button-arrow-icon"
+                    width="14"
+                    height="14"
+                    transform="rotate(270)"
+                  >
+                    <use href="./images/icons.svg#arrow_down"></use>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="calendar">
+              <ul class="calendar-weeks__list">
+                <li class="calendar-weeks__item">Sun</li>
+                <li class="calendar-weeks__item">Mon</li>
+                <li class="calendar-weeks__item">Tue</li>
+                <li class="calendar-weeks__item">Wed</li>
+                <li class="calendar-weeks__item">Thu</li>
+                <li class="calendar-weeks__item">Fri</li>
+                <li class="calendar-weeks__item">Sat</li>
+              </ul>
+              <ul class="days">
+                <li
+                  class="calendar-days"
+                  class="prev-days"
+                  class="next-days"
+                ></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
