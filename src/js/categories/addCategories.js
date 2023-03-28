@@ -1,6 +1,6 @@
 import { categories } from './categories';
 import sprite from '../../images/icons.svg';
-import { typeOfDevice } from '../pagination';
+import { typeOfDevice, firstPageData, renderPopular } from '../pagination';
 import throttle from 'lodash.throttle';
 
 const wrapper = document.querySelector('.category-wrapper');
@@ -21,7 +21,7 @@ function generateButtonsMarkup(data) {
     ? data.reduce((markup, ctg) => {
         return (markup += `
 <li class="categories__item">
-        <button type="button" class="categories__button">${ctg}</button>
+        <button type="button" class="categories__button standalone">${ctg}</button>
       </li>`);
       }, '')
     : '';
@@ -86,5 +86,6 @@ function onResize() {
   if (newState !== currentState) {
     currentState = newState;
     renderFilter();
+    firstPageData.then(data => renderPopular(...data)).catch(console.log);
   }
 }

@@ -73,7 +73,7 @@ export function createCardsMarkup(card) {
                     </p>                
                 <div class="news__info">
                     <time datetime="${element.date}" class="news__time">${day}/${month}/${year}</time>
-                    <a class="news__link" href="${element.url}">Read more</a>
+                    <a class="news__link" href="${element.url}" target="_blank">Read more</a>
                 </div>
                 </div>
             </li>`;
