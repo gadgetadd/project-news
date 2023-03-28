@@ -27,7 +27,11 @@
     border-color: $lightBgColor;
   }
   & .search-input {
-    color: $darkTextColor;
-    background-color: $lightBgColor;
+    color: $lightTextColor;
+    background-color: $darkBgColor;
+  }
+  & .search-symbol {
+    color: $lightTextColor;
+    background-color: $darkBgColor;
   }
 }
