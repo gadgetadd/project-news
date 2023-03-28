@@ -100,18 +100,18 @@ export const renderPage = () => {
                 <source
                     srcset="${desktop} 1x, ${desktopX2} 2x"
                     media="(min-width: 1280px)">
-                <img class="read__no-news" src="${mobile}"
+                <img class="favorite__no-news" src="${mobile}"
                     alt="Зображення не має новин">
             </picture>`;
     return;
   }
 
-  const list = document.querySelectorAll('.read__list-wrapper');
+  const list = document.querySelectorAll('.favorite__list-wrapper');
   console.log(list);
 
   for (let i = 0; i < list.length; i += 1) {
     list[i].children[0].addEventListener('click', () => {
-      list[i].children[0].children[0].classList.toggle('read--rotate');
+      list[i].children[0].children[0].classList.toggle('favorite--rotate');
       const clientHeight = list[i].clientHeight;
       const height = list[i].scrollHeight;
       if (clientHeight > 33) {
