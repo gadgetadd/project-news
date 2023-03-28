@@ -67,7 +67,7 @@ const renderArticles = articles => {
             <p class="news__category">${el.category}</p>
 
             <button type="button" class="button-card">
-            Add to favorite
+            Remove from favorite
             <svg class="button-card-icon" width="16" height="16">
                 <use href="${sprite}#icons_heart"></use>
             </svg>
