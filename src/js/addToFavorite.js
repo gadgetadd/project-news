@@ -5,7 +5,7 @@ const articleInFavorites = (elem) => {
     elem.children[0].children[0].children[2].children[0].classList.add('button-card-icon-remove');
 };
 
-const addingInFavorite = (evt) => {
+const addingInFavorite = (el, arr) => {
     const article = {
         id: el.attributes[1].value,
         category: el.children[0].children[0].children[1].textContent,
@@ -16,16 +16,24 @@ const addingInFavorite = (evt) => {
         url: el.children[1].children[1].attributes[1].value,
     };
     
-    favoriteArticles.push(article);
-    localStorage.setItem('favoriteArticles', JSON.stringify(favoriteArticles));
+    arr.push(article);
+    localStorage.setItem('favoriteArticles', JSON.stringify(arr));
     articleInFavorites(el);
-    el.addEventListener('click', removingIntoFavorite, { once: true });
+
+    el.children[0].children[0].children[2].addEventListener('click', (evt) => {
+        removingIntoFavorite(el, arr);
+    }, { once: true });
 };
 
-const removingIntoFavorite = (evt) => {
+const removingIntoFavorite = (el, arr) => {
+    // index = 
+
     el.children[0].children[0].children[2].childNodes[0].textContent = 'Add to favorite';
     el.children[0].children[0].children[2].children[0].classList.remove('button-card-icon-remove');
-    el.addEventListener('click', addingInFavorite, { once: true});
+
+    el.children[0].children[0].children[2].addEventListener('click', (evt) => {
+            addingInFavorite(el, arr);
+        }, { once: true});
 };
 
 export const addToFavorite = () => {
@@ -43,7 +51,9 @@ export const addToFavorite = () => {
             continue;
         };
 
-        el.addEventListener('click', addingInFavorite, { once: true});
+        el.children[0].children[0].children[2].addEventListener('click', (evt) => {
+            addingInFavorite(el, favoriteArticles);
+        }, { once: true});
     };
 };
 
@@ -55,7 +65,9 @@ export const removeFromFavorite = () => {
         const el = articles[i];
 
         if (favoriteArticles.some((elem) => elem.id === el.attributes[1].value)) {
-            el.addEventListener('click', removingIntoFavorite, { once: true });
+            el.children[0].children[0].children[2].addEventListener('click', (evt) => {
+                removingIntoFavorite(el, favoriteArticles);
+            }, { once: true });
         };
     };
 };
