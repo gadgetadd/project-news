@@ -61,6 +61,3 @@ export const addToRead = () => {
         });
     };
 };
-
-
-// setTimeout(addToRead, 1000);
