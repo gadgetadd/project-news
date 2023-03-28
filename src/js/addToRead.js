@@ -1,6 +1,6 @@
 import sprite from '../images/icons.svg';
 
-const availabilityCheck = (arr, value) => {
+export const availabilityCheck = (arr, value) => {
     return arr.some((el) => {
         return (el.title === value)
     }); 
@@ -39,6 +39,7 @@ export const addToRead = () => {
 
         el.children[1].children[1].addEventListener('click', (evt) => {
             const article = {
+                id: el.attributes[1].value,
                 category: el.children[0].children[0].children[1].textContent,
                 date: el.children[1].children[0].attributes[0].value,
                 descr: el.children[0].children[2].innerText,
