@@ -1,5 +1,4 @@
 export const categories = [
-  'Admin',
   'Arts',
   'Automobiles',
   'Books',
@@ -49,4 +48,5 @@ export const categories = [
   'Well',
   'World',
   'Your Money',
+  'Admin',
 ];
