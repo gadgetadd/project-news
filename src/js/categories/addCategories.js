@@ -4,7 +4,7 @@ import { typeOfDevice, firstPageData, renderPopular } from '../pagination';
 import throttle from 'lodash.throttle';
 
 const wrapper = document.querySelector('.category-wrapper');
-let currentState = getCurrentStateIndex();
+let currentState = typeOfDevice();
 window.addEventListener('resize', throttle(onResize, 300));
 renderFilter();
 
@@ -34,7 +34,7 @@ function generateFilter(buttons, select) {
         <div class="select-menu">
           <button class="categories__button select" type="button" data-select="select">
             <span>${
-              getCurrentStateIndex() === 0 ? 'Categories' : 'Others'
+              typeOfDevice() === 'mobile' ? 'Categories' : 'Others'
             }</span>
             <svg class="categories__icon" width="14" height="14">
               <use href="${sprite}#arrow_down"></use>
@@ -70,19 +70,8 @@ export function renderFilter() {
   wrapper.innerHTML = filter;
 }
 
-function getCurrentStateIndex() {
-  const width = window.innerWidth;
-  if (width < 768) {
-    return 0;
-  } else if (width < 1280) {
-    return 1;
-  } else {
-    return 2;
-  }
-}
-
 function onResize() {
-  const newState = getCurrentStateIndex();
+  const newState = typeOfDevice();
   if (newState !== currentState) {
     currentState = newState;
     renderFilter();
