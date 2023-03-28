@@ -6,6 +6,7 @@ import './js/mobile-menu.js';
 import './js/select-menu.js';
 import './js/switch';
 import './js/addToRead';
+import './js/search';
 
 
 // import { addToRead } from './js/addToRead';
