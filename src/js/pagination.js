@@ -17,7 +17,6 @@ import { weatherByGeolocation } from './geolocation.js';
 import { Spinner } from 'spin.js';
 import 'spin.js/spin.css';
 
-
 const cardsNewsEl = document.querySelector('.news');
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
@@ -105,11 +104,12 @@ export const createPagination = {
     pagination();
     spinner.stop();
     renderPopular(itemsToShow, weatherCard);
-      return itemsToShow;
-
+    return itemsToShow;
   },
 
   async category(cat) {
+    cardsNewsEl.innerHTML = '';
+    spinner.spin(cardsNewsEl);
     valuePage.searchType = 'category';
     const category = new Category(cat);
     const response = await category.get();
@@ -121,11 +121,14 @@ export const createPagination = {
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
+    spinner.stop();
+    renderDefault(itemsToShow);
     // console.log('картки для відмальовки', itemsToShow);
     return itemsToShow;
-
   },
   async search(input) {
+    cardsNewsEl.innerHTML = '';
+    spinner.spin(cardsNewsEl);
     valuePage.searchType = 'search';
     valuePage.searchParam = input;
     const search = new Search(input);
@@ -139,28 +142,35 @@ export const createPagination = {
     );
     pagination();
     // console.log('картки для відмальовки', itemsToShow);
+    spinner.stop();
+    renderDefault(itemsToShow);
   },
 
   async onPageChange() {
+    cardsNewsEl.innerHTML = '';
+    spinner.spin(cardsNewsEl);
     if (valuePage.searchType === 'search') {
       const search = new Search(valuePage.searchParam);
       search.setPage(valuePage.curPage - 1);
       const response = await search.get();
       // console.log('response :', response);
-      itemsToShow = response.slice(0, valuePage.itemsPerPage);
+      const itemsToShow = response.slice(0, valuePage.itemsPerPage);
       pagination();
+      spinner.stop();
+      renderDefault(itemsToShow);
       // console.log('картки для відмальовки', itemsToShow);
       return itemsToShow;
     }
-    itemsToShow = response.slice(
+    const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    // console.log('картки для відмальовки', itemsToShow);
+
+    spinner.stop();
+    renderDefault(itemsToShow);
 
     return itemsToShow;
-
   },
 };
 
