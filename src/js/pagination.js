@@ -99,7 +99,7 @@ export const createPagination = {
     setPageParam(response);
     const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
-      valuePage.itemsPerPage * valuePage.curPage
+      valuePage.itemsPerPage - 1 * valuePage.curPage
     );
     pagination();
     spinner.stop();
@@ -161,6 +161,7 @@ export const createPagination = {
       // console.log('картки для відмальовки', itemsToShow);
       return itemsToShow;
     }
+    const response = valuePage.response;
     const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
