@@ -159,7 +159,6 @@ const removeCard = () => {
                     alt="Зображення не має новин">
             </picture>`;
       }
-      console.log(amountCard);
     });
   };
 };
