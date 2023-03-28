@@ -5,7 +5,6 @@ import './js/card-main.js';
 import './js/mobile-menu.js';
 import './js/select-menu.js';
 import './js/switch';
-import './favorite';
 import './js/addToRead';
 import './js/addToFavorite';
 
