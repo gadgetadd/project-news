@@ -134,6 +134,11 @@
     line-height: 1.15;
     margin-left: 12px;
   }
+  .weather-card__geoelocation__icon {
+    fill: $whiteColor;
+    width: 18px;
+    height: 23px;
+  }
   .weather-card__icon {
     display: block;
     margin-top: 91px;
