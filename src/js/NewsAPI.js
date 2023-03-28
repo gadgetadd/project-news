@@ -71,7 +71,7 @@ export class Search extends NewsAPI {
         category: res.section_name,
         image: res.multimedia[0]
           ? `https://static01.nyt.com/${res.multimedia[0].url}`
-          : 'https://demofree.sirv.com/nope-not-here.jpg?w=400',
+          : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg',
         title: res.abstract,
         descr: res.lead_paragraph,
         date: res.pub_date,
@@ -109,7 +109,7 @@ export class Popular extends NewsAPI {
         category: res.section,
         image: res.media[0]?.['media-metadata'][2]
           ? res.media[0]['media-metadata'][2].url
-          : 'https://demofree.sirv.com/nope-not-here.jpg?w=400',
+          : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg',
         title: res.title,
         descr: res.abstract,
         date: res.published_date,
@@ -143,7 +143,7 @@ export class Category extends NewsAPI {
         image:
           res.multimedia && res.multimedia[2]
             ? res.multimedia[2].url
-            : 'https://demofree.sirv.com/nope-not-here.jpg?w=400',
+            : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg',
         title: res.title,
         descr: res.abstract,
         date: res.published_date,
