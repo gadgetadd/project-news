@@ -126,12 +126,12 @@ export const createPagination = {
     // console.log('картки для відмальовки', itemsToShow);
     return itemsToShow;
   },
-  async search(input) {
+  async search(input, date = null) {
     cardsNewsEl.innerHTML = '';
     spinner.spin(cardsNewsEl);
     valuePage.searchType = 'search';
     valuePage.searchParam = input;
-    const search = new Search(input);
+    const search = new Search(input, date);
     const response = await search.get();
     valuePage.totalHits = search.getHits();
     // console.log('response :', response);
