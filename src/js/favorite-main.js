@@ -112,7 +112,7 @@ export const renderPage = () => {
 
   const articlesFav = renderArticles(articls);
 
-  const list = document.querySelectorAll('#box-container');
+  const list = document.querySelector('#box-container');
   list.append(articlesFav);
 };
 
@@ -128,8 +128,40 @@ function removeFromFavorite(id) {
     localStorage.setItem('favoriteArticles', JSON.stringify(articls));
   }
 
-  const card = document.getElementById(`card-${id}`);
+  const card = document.getElementById(`${id}`);
+
   if (card) {
     card.remove();
   }
-}
+};
+
+const removeCard = () => {
+  const cardsOnPage = document.querySelectorAll('.news__item');
+
+  for (let i = 0; i < cardsOnPage.length; i += 1) {
+    const el = cardsOnPage[i];
+
+    el.children[0].children[0].children[2].addEventListener('click', (evt) => {
+      removeFromFavorite(el.attributes[1].value);
+      const amountCard = document.querySelectorAll('.news__item').length;
+      if (amountCard === 0) {
+        container.innerHTML = ` <picture>
+                <source
+                    srcset="${mobile} 1x, ${mobileX2} 2x"
+                    media="(max-width: 767px)">
+                <source
+                    srcset="${tablet} 1x, ${tabletX2} 2x"
+                    media="(max-width: 1279px)">
+                <source
+                    srcset="${desktop} 1x, ${desktopX2} 2x"
+                    media="(min-width: 1280px)">
+                <img class="favorite__no-news" src="${mobile}"
+                    alt="Зображення не має новин">
+            </picture>`;
+      }
+      console.log(amountCard);
+    });
+  };
+};
+
+removeCard();
