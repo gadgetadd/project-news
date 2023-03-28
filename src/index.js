@@ -8,9 +8,11 @@ import './js/switch';
 <<<<<<< HEAD
 
 =======
-import './js/addToRead';
-// import './js/adaptiveRender';
+import './js/adaptiveRender';
 import './favorite';
+import './js/addToRead';
+
+
 
 // import { addToRead } from './js/addToRead';
 
