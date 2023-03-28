@@ -16,6 +16,8 @@ import { createCardsMarkup } from './card-main';
 import { weatherByGeolocation } from './geolocation.js';
 import { Spinner } from 'spin.js';
 import { addToRead } from './addToRead.js';
+import { addToFavorite } from './addToFavorite.js';
+import { removeFromFavorite } from './addToFavorite.js';
 import 'spin.js/spin.css';
 import moment from 'moment/moment';
 
@@ -296,9 +298,9 @@ function handleButtonRight() {
 
 // Функція для першої сторінки
 function detectViewport(news, weather) {
-  if (window.innerWidth < 768) {
+  if (typeOfDevice() === 'mobile') {
     news.splice(0, 0, weather);
-  } else if (window.innerWidth < 1280) {
+  } else if (typeOfDevice() === 'tablet') {
     news.splice(1, 0, weather);
   } else {
     news.splice(2, 0, weather);
@@ -311,12 +313,16 @@ export function renderPopular(data, weather) {
   const markup = detectViewport(news, weather).join('');
   cardsNewsEl.innerHTML = markup;
   addToRead();
+  addToFavorite();
+  removeFromFavorite();
 }
 
 function renderDefault(data) {
   const markup = createCardsMarkup(data).join('');
   cardsNewsEl.innerHTML = markup;
   addToRead();
+  addToFavorite();
+  removeFromFavorite();
 }
 
 export const firstPageData = createPagination.popular();

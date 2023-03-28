@@ -37,7 +37,7 @@ const renderArticles = articles => {
     const date = new Date(el.date);
     const { day, month, year } = normalizeDate(date);
     return (acc += `
-                <li class="news__item">
+                <li class="news__item" id="${el.id}">
                     <div class="news__card">
                         <div class="news__img">
                           <div class="news__img-wrap">
@@ -132,7 +132,6 @@ export const renderPage = () => {
   }
 
   const list = document.querySelectorAll('.read__list-wrapper');
-  console.log(list);
 
   for (let i = 0; i < list.length; i += 1) {
     list[i].children[0].addEventListener('click', () => {

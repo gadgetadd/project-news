@@ -1,36 +1,34 @@
-
-
 .calendar-input.isActive::placeholder {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  color: #ffffff;
+  color: $whiteColor;
 }
 
 .calendar-input.isActive {
-  background-color: #4440f6;
-  color: #ffffff;
-  border: 1px solid #4440f7;
+  background-color: $accentColor;
+  color: $whiteColor;
+  border: 1px solid $checkboxDark;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
 .calendar-wrapper {
-    position: absolute;
+  position: absolute;
 
-    overflow: hidden;
-    z-index: 2;
-    display: block;
-    width: 250px;
-    height: 250px;
-    right: 0px;
-    
-    pointer-events: auto;
-  }
+  overflow: hidden;
+  z-index: 2;
+  display: block;
+  width: 250px;
+  height: 250px;
+  right: 0px;
+
+  pointer-events: auto;
+}
 
 .calendar-wrapper.is-hidden-wrapper {
   pointer-events: none;
 }
 
-.calendar-wrapper.is-hidden-wrapper>.calendar-wrapper__container {
+.calendar-wrapper.is-hidden-wrapper > .calendar-wrapper__container {
   transform: translateY(-104%);
   box-shadow: 0px 10px 60px rgba(0, 0, 0, 0);
 
@@ -84,7 +82,7 @@
     width: 124px;
     height: 31px;
     padding: 5px 12px;
-    border: 1px solid #4440f6;
+    border: 1px solid $accentColor;
     border-radius: 20px;
 
     text-align: center;
@@ -99,7 +97,8 @@
     color: #111321;
     background-color: transparent;
 
-    cursor: pointer;
+  color: $darkCheckColor;
+  background-color: transparent;
 
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);}
@@ -123,7 +122,7 @@
 }
 .calendar__button-calendar {
   position: absolute;
-  fill: #4440f6;
+  fill: $accentColor;
   margin-left: 12px;
 
   cursor: pointer;
@@ -134,11 +133,10 @@
 
 .calendar__button-calendar.switchedColor {
   z-index: 1;
-  fill: #ffffff;
+  fill: $whiteColor;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .input-form {
@@ -153,7 +151,7 @@
   position: absolute;
   display: flex;
   z-index: 1;
-  fill: #4440f6;
+  fill: $accentColor;
   right: 12px;
 
   cursor: pointer;
@@ -167,7 +165,7 @@
 }
 
 .calendar__button-arrow.switched {
-  fill: #ffffff;
+  fill: $whiteColor;
   transform: rotateX(180deg);
 
   transition-duration: 250ms;
@@ -175,30 +173,30 @@
 }
 
 .calendar__button-back {
-  fill: #4440f6;
+  fill: $accentColor;
 }
 
 .calendar-wrapper__container {
-    position: absolute;
-    cursor: default;
-    z-index: 2;
-    overflow: hidden;
-    margin-left: 0;
-    width: 250px;
-    height: 250px;
-    right: 0px;
-    background-color: #ffffff;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+  position: absolute;
+  cursor: default;
+  z-index: 2;
+  overflow: hidden;
+  margin-left: 0;
+  width: 250px;
+  height: 250px;
+  right: 0px;
+  background-color: $whiteColor;
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.wrapper-date{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.wrapper-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 .calendar-switcher {
   display: flex;
@@ -209,10 +207,10 @@
   align-items: center;
   box-shadow: 0px 10px 60px rgba(0, 0, 0, 0);
 }
-.year-switcher{
+.year-switcher {
   margin-right: 24px;
 }
-.wrapper-current-date{
+.wrapper-current-date {
   width: 113px;
   margin-right: 8px;
 }
@@ -224,32 +222,32 @@
   line-height: 1.38;
   letter-spacing: -0.408px;
   font-feature-settings: 'case' on;
-  color: #000000;
+  color: $blackColor;
 }
 
 .calendar-icons {
   display: flex;
-  color: #4440f6;
+  color: $accentColor;
 }
 
-// .calendar-icons span {
-//   width: 38px;
-//   margin: 0 1px;
-//   text-align: center;
-//   line-height: 38px;
-//   font-size: 1.9rem;
-//   user-select: none;
-//   border-radius: 50%;
-//   fill: #4440f6;
-//   display: flex;
-// }
+.calendar-icons span {
+  width: 38px;
+  margin: 0 1px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+  fill: $accentColor;
+  display: flex;
+}
 
 .calendar-icons span:last-child {
   margin-right: -10px;
 }
 
 .calendar-icons span:hover {
-  background: #ffffff;
+  background: $whiteColor;
 }
 
 .calendar ul {
@@ -258,7 +256,7 @@
   list-style: none;
   text-align: center;
 }
-.calendar-weeks__list{
+.calendar-weeks__list {
   margin-top: 0;
   margin-bottom: 14px;
 }
@@ -287,19 +285,19 @@
   font-size: 14px;
   line-height: 1.79;
   letter-spacing: 0.38px;
-  color: #000000;
+  color: $blackColor;
   z-index: 1;
   cursor: pointer;
   position: relative;
 }
-.calendar .days .inactive{
+.calendar .days .inactive {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.79;
   letter-spacing: 0.38px;
-  color: #000000;
+  color: $blackColor;
   opacity: 40%;
   z-index: 1;
   cursor: pointer;
@@ -310,12 +308,12 @@
   margin-bottom: 0;
 }
 
- .calendar .days li:nth-child(6n + 1),
- .calendar .days li:nth-child(7n + 1) {
-   color: #5f6775;
- }
+.calendar .days li:nth-child(6n + 1),
+.calendar .days li:nth-child(7n + 1) {
+  color: $darkCheckColor;
+}
 .days li.active {
-  color: #ffffff;
+  color: $whiteColor;
 }
 
 .days li::before {
@@ -331,5 +329,5 @@
 }
 
 .days li.active::before {
-  background: #4440f6;
+  background: $accentColor;
 }

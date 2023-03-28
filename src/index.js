@@ -8,7 +8,3 @@ import './js/switch.js';
 import './js/calendar.js';
 import './js/search.js';
 import './js/addToRead.js';
-
-// import { addToRead } from './js/addToRead';
-
-// addToRead();
