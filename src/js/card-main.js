@@ -28,7 +28,7 @@ export function createCardsMarkup(card) {
     const { day, month, year } = normalizeDate(date);
     return `
       
-            <li class="news__item" id="${element.id}>
+            <li class="news__item" id="${element.id}">
                 <div class="news__card">
                     <div class="news__img">
                     <div class="news__img-wrap">
@@ -70,11 +70,11 @@ export function createCardsMarkup(card) {
                     </div>
                     <p class="news__text">
                         ${element.descr}
-                    </p>                
+                    </p>      
+                    </div>          
                 <div class="news__info">
                     <time datetime="${element.date}" class="news__time">${day}/${month}/${year}</time>
                     <a class="news__link" href="${element.url}" target="_blank">Read more</a>
-                </div>
                 </div>
             </li>`;
   });
