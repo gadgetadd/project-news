@@ -73,3 +73,6 @@ export const removeFromFavorite = () => {
         };
     };
 };
+
+addToFavorite();
+removeFromFavorite();
