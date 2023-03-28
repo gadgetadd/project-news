@@ -100,6 +100,9 @@
     width: 353px;
     height: 675px;
   }
+  .weather-card__date {
+    margin: 90px 0 0;
+  }
 }
 @media screen and (min-width: 1280px) {
   .weather-card {
