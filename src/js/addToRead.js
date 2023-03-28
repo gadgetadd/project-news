@@ -1,6 +1,6 @@
 import sprite from '../images/icons.svg';
 
-const availabilityCheck = (arr, value) => {
+export const availabilityCheck = (arr, value) => {
     return arr.some((el) => {
         return (el.title === value)
     }); 
