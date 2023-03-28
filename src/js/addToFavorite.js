@@ -21,6 +21,9 @@ export const addToFavorite = () => {
             continue;
         };
     
+        el.addEventListener('click', (evt) => {
+            
+        });
     };
     // articleInFavorites();
 };
