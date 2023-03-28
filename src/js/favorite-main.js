@@ -1,3 +1,12 @@
+// import sprite from '../images/icons.svg';
+// import desktop from '../images/no-news-desktop.png';
+// import desktopX2 from '../images/no-news-desktop@2x.png';
+// import tablet from '../images/no-news-tablet.png';
+// import tabletX2 from '../images/no-news-tablet@2x.png';
+// import mobile from '../images/no-news-mobile.png';
+// import mobileX2 from '../images/no-news-mobile@2x.png';
+// const container = document.querySelector('#art-container');
+
 import { createCardsMarkup } from './card-main';
 
 function displayFavorites() {
