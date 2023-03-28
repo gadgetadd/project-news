@@ -37,7 +37,7 @@ const renderArticles = articles => {
     const date = new Date(el.date);
     const { day, month, year } = normalizeDate(date);
     return (acc += `
-    <li class="news__item">
+    <li class="news__item" id="${element.id}">
     <div class="news__card">
         <div class="news__img">
           <div class="news__img-wrap">
@@ -68,7 +68,7 @@ const renderArticles = articles => {
 
             <button type="button" class="button-card">
             Remove from favorite
-            <svg class="button-card-icon" width="16" height="16">
+            <svg class="button-card-icon button-card-icon-remove" width="16" height="16">
                 <use href="${sprite}#icons_heart"></use>
             </svg>
             </button>
@@ -93,7 +93,7 @@ const renderArticles = articles => {
 export const renderPage = () => {
   const articls = JSON.parse(localStorage.getItem('favoriteArticles'));
 
-  if (articls === null) {
+  if (articls.length === 0) {
     container.innerHTML = ` <picture>
                 <source
                     srcset="${mobile} 1x, ${mobileX2} 2x"
@@ -118,22 +118,18 @@ export const renderPage = () => {
 
 renderPage();
 
-// function removeFromFavorite(id) {
-//   // Отримуємо список збережених новин з локального сховища
-//   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+function removeFromFavorite(id) {
+  const articls = JSON.parse(localStorage.getItem('favoriteArticles'));
 
-//   // Шукаємо новину за її ідентифікатором
-//   const index = favorites.findIndex(item => item.id === id);
+  const index = articls.findIndex(item => item.id === id);
 
-//   // Якщо новина знайдена, видаляємо її зі списку
-//   if (index !== -1) {
-//     favorites.splice(index, 1);
-//     localStorage.setItem('favorites', JSON.stringify(favorites));
-//   }
+  if (index !== -1) {
+    articls.splice(index, 1);
+    localStorage.setItem('favoriteArticles', JSON.stringify(articls));
+  }
 
-//   // Видаляємо картку зі сторінки Favorite
-//   const card = document.getElementById(`card-${id}`);
-//   if (card) {
-//     card.remove();
-//   }
-// }
+  const card = document.getElementById(`card-${id}`);
+  if (card) {
+    card.remove();
+  }
+}
