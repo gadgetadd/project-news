@@ -7,6 +7,7 @@ import './js/select-menu.js';
 import './js/switch';
 import './favorite';
 import './js/addToRead';
+import './js/addToFavorite';
 
 // import { addToRead } from './js/addToRead';
 
