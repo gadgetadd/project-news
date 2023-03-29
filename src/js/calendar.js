@@ -20,7 +20,7 @@ function showCurrentDate() {
     closeModalBtn: document.querySelector('body'),
     modal: document.querySelector('[data-modal]'),
     input: document.querySelector('.calendar-input'),
-    arrow: document.querySelector('.calendar__button-arrow'),
+    // arrow: document.querySelector('.calendar__button-arrow'),
     calendarBtn: document.querySelector('.calendar__button-calendar'),
   };
 
@@ -145,9 +145,9 @@ const renderCalendar = number => {
     localStorage.setItem('date', JSON.stringify(inputDateValue));
     document.querySelector('[data-modal]').classList.add('is-hidden-wrapper');
     document.querySelector('.calendar-input').classList.remove('isActive');
-    document
-      .querySelector('.calendar__button-arrow')
-      .classList.remove('switched');
+    // document
+    //   .querySelector('.calendar__button-arrow')
+    //   .classList.remove('switched');
     document
       .querySelector('.calendar__button-calendar')
       .classList.remove('switchedColor');
