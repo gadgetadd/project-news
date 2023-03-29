@@ -5,6 +5,7 @@ import tablet from '../images/no-news-tablet.png';
 import tabletX2 from '../images/no-news-tablet@2x.png';
 import mobile from '../images/no-news-mobile.png';
 import mobileX2 from '../images/no-news-mobile@2x.png';
+import { addToRead } from './addToRead.js';
 
 const container = document.querySelector('#box-container');
 
@@ -117,6 +118,7 @@ export const renderPage = () => {
 };
 
 renderPage();
+addToRead();
 
 function removeFromFavorite(id) {
   const articls = JSON.parse(localStorage.getItem('favoriteArticles'));
