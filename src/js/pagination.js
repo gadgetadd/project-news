@@ -128,7 +128,7 @@ export const createPagination = {
     const category = new Category(cat);
     let response = await category.get();
     if (date) {
-      normalizedDate = moment(date).format('YYYY-MM-DD');
+      const normalizedDate = moment(date).format('YYYY-MM-DD');
       const filteredResponse = response.filter(
         value => value.date.slice(0, 10) === normalizedDate
       );
