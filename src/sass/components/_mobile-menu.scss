@@ -22,17 +22,17 @@
   justify-content: start;
   gap: 24px;
   margin-top: auto;
-  margin-bottom: auto;
+  
 
   @media screen and (max-width: 767px) {
-      width: 320px;
-      margin: auto;
-    }
+    width: 320px;
+    margin: auto;
+  }
 }
 
-.site-nav__item {
+.site-nav__link {
   display: flex;
-  font-family: "Manrope" sans-serif;
+  font-family: Manrope;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -42,13 +42,12 @@
   justify-content: flex-start;
   color: inherit;
   cursor: pointer;
-  padding-left: 16px;
 
   &:hover,
   &:focus {
     background-color: $accentColor;
     color: $lightBgColor;
-    
+
     .arrow-right {
       display: block;
     }
@@ -57,6 +56,7 @@
       background-color: $accentColor;
       border: 1px solid $lightBgColor;
     }
+        
   }
 
   .icon-menu {
@@ -74,7 +74,9 @@
     margin-right: 0;
   }
 }
-
+.site-nav__item.active {
+  border-bottom: 1px solid $accentColor;
+}
 // Планшетна версія 768px
 @media screen and (min-width: 768px) {
   .menu-container {
