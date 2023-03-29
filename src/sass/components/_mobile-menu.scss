@@ -22,7 +22,6 @@
   justify-content: start;
   gap: 24px;
   margin-top: auto;
-  
 
   @media screen and (max-width: 767px) {
     width: 320px;
@@ -45,8 +44,8 @@
 
   &:hover,
   &:focus {
-    background-color: $accentColor;
-    color: $lightBgColor;
+    background-color: $lightBgColor;
+    color: $accentColor;
 
     .arrow-right {
       display: block;
@@ -56,7 +55,6 @@
       background-color: $accentColor;
       border: 1px solid $lightBgColor;
     }
-        
   }
 
   .icon-menu {
