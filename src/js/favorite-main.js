@@ -82,7 +82,7 @@ const renderArticles = articles => {
     </div>
     <div class="news__info">
         <time datetime="${el.date}" class="news__time">${day}/${month}/${year}</time>
-        <a class="news__link" href="${el.url}">Read more</a>
+        <a class="news__link" href="${el.url}" target="_blank">Read more</a>
     </div>
 </li>`);
   }, '');
@@ -133,7 +133,7 @@ function removeFromFavorite(id) {
   if (card) {
     card.remove();
   }
-};
+}
 
 const removeCard = () => {
   const cardsOnPage = document.querySelectorAll('.news__item');
@@ -141,7 +141,7 @@ const removeCard = () => {
   for (let i = 0; i < cardsOnPage.length; i += 1) {
     const el = cardsOnPage[i];
 
-    el.children[0].children[0].children[2].addEventListener('click', (evt) => {
+    el.children[0].children[0].children[2].addEventListener('click', evt => {
       removeFromFavorite(el.attributes[1].value);
       const amountCard = document.querySelectorAll('.news__item').length;
       if (amountCard === 0) {
@@ -160,7 +160,7 @@ const removeCard = () => {
             </picture>`;
       }
     });
-  };
+  }
 };
 
 removeCard();

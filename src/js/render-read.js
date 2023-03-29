@@ -82,7 +82,7 @@ const renderArticles = articles => {
                     </div>
                     <div class="news__info">
                         <time datetime="${el.date}" class="news__time">${day}/${month}/${year}</time>
-                        <a class="news__link" href="${el.url}">Read more</a>
+                        <a class="news__link" href="${el.url}" target="_blank">Read more</a>
                     </div>
                 </li>`);
   }, '');
