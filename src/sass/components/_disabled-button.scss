@@ -1,6 +1,0 @@
-.categories__button[disabled]{
-    color: opacify($accentColor, 0.5);
-    background-color: opacify($whiteColor, 0.5);
-    border: 1px solid opacify($accentColor, 0.5);
-    cursor: not-allowed;
-}
