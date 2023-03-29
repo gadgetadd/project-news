@@ -28,6 +28,8 @@ import 'spin.js/spin.css';
 import moment from 'moment/moment';
 
 const cardsNewsEl = document.querySelector('.news');
+const mainPage = document.querySelector('.card-news__wrap');
+const pgBlock = document.querySelector('.pagination');
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
 const btnPrevPg = document.querySelector('button.pagination__button--prev');
@@ -81,7 +83,7 @@ function setPageParam(response) {
       valuePage.totalHits = 1000;
     }
     valuePage.totalPages = Math.ceil(valuePage.totalHits / 10);
-    console.log(valuePage);
+    // console.log(valuePage);
     return;
   }
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
@@ -316,10 +318,12 @@ function detectViewport(news, weather) {
 
 export function renderPopular(data, weather) {
   if (data.length === 0) {
+    pgBlock.classList.add('pagination--disabled');
     return placeholder();
   }
   const news = createCardsMarkup(data);
   const markup = detectViewport(news, weather).join('');
+  pgBlock.classList.remove('pagination--disabled');
   cardsNewsEl.innerHTML = markup;
   addToRead();
   addToFavorite();
@@ -328,9 +332,11 @@ export function renderPopular(data, weather) {
 
 function renderDefault(data) {
   if (data.length === 0) {
+    pgBlock.classList.add('pagination--disabled');
     return placeholder();
   }
   const markup = createCardsMarkup(data).join('');
+  pgBlock.classList.remove('pagination--disabled');
   cardsNewsEl.innerHTML = markup;
   addToRead();
   addToFavorite();
@@ -338,7 +344,7 @@ function renderDefault(data) {
 }
 
 function placeholder() {
-  cardsNewsEl.innerHTML = ` <picture>
+  mainPage.innerHTML = ` <picture>
                 <source
                     srcset="${mobile} 1x, ${mobileX2} 2x"
                     media="(max-width: 767px)">
