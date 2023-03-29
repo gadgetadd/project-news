@@ -10,7 +10,7 @@ function onCategoriesWrapperClick(e) {
   const select__list = document.querySelector('.select__list');
   const options = document.querySelectorAll('.options');
   const ctgBtns = document.querySelectorAll('.categories__button');
-  console.log(e.target);
+  // console.log(e.target);
   if (e.target.dataset.select === 'button') {
     select.querySelector('span').textContent = 'Others';
   }
