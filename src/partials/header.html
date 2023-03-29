@@ -43,7 +43,7 @@
             class="search-input"
             placeholder="Search  |"
           />
-          <button type="submit" class="search-symbol">
+          <button type="submit" class="search-symbol" aria-label="search">
             <svg class="search-lens">
               <use href="./images/icons.svg#search" />
             </svg>
@@ -52,6 +52,7 @@
         <button
           type="button"
           class="menu-btn_menu"
+          aria-label="theme switcher"
           aria-expanded="false"
           aria-controls="menu-container"
           data-menu-button
@@ -73,7 +74,7 @@
         </svg>
         <p class="switch-light">Light</p>
         <label class="switch">
-          <input type="checkbox" class="switch__input" />
+          <input name="switch" type="checkbox" class="switch__input" />
           <span class="switch__slider"></span>
         </label>
         <svg width="21" height="21" class="icon-moon">

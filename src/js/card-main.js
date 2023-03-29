@@ -58,7 +58,7 @@ export function createCardsMarkup(card) {
 
                         <p class="news__category">${element.category}</p>
 
-                        <button type="button" class="button-card">
+                        <button type="button" class="button-card" aria-label="add to favorite">
                         Add to favorite
                         <svg class="button-card-icon" width="16" height="16">
                             <use href="${sprite}#icons_heart"></use>

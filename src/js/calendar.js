@@ -20,21 +20,16 @@ function showCurrentDate() {
     closeModalBtn: document.querySelector('body'),
     modal: document.querySelector('[data-modal]'),
     input: document.querySelector('.calendar-input'),
-    // arrow: document.querySelector('.calendar__button-arrow'),
     calendarBtn: document.querySelector('.calendar__button-calendar'),
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
   document.addEventListener('click', hideModals);
-  //   function cleanInput() {
-  //     refs.input.classList.remove('isActive');
-  //   }
+
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden-wrapper');
     refs.input.classList.toggle('isActive');
-    // refs.arrow.classList.toggle('switched');
     refs.calendarBtn.classList.toggle('switchedColor');
-    // showCurrentDate();
   }
 
   function hideModals(evt) {
@@ -45,7 +40,6 @@ function showCurrentDate() {
     if (refs.input.classList.contains('isActive')) {
       refs.modal.classList.add('is-hidden-wrapper');
       refs.input.classList.remove('isActive');
-      // refs.arrow.classList.remove('switched');
       refs.calendarBtn.classList.remove('switchedColor');
       document.getElementById('input-picker').value = '';
       localStorage.removeItem('VALUE');
@@ -112,17 +106,8 @@ const renderCalendar = number => {
   // function addChangingDayListener() {
 
   dayChange.addEventListener('click', evt => {
-    //evt.preventDefault();
-    // evt.target.classList.toggle('active');
-
-    //     function hideButton() {
-    //       if (showButton() && evt.target.contains('active')) {
-    //         // evt.target.classList.remove('active');
-    //       }
-    //     }
     [...evt.currentTarget.children].forEach(item => {
       item.classList.remove('active');
-      //console.log(item.textContent);
     });
 
     evt.target.classList.add('active');
@@ -141,13 +126,10 @@ const renderCalendar = number => {
     localStorage.setItem('VALUE', JSON.stringify(newValueDay));
 
     let inputDateValue = document.querySelector('.calendar-input').value;
-    // console.log(inputDateValue);
+
     localStorage.setItem('date', JSON.stringify(inputDateValue));
     document.querySelector('[data-modal]').classList.add('is-hidden-wrapper');
     document.querySelector('.calendar-input').classList.remove('isActive');
-    // document
-    //   .querySelector('.calendar__button-arrow')
-    //   .classList.remove('switched');
     document
       .querySelector('.calendar__button-calendar')
       .classList.remove('switchedColor');
@@ -157,7 +139,6 @@ const renderCalendar = number => {
 
 renderCalendar();
 let findUl = document.querySelector('.days');
-// inputDateValue = document.querySelector('.calendar-input').value;
 
 prevNextIcon.forEach(icon => {
   // getting prev and next icons
@@ -177,10 +158,8 @@ prevNextIcon.forEach(icon => {
     renderCalendar(); // calling renderCalendar function
     let test = JSON.parse(localStorage.getItem('VALUE'));
     let reachUl = daysTag.childNodes;
-    //console.log(reachUl);
     reachUl.forEach(elem => {
       if (elem.textContent === test) {
-        // console.log(elem.textContent);
         elem.classList.add('active');
       }
     });

@@ -21,7 +21,7 @@ function generateButtonsMarkup(data) {
     ? data.reduce((markup, ctg) => {
         return (markup += `
 <li class="categories__item">
-        <button type="button" class="categories__button standalone" data-select="button">${ctg}</button>
+        <button aria-label="category" type="button" class="categories__button standalone" data-select="button">${ctg}</button>
       </li>`);
       }, '')
     : '';
@@ -32,7 +32,7 @@ function generateFilter(buttons, select) {
         ${generateButtonsMarkup(buttons)}     
        <li class="categories__item">
         <div class="select-menu">
-          <button class="categories__button select" type="button" data-select="select">
+          <button aria-label="category select" class="categories__button select" type="button" data-select="select">
             <span>${
               typeOfDevice() === 'mobile' ? 'Categories' : 'Others'
             }</span>

@@ -83,8 +83,7 @@ function setPageParam(response) {
       valuePage.totalHits = 1000;
     }
     valuePage.totalPages = Math.ceil(valuePage.totalHits / 10);
-    // console.log(valuePage);
-    return;
+        return;
   }
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
 }
@@ -107,8 +106,7 @@ export const createPagination = {
     const popular = new Popular();
     const response = await popular.get();
     valuePage.response = response;
-    // console.log('response :', response);
-    const weatherCard = await weatherByGeolocation();
+       const weatherCard = await weatherByGeolocation();
     setPageParam(response);
     const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
@@ -135,7 +133,7 @@ export const createPagination = {
       response = filteredResponse;
     }
     valuePage.response = response;
-    // console.log('response :', response);
+    
     setPageParam(response);
     const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
@@ -144,7 +142,7 @@ export const createPagination = {
     pagination();
     spinner.stop();
     renderDefault(itemsToShow);
-    // console.log('картки для відмальовки', itemsToShow);
+  
     return itemsToShow;
   },
 
@@ -157,14 +155,14 @@ export const createPagination = {
     const search = new Search(input, date);
     const response = await search.get();
     valuePage.totalHits = search.getHits();
-    // console.log('response :', response);
+   
     setPageParam(response);
     const itemsToShow = response.slice(
       valuePage.itemsPerPage * (valuePage.curPage - 1),
       valuePage.itemsPerPage * valuePage.curPage
     );
     pagination();
-    // console.log('картки для відмальовки', itemsToShow);
+    
     spinner.stop();
     renderDefault(itemsToShow);
   },
@@ -176,12 +174,12 @@ export const createPagination = {
       const search = new Search(valuePage.searchParam);
       search.setPage(valuePage.curPage - 1);
       const response = await search.get();
-      // console.log('response :', response);
+    
       const itemsToShow = response.slice(0, valuePage.itemsPerPage);
       pagination();
       spinner.stop();
       renderDefault(itemsToShow);
-      // console.log('картки для відмальовки', itemsToShow);
+      
       return itemsToShow;
     }
     const response = valuePage.response;
@@ -252,9 +250,9 @@ function pagination() {
 }
 
 function renderPage(index, active = '') {
-  return ` <li class="pagination__item ${active}" data-page="${index}">
+  return ` <div class="pagination__item ${active}" data-page="${index}">
         ${index}
-    </li>`;
+    </div>`;
 }
 
 document.querySelector('.pagination').addEventListener('click', function (e) {
@@ -279,11 +277,7 @@ function handleButton(element) {
     handleButtonRight();
   }
 
-  // if (
-  //   valuePage.searchType === 'popular' ||
-  //   valuePage.searchType === 'category'
-  // ) {
-  // }
+
   createPagination.onPageChange();
 }
 

@@ -1,6 +1,5 @@
-import { weatherByGeolocation } from './geolocation.js';
 import sprite from './../images/icons.svg';
-// const weatherCard = document.querySelector('body');
+
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 var months = [
   'Jan',
@@ -57,15 +56,10 @@ function renderWeatherCard(data, currentDate, dayName, month) {
         </div>
       </div>
     </div>
-    <div class="weather-card__icon">${`<img class="icon__weather" src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@4x.png"></img>`}</div>
+    <div class="weather-card__icon">${`<img class="icon__weather" alt="Current Weather" width="198" height="198" src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@4x.png"></img>`}</div>
     <p class="weather-card__date">${dayName}</p>
     <p class="weather-card__year">${
       currentDate.getUTCDate() + ' ' + month + ' ' + currentDate.getFullYear()
     }</p>
   </div>`;
 }
-
-// async function app() {
-//   const weather = await weatherByGeolocation();
-//   }
-// app();
