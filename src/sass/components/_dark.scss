@@ -37,4 +37,8 @@
   & .categories__button {
     background-color: $whiteColor;
   }
+  & .active-category {
+    color: $whiteColor;
+    background-color: $accentBgColor;
+  }
 }
