@@ -1,22 +1,21 @@
 /* Загальні стилі для футера */
 
 footer {
-    padding-bottom: 16px;
-    background-color: $secondaryTextColor;
+  background-color: $secondaryTextColor;
 }
 
-.text {
-    display: flex;
-    text-align: center;
-    font-size: 14px;
-    color: $darkBgColor;
-    justify-content: center;
-    margin: 16px 0;
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 14px;
+  color: $darkBgColor;
+  justify-content: center;
+  height: 130px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: auto;
+  margin-bottom: 0;
+  gap: 16px;
 }
 
-/* Стилі для роздільника в футері */
-
-footer hr {
-    border: none;
-    border-top: 1px solid #929292;
-}

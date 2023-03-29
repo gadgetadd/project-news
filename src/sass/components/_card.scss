@@ -181,3 +181,7 @@
 .main__no-news {
   margin: 0 auto;
 }
+
+.card-news__wrap {
+  min-height: calc(100vh - 130px);
+}
