@@ -45,7 +45,7 @@ function showCurrentDate() {
     if (refs.input.classList.contains('isActive')) {
       refs.modal.classList.add('is-hidden-wrapper');
       refs.input.classList.remove('isActive');
-      refs.arrow.classList.remove('switched');
+      // refs.arrow.classList.remove('switched');
       refs.calendarBtn.classList.remove('switchedColor');
       document.getElementById('input-picker').value = '';
       localStorage.removeItem('VALUE');
