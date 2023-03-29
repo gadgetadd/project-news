@@ -1,5 +1,6 @@
 import axios from 'axios';
 import moment from 'moment/moment';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 // Загальний клас для базових даних і методів
 
@@ -17,7 +18,7 @@ class NewsAPI {
       }
       return this.normalize(response.data);
     } catch {
-      throw new Error('data retrieval error');
+      Notify.failure('Sorry, error retrieving data. Please try again later.');
     }
   }
 }
