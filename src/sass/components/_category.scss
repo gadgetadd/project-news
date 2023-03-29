@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 320px) {
   .filter-wrapper {
     display: flex;
@@ -8,15 +7,15 @@
   }
 }
 @media screen and (min-width: 768px) {
-.filter-wrapper {
+  .filter-wrapper {
     padding: 28px 0 48px 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .filter-wrapper {
-      padding: 28px 40px 60px 0;
-    }
+    padding: 28px 40px 60px 0;
+  }
 }
 .categories-wrapper {
   display: flex;
@@ -38,6 +37,7 @@
   color: $accentColor;
   background-color: inherit;
   cursor: pointer;
+  transition: color 250ms ease, background-color 250ms ease;
 }
 .categories__button:hover,
 .categories__button:focus,

@@ -41,6 +41,7 @@
   justify-content: flex-start;
   color: inherit;
   cursor: pointer;
+  transition: color 250ms ease;
 
   &:hover,
   &:focus {
