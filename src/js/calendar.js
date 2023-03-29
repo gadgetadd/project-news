@@ -32,7 +32,7 @@ function showCurrentDate() {
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden-wrapper');
     refs.input.classList.toggle('isActive');
-    refs.arrow.classList.toggle('switched');
+    // refs.arrow.classList.toggle('switched');
     refs.calendarBtn.classList.toggle('switchedColor');
     // showCurrentDate();
   }
