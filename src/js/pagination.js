@@ -10,6 +10,12 @@
 // сreatePagination.onPageChange().
 // При переході на інші сторінки, слухачем подій запускається функція для рендеру, в яку агрументом передається функція CreatePagination.onPageChange.
 // Функція повертає масив для відмальовки необхідної сторінки.
+import desktop from '../images/no-news-desktop.png';
+import desktopX2 from '../images/no-news-desktop@2x.png';
+import tablet from '../images/no-news-tablet.png';
+import tabletX2 from '../images/no-news-tablet@2x.png';
+import mobile from '../images/no-news-mobile.png';
+import mobileX2 from '../images/no-news-mobile@2x.png';
 
 import { Popular, Category, Search } from './NewsAPI';
 import { createCardsMarkup } from './card-main';
@@ -22,6 +28,8 @@ import 'spin.js/spin.css';
 import moment from 'moment/moment';
 
 const cardsNewsEl = document.querySelector('.news');
+const mainPage = document.querySelector('.card-news__wrap');
+const pgBlock = document.querySelector('.pagination');
 const pg = document.getElementById('pagination');
 const btnNextPg = document.querySelector('button.pagination__button--next');
 const btnPrevPg = document.querySelector('button.pagination__button--prev');
@@ -75,7 +83,7 @@ function setPageParam(response) {
       valuePage.totalHits = 1000;
     }
     valuePage.totalPages = Math.ceil(valuePage.totalHits / 10);
-    console.log(valuePage);
+    // console.log(valuePage);
     return;
   }
   valuePage.totalPages = Math.ceil(response.length / valuePage.itemsPerPage);
@@ -309,8 +317,13 @@ function detectViewport(news, weather) {
 }
 
 export function renderPopular(data, weather) {
+  if (data.length === 0) {
+    pgBlock.classList.add('pagination--disabled');
+    return placeholder();
+  }
   const news = createCardsMarkup(data);
   const markup = detectViewport(news, weather).join('');
+  pgBlock.classList.remove('pagination--disabled');
   cardsNewsEl.innerHTML = markup;
   addToRead();
   addToFavorite();
@@ -318,11 +331,32 @@ export function renderPopular(data, weather) {
 }
 
 function renderDefault(data) {
+  if (data.length === 0) {
+    pgBlock.classList.add('pagination--disabled');
+    return placeholder();
+  }
   const markup = createCardsMarkup(data).join('');
+  pgBlock.classList.remove('pagination--disabled');
   cardsNewsEl.innerHTML = markup;
   addToRead();
   addToFavorite();
   removeFromFavorite();
+}
+
+function placeholder() {
+  mainPage.innerHTML = ` <picture>
+                <source
+                    srcset="${mobile} 1x, ${mobileX2} 2x"
+                    media="(max-width: 767px)">
+                <source
+                    srcset="${tablet} 1x, ${tabletX2} 2x"
+                    media="(max-width: 1279px)">
+                <source
+                    srcset="${desktop} 1x, ${desktopX2} 2x"
+                    media="(min-width: 1280px)">
+                <img class="main__no-news" src="${mobile}"
+                    alt="Зображення не має новин">
+            </picture>`;
 }
 
 export const firstPageData = createPagination.popular();
