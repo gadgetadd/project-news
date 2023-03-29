@@ -160,6 +160,11 @@
 
 .calendar__button-arrow-icon {
   cursor: pointer;
+  transform: rotate(90deg);
+}
+
+.calendar__button-arrow-icon--inverted {
+  transform: rotate(270deg);
 }
 
 .calendar__button-arrow.switched {
