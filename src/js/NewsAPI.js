@@ -62,7 +62,7 @@ export class Search extends NewsAPI {
       this.options.begin_date = moment(date).format('YYYYMMDD');
       this.options.end_date = moment(date).format('YYYYMMDD');
     }
-    this.options.q = encodeURIComponent(query.toLowerCase());
+    this.options.q = encodeURIComponent(query.toLowerCase().trim());
   }
 
   normalize({ response: { docs } }) {
