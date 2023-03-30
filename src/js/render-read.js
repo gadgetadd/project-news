@@ -109,8 +109,7 @@ const renderAccordion = (dateString, articles) => {
 
 export const renderPage = () => {
   const articls = JSON.parse(localStorage.getItem('readArticles'));
-
-  if (articls === null) {
+  if (articls === null || Object.keys(articls).length === 0) {
     container.innerHTML = ` <picture>
                 <source
                     srcset="${mobile} 1x, ${mobileX2} 2x"
