@@ -35,7 +35,7 @@
   font-size: 12px;
   line-height: 1.33;
   color: $accentColor;
-  background-color: inherit;
+  background-color: $lightBgColor;
   cursor: pointer;
   transition: color 250ms ease, background-color 250ms ease;
 }

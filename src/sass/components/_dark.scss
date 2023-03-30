@@ -4,9 +4,6 @@
     color: $lightBgColor;
     fill: $lightBgColor;
   }
-  & .page-header {
-    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
-  }
   & .menu-container {
     background-color: $darkBgColor;
   }
@@ -40,5 +37,13 @@
   & .active-category {
     color: $whiteColor;
     background-color: $accentBgColor;
+  }
+  .site-nav__link {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $darkBgColor;
+      color: $accentColor;
+    }
   }
 }
