@@ -2,6 +2,7 @@ import { categories } from './categories';
 import sprite from '../../images/icons.svg';
 import { typeOfDevice, firstPageData, renderPopular } from '../pagination';
 import throttle from 'lodash.throttle';
+import { setActiveLink } from '../activMenu';
 
 const wrapper = document.querySelector('.category-wrapper');
 let currentState = typeOfDevice();
@@ -75,6 +76,7 @@ function onResize() {
   if (newState !== currentState) {
     currentState = newState;
     renderFilter();
+    setActiveLink();
     firstPageData.then(data => renderPopular(...data)).catch(console.log);
   }
 }

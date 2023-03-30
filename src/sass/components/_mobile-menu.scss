@@ -44,12 +44,13 @@
   transition: color 250ms ease;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     background-color: $lightBgColor;
     color: $accentColor;
 
     .arrow-right {
-      display: block;
+      opacity: 1;
     }
 
     .icon-menu {
@@ -68,9 +69,12 @@
   }
 
   .arrow-right {
-    display: none;
+    opacity: 0;
     margin-left: auto;
     margin-right: 0;
+    transform: rotate(270deg);
+    fill: $accentColor;
+    transition: opacity 300ms ease;
   }
 }
 .site-nav__item.active {
