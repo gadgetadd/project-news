@@ -301,10 +301,11 @@
   line-height: 1.79;
   letter-spacing: 0.38px;
   color: $blackColor;
-  opacity: 40%;
+  opacity: 25%;
   z-index: 1;
   cursor: pointer;
   position: relative;
+  pointer-events: none;
 }
 
 .calendar .days li:nth-last-child(-n + 7) {
